@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<title>MLP Studio Creativo — Studio Creativo Multidisciplinare · San Donà di Piave</title>
+<meta name="description" content="MLP Studio Creativo è uno studio creativo multidisciplinare con sede a San Donà di Piave (Venezia): branding, web design, editoriale e visual per brand in Veneto, Italia ed Europa." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,800;0,900;1,300;1,400&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0a0a;
+    --paper:#ffffff;
+    --paper-2:#f3f3f3;
+    --muted:#7a7a7a;
+    --line:#0a0a0a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Roboto', Arial, sans-serif;
+    font-weight:300;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+
+  .display{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans', sans-serif;
+    font-weight:300;letter-spacing:-0.03em;
+  }
+  .italic{font-style:italic;font-family:'Nunito Sans',serif}
+  .mono{font-family:'Roboto Mono','Roboto',monospace;font-variant-numeric:tabular-nums}
+
+  /* ============== CUSTOM CURSOR ============== */
+  .cursor{
+    position:fixed;top:0;left:0;width:8px;height:8px;
+    background:var(--ink);border-radius:50%;
+    pointer-events:none;z-index:9998;
+    transform:translate(-50%,-50%);
+    transition:width .25s ease, height .25s ease, background .25s ease, opacity .2s ease;
+    mix-blend-mode:difference;
+    will-change:transform;
+  }
+  .cursor.is-hover{width:52px;height:52px;background:var(--paper)}
+  .cursor.is-hidden{opacity:0}
+  @media (hover:none){.cursor{display:none}}
+
+  /* ============== INTRO — sequenza cinematografica ============== */
+  .intro{
+    position:fixed;inset:0;z-index:9999;
+    background:var(--ink);color:var(--paper);
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+  }
+  /* Linea verticale che cresce, si apre, e fa "tagliare" il logo */
+  .intro .scan-line{
+    position:absolute;top:0;left:50%;width:1px;height:100%;
+    background:var(--paper);transform:scaleY(0);transform-origin:top;
+    animation:scanLine 0.7s cubic-bezier(0.85,0,0.15,1) forwards;
+  }
+  @keyframes scanLine{
+    0%{transform:scaleY(0);transform-origin:top}
+    50%{transform:scaleY(1);transform-origin:top}
+    50.01%{transform-origin:bottom}
+    100%{transform:scaleY(0);transform-origin:bottom}
+  }
+  /* Wrapper logo: mask che si apre dal centro */
+  .intro .logo-mask{
+    position:relative;width:min(560px, 70vw);
+    overflow:hidden;
+    clip-path:inset(0 50% 0 50%);
+    animation:maskOpen 1s cubic-bezier(0.85,0,0.15,1) 0.55s forwards, maskClose 0.6s cubic-bezier(0.85,0,0.15,1) 2.4s forwards;
+  }
+  .intro .logo-mark{
+    width:100%;height:auto;display:block;
+    filter:invert(1);
+    transform:scale(1.08);
+    animation:logoSettle 1.4s cubic-bezier(0.25,0.46,0.45,0.94) 0.55s forwards, logoPulse 0.4s ease-in-out 1.95s;
+  }
+  @keyframes maskOpen{
+    0%{clip-path:inset(0 50% 0 50%)}
+    100%{clip-path:inset(0 0 0 0)}
+  }
+  @keyframes maskClose{
+    0%{clip-path:inset(0 0 0 0)}
+    100%{clip-path:inset(50% 0 50% 0)}
+  }
+  @keyframes logoSettle{
+    0%{transform:scale(1.08)}
+    100%{transform:scale(1)}
+  }
+  @keyframes logoPulse{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.025)}
+  }
+  /* Crocini d'angolo (stile camera/registro tipografico) */
+  .intro .corner{
+    position:absolute;width:18px;height:18px;
+    opacity:0;animation:cornerIn 0.5s ease-out 0.55s forwards;
+  }
+  .intro .corner::before, .intro .corner::after{
+    content:"";position:absolute;background:var(--paper);
+  }
+  .intro .corner::before{width:100%;height:1px;top:0}
+  .intro .corner::after{width:1px;height:100%;left:0}
+  .intro .corner.tl{top:36px;left:36px}
+  .intro .corner.tr{top:36px;right:36px;transform:rotate(90deg)}
+  .intro .corner.bl{bottom:36px;left:36px;transform:rotate(-90deg)}
+  .intro .corner.br{bottom:36px;right:36px;transform:rotate(180deg)}
+  @keyframes cornerIn{from{opacity:0}to{opacity:0.8}}
+  /* Counter di caricamento in basso */
+  .intro .meta-line{
+    position:absolute;bottom:40px;left:40px;right:40px;
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:11px;letter-spacing:0.25em;text-transform:uppercase;
+    color:rgba(255,255,255,0.55);
+    opacity:0;animation:metaIn 0.6s ease-out 0.7s forwards;
+  }
+  .intro .pct{color:var(--paper);font-weight:500;font-variant-numeric:tabular-nums}
+  @keyframes metaIn{from{opacity:0;transform:translateY(8px)}to{opacity:0.7;transform:translateY(0)}}
+  /* Tenda finale che si solleva */
+  .intro-curtain{
+    position:fixed;inset:0;z-index:9998;background:var(--ink);
+    transform:translateY(0);
+    animation:curtainUp 1.1s cubic-bezier(0.85,0,0.15,1) 3s forwards;
+    pointer-events:none;
+  }
+  @keyframes curtainUp{
+    0%{transform:translateY(0)}
+    100%{transform:translateY(-100%)}
+  }
+  body > *:not(.intro):not(.intro-curtain):not(.cursor){
+    opacity:0;
+    animation:contentReveal .9s ease-out 3.8s forwards;
+  }
+  @keyframes contentReveal{
+    from{opacity:0;transform:translateY(16px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .intro,.intro-curtain{display:none}
+    body > *:not(.intro):not(.intro-curtain):not(.cursor){opacity:1;animation:none;transform:none}
+  }
+
+  /* ============== TOPBAR ============== */
+  .topbar{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:18px 32px;
+    font-size:11px;text-transform:uppercase;letter-spacing:0.22em;
+    background:rgba(255,255,255,0.85);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .brand{
+    display:flex;align-items:center;gap:14px;
+    text-transform:none;letter-spacing:0;
+    padding:6px 10px;margin:-6px -10px;
+    transition:transform .35s cubic-bezier(0.25,0.46,0.45,0.94);
+  }
+  .topbar .brand:hover{transform:scale(0.96)}
+  .topbar .brand img{
+    height:48px;width:auto;
+    transition:transform .4s cubic-bezier(0.25,0.46,0.45,0.94);
+    transform-origin:left center;
+  }
+  .topbar .brand:hover img{transform:scale(1.05)}
+  .topbar .brand-tag{
+    font-size:9px;letter-spacing:0.3em;text-transform:uppercase;
+    color:var(--muted);border-left:1px solid var(--paper-2);padding-left:14px;
+    line-height:1.3;
+  }
+  .topbar .brand-tag strong{color:var(--ink);font-weight:500;display:block}
+  .topbar nav{display:flex;gap:28px}
+  .topbar nav a{position:relative;padding:4px 0;transition:opacity .2s}
+  .topbar nav a::after{
+    content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;
+    background:var(--ink);transition:width .3s ease;
+  }
+  .topbar nav a:hover::after{width:100%}
+  .topbar .meta{color:var(--muted)}
+
+  /* ============== MASTHEAD ============== */
+  .masthead{
+    padding:140px 32px 60px;
+    border-bottom:1px solid var(--line);
+    position:relative;min-height:100vh;
+    display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .masthead .kicker{
+    font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);
+    display:flex;align-items:center;gap:12px;
+  }
+  .masthead .kicker::before{content:"";width:24px;height:1px;background:var(--ink);display:inline-block}
+  .masthead h1{
+    font-size:clamp(80px, 17vw, 280px);
+    line-height:0.88;letter-spacing:-0.05em;
+    margin:auto 0;
+  }
+  .masthead h1 .word{display:inline-block;overflow:hidden;vertical-align:top}
+  .masthead h1 .word span{
+    display:inline-block;
+    transform:translateY(110%);
+    animation:reveal 1.1s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
+    animation-delay:3.4s;
+  }
+  .masthead h1 .word:nth-child(2) span{animation-delay:3.5s}
+  .masthead h1 .word:nth-child(3) span{animation-delay:3.6s}
+  @keyframes reveal{from{transform:translateY(110%)}to{transform:translateY(0)}}
+  .masthead h1 .amp{font-style:italic;font-family:'Nunito Sans',serif;font-weight:200}
+  /* Logo come elemento d'ancoraggio nel masthead (firma) */
+  .masthead .hero-logo{
+    display:block;width:min(720px, 80vw);height:auto;margin:24px 0 36px;
+    transition:transform .6s cubic-bezier(0.25,0.46,0.45,0.94);
+  }
+  .masthead .hero-logo:hover{transform:scale(1.015)}
+  .masthead .hero-stamp{
+    display:flex;align-items:flex-end;justify-content:space-between;gap:32px;
+    border-top:1px solid var(--ink);padding-top:18px;margin-bottom:28px;
+  }
+  .masthead .hero-stamp .left{font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted)}
+  .masthead .hero-stamp .right{font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);text-align:right}
+  .masthead .foot{
+    display:grid;grid-template-columns:1fr 1fr 1fr;
+    gap:20px;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:var(--muted);
+    padding-top:40px;border-top:1px solid var(--paper-2);
+  }
+  .masthead .foot span:nth-child(2){text-align:center}
+  .masthead .foot span:last-child{text-align:right}
+  .scroll-hint{
+    position:absolute;bottom:24px;left:50%;transform:translateX(-50%);
+    font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);
+    display:flex;align-items:center;gap:10px;
+  }
+  .scroll-hint::after{
+    content:"";width:1px;height:28px;background:var(--ink);display:block;
+    animation:scrollDown 1.8s ease-in-out infinite;transform-origin:top;
+  }
+  @keyframes scrollDown{
+    0%{transform:scaleY(0);transform-origin:top}
+    50%{transform:scaleY(1);transform-origin:top}
+    50.01%{transform-origin:bottom}
+    100%{transform:scaleY(0);transform-origin:bottom}
+  }
+
+  /* ============== MARQUEE ============== */
+  .ticker{
+    border-bottom:1px solid var(--line);border-top:1px solid var(--line);
+    overflow:hidden;white-space:nowrap;padding:22px 0;
+    background:var(--ink);color:var(--paper);
+  }
+  .ticker-track{display:inline-block;animation:scroll 45s linear infinite}
+  .ticker:hover .ticker-track{animation-play-state:paused}
+  .ticker span{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
+    font-size:34px;font-weight:300;
+    padding:0 28px;display:inline-block;letter-spacing:-0.02em;
+  }
+  .ticker .sep{font-style:italic;opacity:0.4;padding:0 12px}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ============== INTRO BLOCK (manifesto) ============== */
+  .manifesto{
+    display:grid;grid-template-columns:auto 1fr;gap:60px;
+    padding:100px 32px;border-bottom:1px solid var(--line);align-items:start;
+  }
+  .manifesto .num{
+    font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);
+    position:sticky;top:120px;
+  }
+  .manifesto p{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
+    font-weight:300;font-size:clamp(28px,3.4vw,52px);
+    line-height:1.2;letter-spacing:-0.02em;max-width:22ch;
+  }
+  .manifesto p .italic{color:var(--muted)}
+  .manifesto p .highlight{
+    display:inline-block;position:relative;
+  }
+  .manifesto p .highlight::after{
+    content:"";position:absolute;left:0;right:0;bottom:0.08em;height:0.06em;
+    background:var(--ink);
+  }
+
+  /* ============== SECTION HEADER ============== */
+  .section-head{
+    display:grid;grid-template-columns:60px 1fr auto;gap:20px;align-items:baseline;
+    padding:60px 32px 30px;border-bottom:1px solid var(--line);
+  }
+  .section-head .n{font-size:11px;letter-spacing:0.25em;color:var(--muted)}
+  .section-head h2{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
+    font-weight:300;font-size:clamp(38px,6vw,80px);
+    letter-spacing:-0.035em;line-height:1;
+  }
+  .section-head h2 .italic{font-family:'Nunito Sans',serif;font-weight:200;color:var(--muted)}
+  .section-head .m{font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);text-align:right}
+
+  /* ============== SERVICES ============== */
+  .services{border-bottom:1px solid var(--line)}
+  .svc{
+    display:grid;grid-template-columns:60px 1fr 1fr;gap:30px;
+    padding:40px 32px;border-bottom:1px solid var(--paper-2);
+    align-items:start;transition:background .4s, color .4s;
+    cursor:default;
+  }
+  .svc:last-child{border-bottom:none}
+  .svc:hover{background:var(--ink);color:var(--paper)}
+  .svc:hover .svc-tags span{border-color:rgba(255,255,255,0.3)}
+  .svc .idx{font-size:11px;letter-spacing:0.25em;color:var(--muted);padding-top:14px}
+  .svc:hover .idx{color:rgba(255,255,255,0.6)}
+  .svc h3{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
+    font-weight:300;font-size:clamp(32px,4.4vw,64px);
+    letter-spacing:-0.03em;line-height:1;
+  }
+  .svc .desc{font-size:16px;color:var(--muted);max-width:38ch;line-height:1.6}
+  .svc:hover .desc{color:rgba(255,255,255,0.7)}
+  .svc-tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px}
+  .svc-tags span{
+    font-size:10px;letter-spacing:0.18em;text-transform:uppercase;
+    border:1px solid var(--line);padding:5px 11px;border-radius:999px;
+    transition:border-color .4s;
+  }
+  .services-more{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:44px 32px;background:var(--paper-2);
+    font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:300;
+    text-decoration:none;color:var(--ink);transition:background .3s, color .3s;
+  }
+  .services-more:hover{background:var(--ink);color:var(--paper)}
+  .services-more .lab{font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--muted)}
+  .services-more:hover .lab{color:rgba(255,255,255,0.6)}
+  .services-more .t{font-size:clamp(22px,2.4vw,32px);letter-spacing:-0.02em}
+  .services-more .arr{font-size:22px;transition:transform .3s}
+  .services-more:hover .arr{transform:translateX(8px)}
+
+  /* ============== PORTFOLIO ============== */
+  .portfolio{border-bottom:1px solid var(--line)}
+  .pf-list{padding:0 32px}
+  .pf-row{
+    display:grid;grid-template-columns:60px 1fr auto;gap:30px;
+    padding:32px 0;border-bottom:1px solid var(--paper-2);
+    align-items:center;position:relative;cursor:pointer;
+    transition:padding .3s;
+  }
+  .pf-row:hover{padding-left:14px}
+  .pf-row:last-child{border-bottom:none}
+  .pf-row .pf-idx{font-size:11px;color:var(--muted);letter-spacing:0.2em}
+  .pf-row .pf-title{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
+    font-weight:300;font-size:clamp(28px,4vw,56px);
+    letter-spacing:-0.03em;line-height:1;transition:transform .3s;
+  }
+  .pf-row:hover .pf-title{transform:translateX(8px)}
+  .pf-row .pf-cat{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted)}
+  .pf-row .pf-year{font-size:11px;letter-spacing:0.2em;color:var(--muted)}
+  .pf-row .pf-preview{
+    position:absolute;right:40%;top:50%;transform:translateY(-50%) scale(0.85);
+    width:260px;aspect-ratio:4/3;
+    opacity:0;pointer-events:none;transition:opacity .3s, transform .4s;
+    z-index:3;
+    background-size:cover;background-position:center;
+    filter:grayscale(100%);
+  }
+  .pf-row:hover .pf-preview{opacity:1;transform:translateY(-50%) scale(1)}
+  .prev-1{background:linear-gradient(135deg,#2a2a2a 0%,#8a8a8a 100%)}
+  .prev-2{background:linear-gradient(160deg,#0a0a0a 0%,#6a6a6a 100%)}
+  .prev-3{background:linear-gradient(135deg,#e8e8e8 0%,#3a3a3a 100%)}
+  .prev-4{background:linear-gradient(200deg,#1a1a1a 0%,#9a9a9a 100%)}
+  .prev-5{background:linear-gradient(135deg,#c8c8c8 0%,#2a2a2a 100%)}
+  .prev-6{background:linear-gradient(135deg,#0a0a0a 0%,#d0d0d0 100%)}
+
+  /* ============== AVAILABILITY ============== */
+  .availability{
+    background:var(--ink);color:var(--paper);
+    padding:70px 32px;border-bottom:1px solid var(--line);
+    display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;
+  }
+  .availability h3{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
+    font-weight:200;font-size:clamp(32px,4.8vw,68px);
+    line-height:1;letter-spacing:-0.035em;margin-bottom:16px;
+  }
+  .availability h3 .italic{font-family:'Nunito Sans',serif;font-weight:200;color:#999}
+  .availability p{color:rgba(255,255,255,0.7);font-size:15px;max-width:58ch}
+  .availability .slots{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}
+  .availability .slot{
+    font-size:10px;letter-spacing:0.22em;text-transform:uppercase;
+    border:1px solid rgba(255,255,255,0.3);padding:6px 12px;border-radius:999px;
+  }
+  .availability .slot.full{opacity:0.35;text-decoration:line-through}
+  .btn-magnet{
+    display:inline-block;
+    background:var(--paper);color:var(--ink);
+    padding:22px 34px;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;
+    font-weight:600;cursor:pointer;transition:transform .25s;
+    will-change:transform;border:none;
+  }
+  .btn-magnet:hover{transform:scale(1.03)}
+
+  /* ============== TESTIMONIALS ============== */
+  .testimonials{border-bottom:1px solid var(--line)}
+  .tm-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+  .tm{
+    padding:48px 32px;border-right:1px solid var(--paper-2);
+    display:flex;flex-direction:column;justify-content:space-between;gap:32px;
+    min-height:320px;transition:background .3s;
+  }
+  .tm:last-child{border-right:none}
+  .tm:hover{background:var(--paper-2)}
+  .tm .quote{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
+    font-weight:300;font-size:22px;line-height:1.35;letter-spacing:-0.01em;
+  }
+  .tm .quote::before{
+    content:"\201C";font-size:48px;line-height:0;vertical-align:-18px;margin-right:2px;
+    font-family:'Nunito Sans',serif;font-weight:300;
+  }
+  .tm .author{display:flex;align-items:center;gap:14px}
+  .tm .avatar{
+    width:46px;height:46px;border-radius:50%;border:1px solid var(--ink);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
+    color:var(--ink);font-size:14px;font-weight:600;letter-spacing:0.05em;
+  }
+  .tm .who{font-size:13px}
+  .tm .who strong{display:block;font-weight:500;font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif}
+  .tm .who span{color:var(--muted);font-size:11px;letter-spacing:0.1em;text-transform:uppercase}
+
+  /* ============== ABOUT ============== */
+  .about{
+    display:grid;grid-template-columns:1fr 1fr;
+    border-bottom:1px solid var(--line);
+  }
+  .about .col{padding:80px 40px;border-right:1px solid var(--line)}
+  .about .col:last-child{border-right:none;background:var(--ink);color:var(--paper)}
+  .about .num{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-bottom:32px}
+  .about .col:last-child .num{color:rgba(255,255,255,0.5)}
+  .about h3{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
+    font-weight:300;font-size:clamp(32px,4.5vw,64px);
+    line-height:1;letter-spacing:-0.035em;margin-bottom:32px;
+  }
+  .about h3 .italic{font-family:'Nunito Sans',serif;font-weight:200;color:var(--muted)}
+  .about .col:last-child h3 .italic{color:rgba(255,255,255,0.5)}
+  .about p{font-size:16px;line-height:1.75;margin-bottom:18px;max-width:52ch}
+  .about .col:last-child p{color:rgba(255,255,255,0.75)}
+  .about .stats{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+    margin-top:40px;border-top:1px solid rgba(255,255,255,0.15);
+  }
+  .about .stat{padding:28px 0;border-right:1px solid rgba(255,255,255,0.15)}
+  .about .stat:last-child{border-right:none}
+  .about .stat .num-big{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
+    font-size:clamp(48px,5vw,72px);font-weight:200;color:var(--paper);
+    letter-spacing:-0.02em;line-height:1;
+  }
+  .about .stat .lbl{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:10px}
+
+  /* ============== FAQ ============== */
+  .faq{border-bottom:1px solid var(--line)}
+  .faq-list{padding:0 32px 40px}
+  details{border-bottom:1px solid var(--paper-2);padding:26px 0;cursor:pointer}
+  details:last-child{border-bottom:none}
+  details summary{
+    list-style:none;display:flex;justify-content:space-between;align-items:center;gap:30px;
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
+    font-size:clamp(20px,2.6vw,32px);font-weight:300;letter-spacing:-0.02em;
+    transition:padding .3s;
+  }
+  details:hover summary{padding-left:14px}
+  details summary::-webkit-details-marker{display:none}
+  details summary::after{
+    content:"";width:14px;height:14px;flex-shrink:0;
+    background:
+      linear-gradient(var(--ink),var(--ink)) center/100% 1.5px no-repeat,
+      linear-gradient(var(--ink),var(--ink)) center/1.5px 100% no-repeat;
+    transition:transform .3s;
+  }
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{margin-top:14px;color:var(--muted);font-size:15px;line-height:1.7;max-width:70ch}
+
+  /* ============== CONTACT ============== */
+  .contact{padding:120px 32px 80px;border-bottom:1px solid var(--line);position:relative}
+  .contact-head{text-align:center;max-width:1100px;margin:0 auto 72px}
+  .contact .kicker{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-bottom:24px}
+  .contact h2{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
+    font-weight:200;font-size:clamp(56px,11vw,180px);
+    line-height:0.92;letter-spacing:-0.055em;margin-bottom:40px;
+  }
+  .contact h2 .italic{font-family:'Nunito Sans',serif;font-weight:200;color:var(--muted)}
+  .contact a.mail{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
+    font-size:clamp(22px,2.6vw,34px);font-weight:300;letter-spacing:-0.01em;
+    border-bottom:1px solid var(--ink);padding-bottom:6px;transition:letter-spacing .3s;
+    display:inline-block;
+  }
+  .contact a.mail:hover{letter-spacing:0}
+  .contact .socials{
+    margin-top:40px;display:flex;gap:32px;justify-content:center;flex-wrap:wrap;
+    font-size:11px;letter-spacing:0.25em;text-transform:uppercase;
+  }
+  .contact .socials a{position:relative;padding-bottom:4px}
+  .contact .socials a::after{
+    content:"";position:absolute;left:0;bottom:0;height:1px;width:0;
+    background:var(--ink);transition:width .3s;
+  }
+  .contact .socials a:hover::after{width:100%}
+
+  /* ============== CONTACT FORM ============== */
+  .contact-form{
+    max-width:880px;margin:0 auto;border-top:1px solid var(--line);padding-top:64px;
+  }
+  .contact-form .form-intro{
+    display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:end;margin-bottom:56px;
+  }
+  .contact-form .form-intro .label{
+    font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);
+    font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:300;
+  }
+  .contact-form .form-intro h3{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
+    font-weight:300;font-size:clamp(28px,3.6vw,44px);letter-spacing:-0.025em;line-height:1.1;
+    margin-top:14px;
+  }
+  .contact-form .form-intro p{font-size:15px;color:var(--muted);line-height:1.7}
+  .contact-form .row{
+    display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:36px;
+  }
+  .contact-form .row-1{grid-template-columns:1fr}
+  .contact-form .field{position:relative;display:flex;flex-direction:column}
+  .contact-form label{
+    font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);
+    margin-bottom:14px;font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:300;
+  }
+  .contact-form label .req{color:var(--ink)}
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form input[type="tel"],
+  .contact-form select,
+  .contact-form textarea{
+    width:100%;border:none;border-bottom:1px solid var(--line);
+    background:transparent;padding:10px 0 14px;
+    font-family:inherit;font-size:17px;font-weight:300;color:var(--ink);
+    border-radius:0;transition:border-color .3s;
+    -webkit-appearance:none;appearance:none;
+  }
+  .contact-form select{
+    background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);
+    background-position:calc(100% - 12px) 18px,calc(100% - 6px) 18px;
+    background-size:6px 6px,6px 6px;background-repeat:no-repeat;padding-right:24px;
+  }
+  .contact-form textarea{min-height:140px;resize:vertical;line-height:1.55;padding-top:14px}
+  .contact-form input:focus,
+  .contact-form select:focus,
+  .contact-form textarea:focus{outline:none;border-bottom-color:var(--ink);border-bottom-width:2px}
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder{color:#b0b0b0;font-weight:300}
+
+  .contact-form .checkbox-group{
+    display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;
+  }
+  .contact-form .checkbox-group label{
+    margin:0;padding:10px 16px;border:1px solid var(--paper-2);
+    font-size:11px;letter-spacing:0.18em;cursor:pointer;
+    transition:border-color .25s,background .25s,color .25s;
+  }
+  .contact-form .checkbox-group input{position:absolute;opacity:0;pointer-events:none}
+  .contact-form .checkbox-group label:hover{border-color:var(--ink)}
+  .contact-form .checkbox-group input:checked + label,
+  .contact-form .checkbox-group label.is-on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+  .contact-form .consent{
+    display:flex;gap:14px;align-items:flex-start;font-size:13px;color:var(--muted);line-height:1.55;
+    margin:18px 0 32px;
+  }
+  .contact-form .consent input{margin-top:3px;accent-color:var(--ink)}
+  .contact-form .consent a{text-decoration:underline}
+
+  .contact-form .submit-row{
+    display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;
+    margin-top:16px;padding-top:32px;border-top:1px solid var(--paper-2);
+  }
+  .contact-form .submit-note{font-size:12px;letter-spacing:0.06em;color:var(--muted);max-width:48ch}
+  .contact-form button[type="submit"]{
+    background:var(--ink);color:var(--paper);border:none;cursor:pointer;
+    padding:20px 36px;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;
+    font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:400;
+    transition:letter-spacing .3s,background .3s;
+  }
+  .contact-form button[type="submit"]:hover{letter-spacing:0.42em;background:#1a1a1a}
+  .contact-form .hp{position:absolute;left:-9999px;opacity:0;pointer-events:none}
+
+  .contact-form .form-success{
+    display:none;padding:64px 32px;border:1px solid var(--line);text-align:center;
+  }
+  .contact-form.submitted .form-success{display:block}
+  .contact-form.submitted form{display:none}
+  .contact-form .form-success h4{
+    font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:300;
+    font-size:clamp(26px,3.4vw,40px);letter-spacing:-0.02em;margin-bottom:14px;
+  }
+  .contact-form .form-success p{color:var(--muted);font-size:15px;line-height:1.7}
+
+  @media (max-width:900px){
+    .contact{padding:80px 20px 60px}
+    .contact-head{margin-bottom:48px}
+    .contact-form{padding-top:48px}
+    .contact-form .form-intro{grid-template-columns:1fr;gap:18px;margin-bottom:40px}
+    .contact-form .row{grid-template-columns:1fr;gap:28px;margin-bottom:28px}
+    .contact-form .submit-row{flex-direction:column;align-items:stretch}
+    .contact-form button[type="submit"]{width:100%}
+  }
+
+  /* ============== FOOTER ============== */
+  footer{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:26px 32px;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);
+    flex-wrap:wrap;gap:10px;
+  }
+  footer .dot{width:6px;height:6px;border-radius:50%;background:var(--ink);display:inline-block;margin:0 8px;vertical-align:middle;animation:pulse 2s ease-in-out infinite}
+  @keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:0.5}}
+
+  /* ============== REVEAL ============== */
+  .reveal{opacity:0;transform:translateY(40px);transition:opacity .9s ease-out, transform .9s ease-out}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  /* ============== RESPONSIVE ============== */
+  @media (max-width: 900px){
+    .topbar{padding:14px 20px}
+    .topbar nav{display:none}
+    .masthead,.manifesto,.section-head,.contact,footer{padding-left:20px;padding-right:20px}
+    .masthead{padding-top:90px}
+    .masthead .foot{grid-template-columns:1fr;gap:6px;text-align:left !important}
+    .masthead .foot span{text-align:left !important}
+    .manifesto{grid-template-columns:1fr;gap:24px;padding:60px 20px}
+    .manifesto .num{position:static}
+    .section-head{grid-template-columns:1fr;gap:8px;padding:40px 20px 20px}
+    .section-head .m{text-align:left}
+    .svc{grid-template-columns:1fr;gap:16px;padding:30px 20px}
+    .svc .idx{padding-top:0}
+    .pf-list{padding:0 20px}
+    .pf-row{grid-template-columns:auto 1fr auto;gap:14px}
+    .pf-row .pf-cat{display:none}
+    .pf-row .pf-preview{display:none}
+    .availability{grid-template-columns:1fr;padding:50px 20px;text-align:left}
+    .tm-grid{grid-template-columns:1fr}
+    .tm{border-right:none;border-bottom:1px solid var(--paper-2);padding:36px 20px}
+    .tm:last-child{border-bottom:none}
+    .about{grid-template-columns:1fr}
+    .about .col{padding:50px 20px;border-right:none;border-bottom:1px solid var(--line)}
+    .about .col:last-child{border-bottom:none}
+    .about .stats{grid-template-columns:1fr}
+    .about .stat{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15)}
+    .faq-list{padding:0 20px 30px}
+    .contact{padding:80px 20px}
+  }
+</style>
+</head>
+<body>
+
+  <!-- ============ CURSORE CUSTOM ============ -->
+  <div class="cursor" id="cursor"></div>
+
+  <!-- ============ INTRO ============ -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <span class="corner tl"></span>
+    <span class="corner tr"></span>
+    <span class="corner bl"></span>
+    <span class="corner br"></span>
+    <span class="scan-line"></span>
+    <div class="logo-mask">
+      <img src="logo.svg" alt="MLP Studio Creativo" class="logo-mark" />
+    </div>
+    <div class="meta-line">
+      <span><span class="pct" id="pct">000</span> — Loading studio</span>
+      <span>San Donà di Piave / Venezia</span>
+    </div>
+  </div>
+  <div class="intro-curtain" id="curtain"></div>
+
+  <!-- ============ TOPBAR ============ -->
+  <header class="topbar">
+    <a href="#top" class="brand">
+      <img src="logo.svg" alt="MLP Studio Creativo" />
+      <span class="brand-tag"><strong>Studio Creativo</strong>San Donà / Venezia</span>
+    </a>
+    <nav>
+      <a href="#servizi">Servizi</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#about">Studio</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+    <div class="meta">Vol. II · MMXXVI</div>
+  </header>
+
+  <!-- ============ MASTHEAD ============ -->
+  <section class="masthead" id="top">
+    <div class="kicker">Studio Creativo · Veneto — Italia — Europa</div>
+    <h1 class="display">
+      <span class="word"><span>Idee</span></span>
+      <span class="word"><span class="amp">&amp;</span></span>
+      <span class="word"><span>forma.</span></span>
+    </h1>
+    <div class="foot">
+      <span>Branding</span>
+      <span>Digital · Visual</span>
+      <span>Editorial · Motion</span>
+    </div>
+    <div class="scroll-hint">Scroll</div>
+  </section>
+
+  <!-- ============ TICKER ============ -->
+  <div class="ticker">
+    <div class="ticker-track">
+      <span>Branding</span><span class="sep">—</span><span class="italic">Art Direction</span><span class="sep">—</span><span>Web Design</span><span class="sep">—</span><span class="italic">Editorial</span><span class="sep">—</span><span>Motion</span><span class="sep">—</span><span class="italic">Photography</span><span class="sep">—</span><span>Packaging</span><span class="sep">—</span><span class="italic">Illustrazione</span><span class="sep">—</span>
+      <span>Branding</span><span class="sep">—</span><span class="italic">Art Direction</span><span class="sep">—</span><span>Web Design</span><span class="sep">—</span><span class="italic">Editorial</span><span class="sep">—</span><span>Motion</span><span class="sep">—</span><span class="italic">Photography</span><span class="sep">—</span><span>Packaging</span><span class="sep">—</span><span class="italic">Illustrazione</span><span class="sep">—</span>
+    </div>
+  </div>
+
+  <!-- ============ MANIFESTO ============ -->
+  <section class="manifesto reveal">
+    <div class="num">(001) — Manifesto</div>
+    <p class="display">
+      Siamo giovani. <span class="italic">Sì.</span><br/>
+      Qualcuno ce lo rinfaccia,<br/>
+      noi ne andiamo <span class="highlight">fieri</span>.<br/>
+      Ogni giorno arriviamo<br/>
+      con <span class="italic">idee nuove</span>.
+    </p>
+  </section>
+
+  <!-- ============ SERVIZI ============ -->
+  <section class="services" id="servizi">
+    <div class="section-head reveal">
+      <div class="n">— 002</div>
+      <h2 class="display">Cosa <span class="italic">facciamo</span></h2>
+      <div class="m">Otto discipline, una voce</div>
+    </div>
+    <div class="svc reveal">
+      <div class="idx">i.</div>
+      <h3 class="display">Brand Identity</h3>
+      <div>
+        <p class="desc">Costruiamo identità coerenti e durature: naming, logotipi, sistemi visivi, linee editoriali e manuali d'uso.</p>
+        <div class="svc-tags"><span>Logo</span><span>Naming</span><span>Guidelines</span><span>Typography</span></div>
+      </div>
+    </div>
+    <div class="svc reveal">
+      <div class="idx">ii.</div>
+      <h3 class="display">Web &amp; Digital</h3>
+      <div>
+        <p class="desc">Progettiamo siti, e-commerce e prodotti digitali con un approccio che mette al centro la lettura e l'esperienza.</p>
+        <div class="svc-tags"><span>UX/UI</span><span>Siti vetrina</span><span>E-commerce</span><span>Webflow</span></div>
+      </div>
+    </div>
+    <div class="svc reveal">
+      <div class="idx">iii.</div>
+      <h3 class="display">Editoriale &amp; Print</h3>
+      <div>
+        <p class="desc">Libri, riviste, cataloghi e packaging. Curiamo carta, inchiostro e ritmo delle pagine con amore artigianale.</p>
+        <div class="svc-tags"><span>Books</span><span>Magazine</span><span>Packaging</span><span>Stationery</span></div>
+      </div>
+    </div>
+    <div class="svc reveal">
+      <div class="idx">iv.</div>
+      <h3 class="display">Visual &amp; Motion</h3>
+      <div>
+        <p class="desc">Dalla fotografia d'autore alle animazioni per i social: immagini in movimento che raccontano la tua storia.</p>
+        <div class="svc-tags"><span>Video</span><span>Fotografia</span><span>Motion</span><span>Illustrazione</span></div>
+      </div>
+    </div>
+    <div class="svc reveal">
+      <div class="idx">v.</div>
+      <h3 class="display">Social Media Strategy</h3>
+      <div>
+        <p class="desc">Piano editoriale, architettura dei contenuti e ritmo di pubblicazione pensati per il posizionamento del brand — non una griglia da riempire.</p>
+        <div class="svc-tags"><span>Piano editoriale</span><span>Content system</span><span>Audit</span><span>KPI</span></div>
+      </div>
+    </div>
+    <div class="svc reveal">
+      <div class="idx">vi.</div>
+      <h3 class="display">Personal Branding</h3>
+      <div>
+        <p class="desc">Dietro ogni locale o studio c'è una persona: costruiamo la sua presenza pubblica con posizionamento chiaro, voce riconoscibile e coaching on-camera.</p>
+        <div class="svc-tags"><span>Posizionamento</span><span>Coaching</span><span>Format ricorrenti</span><span>PR</span></div>
+      </div>
+    </div>
+    <div class="svc reveal">
+      <div class="idx">vii.</div>
+      <h3 class="display">Community Management</h3>
+      <div>
+        <p class="desc">DM, commenti, recensioni: rispondiamo con la voce del brand e trasformiamo ogni conversazione in un'occasione di conversione o fidelizzazione.</p>
+        <div class="svc-tags"><span>DM &amp; commenti</span><span>Recensioni</span><span>Conversione</span><span>Reputation</span></div>
+      </div>
+    </div>
+    <div class="svc reveal">
+      <div class="idx">viii.</div>
+      <h3 class="display">Copywriting</h3>
+      <div>
+        <p class="desc">Caption, carousel, claim, menu e newsletter. Le parole sono metà del lavoro: le scriviamo nello stesso tono su ogni formato.</p>
+        <div class="svc-tags"><span>Caption</span><span>Claim</span><span>Tono di voce</span><span>Long-form</span></div>
+      </div>
+    </div>
+    <a href="services.html" class="services-more reveal">
+      <span class="lab">— 002b</span>
+      <span class="t display">Approfondisci ogni disciplina <span class="italic">in dettaglio</span></span>
+      <span class="arr">→</span>
+    </a>
+  </section>
+
+  <!-- ============ PORTFOLIO ============ -->
+  <section class="portfolio" id="portfolio">
+    <div class="section-head reveal">
+      <div class="n">— 003</div>
+      <h2 class="display">Lavori <span class="italic">selezionati</span></h2>
+      <div class="m">Una selezione</div>
+    </div>
+    <div class="pf-list">
+      <a class="pf-row reveal" href="projects/retro-specialisti-carne.html">
+        <div class="pf-idx">01</div>
+        <div class="pf-title display">Retr<span class="italic">ò</span></div>
+        <div class="pf-cat">Personal Brand · Social</div>
+        <div class="pf-preview prev-1"></div>
+      </a>
+      <a class="pf-row reveal" href="projects/light-bistrot.html">
+        <div class="pf-idx">02</div>
+        <div class="pf-title display">Light <span class="italic">Bistrot</span></div>
+        <div class="pf-cat">Personal Brand · Social</div>
+        <div class="pf-preview prev-2"></div>
+      </a>
+      <a class="pf-row reveal" href="projects/piave-pesca.html">
+        <div class="pf-idx">03</div>
+        <div class="pf-title display">Piave <span class="italic">Pesca</span></div>
+        <div class="pf-cat">Content · Social · Ittica</div>
+        <div class="pf-preview prev-3"></div>
+      </a>
+      <a class="pf-row reveal" href="projects/de-piccoli.html">
+        <div class="pf-idx">04</div>
+        <div class="pf-title display">De <span class="italic">Piccoli</span></div>
+        <div class="pf-cat">Content · Social · Immobiliare</div>
+        <div class="pf-preview prev-4"></div>
+      </a>
+      <a class="pf-row reveal" href="projects/forte48.html">
+        <div class="pf-idx">05</div>
+        <div class="pf-title display">Forte <span class="italic">48</span></div>
+        <div class="pf-cat">Content · Social · Eventi</div>
+        <div class="pf-preview prev-5"></div>
+      </a>
+      <a class="pf-row reveal" href="projects/biys.html">
+        <div class="pf-idx">06</div>
+        <div class="pf-title display">Biys<span class="italic">.</span></div>
+        <div class="pf-cat">Content · Brand · Grafica</div>
+        <div class="pf-preview prev-6"></div>
+      </a>
+      <a class="pf-row reveal" href="projects/origo.html">
+        <div class="pf-idx">07</div>
+        <div class="pf-title display">Origo<span class="italic">.</span></div>
+        <div class="pf-cat">Brand Storytelling · Campagna</div>
+        <div class="pf-preview prev-1"></div>
+      </a>
+      <a class="pf-row reveal" href="projects/nero.html">
+        <div class="pf-idx">08</div>
+        <div class="pf-title display">Nero<span class="italic">.</span></div>
+        <div class="pf-cat">Brand Identity · Food</div>
+        <div class="pf-preview prev-2"></div>
+      </a>
+      <a class="pf-row reveal" href="projects/corte.html">
+        <div class="pf-idx">09</div>
+        <div class="pf-title display">Corte<span class="italic">.</span></div>
+        <div class="pf-cat">Brand Identity · Beverage</div>
+        <div class="pf-preview prev-3"></div>
+      </a>
+      <a class="pf-row reveal" href="projects/camera.html">
+        <div class="pf-idx">10</div>
+        <div class="pf-title display">Camera<span class="italic">.</span></div>
+        <div class="pf-cat">Brand Identity · Ospitalità</div>
+        <div class="pf-preview prev-4"></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ AVAILABILITY ============ -->
+  <section class="availability reveal">
+    <div>
+      <h3 class="display">Seguiamo <span class="italic">pochi progetti</span> alla volta.</h3>
+      <p>Siamo un team piccolo e ci teniamo a dare a ogni cliente il tempo che merita. Se ci scrivi ora, ecco gli slot ancora liberi:</p>
+      <div class="slots">
+        <div class="slot full">Q2 2026 · Pieno</div>
+        <div class="slot">Q3 2026 · 1 slot</div>
+        <div class="slot">Q4 2026 · 2 slot</div>
+      </div>
+    </div>
+    <a class="btn-magnet" href="#contatti" data-magnet>Prenota una call →</a>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="testimonials">
+    <div class="section-head reveal">
+      <div class="n">— 004</div>
+      <h2 class="display">Loro <span class="italic">dicono</span></h2>
+      <div class="m">Parola ai clienti</div>
+    </div>
+    <div class="tm-grid">
+      <div class="tm reveal">
+        <p class="quote">Hanno trasformato un brief confuso in un'identità che ancora oggi, dopo due anni, ci fa invidia da sola.</p>
+        <div class="author">
+          <div class="avatar">LM</div>
+          <div class="who"><strong>Laura M.</strong><span>Founder, Fornara Caffè</span></div>
+        </div>
+      </div>
+      <div class="tm reveal">
+        <p class="quote">Rigorosi sul progetto, divertenti nel processo. Una combinazione rarissima nel nostro settore.</p>
+        <div class="author">
+          <div class="avatar">GR</div>
+          <div class="who"><strong>Giorgio R.</strong><span>Direttore, Rivista Oblique</span></div>
+        </div>
+      </div>
+      <div class="tm reveal">
+        <p class="quote">Ci hanno ascoltato davvero. Il sito non sembra fatto per noi: sembra scritto con le nostre parole.</p>
+        <div class="author">
+          <div class="avatar">SV</div>
+          <div class="who"><strong>Sara V.</strong><span>Marketing, Casa Verde Hotel</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="col reveal">
+      <div class="num">— 005 · Chi siamo</div>
+      <h3 class="display">Giovani, sì. E <span class="italic">ne andiamo fieri</span>.</h3>
+      <p>MLP Studio Creativo nasce a San Donà di Piave, in provincia di Venezia, dall'incontro di un gruppo di professionisti che ha scelto di unire competenze, idee e visioni sotto un unico segno. Siamo un team giovane e ce lo sentiamo dire spesso, a volte come se fosse un problema. Per noi invece è il punto di partenza: ogni giorno entriamo in studio con idee fresche, curiosità vera e la voglia di guardare le cose da un'altra angolazione.</p>
+      <p>Non abbiamo abitudini da difendere, non abbiamo clienti da "salvare per contratto". Abbiamo un sogno da costruire — questo studio — e la fortuna di poterlo fare a modo nostro. Oggi lavoriamo in tutto il Veneto, ma guardiamo già all'Italia e all'Europa.</p>
+    </div>
+    <div class="col reveal">
+      <div class="num">— 005b · Energia</div>
+      <h3 class="display">Energia <span class="italic">ogni giorno</span>.</h3>
+      <p>Alcune cifre che raccontano chi siamo, senza prenderci troppo sul serio.</p>
+      <div class="stats">
+        <div class="stat"><div class="num-big">∞</div><div class="lbl">Idee al giorno</div></div>
+        <div class="stat"><div class="num-big">+</div><div class="lbl">Discipline che parlano fra loro</div></div>
+        <div class="stat"><div class="num-big">0</div><div class="lbl">"Si fa così"</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq">
+    <div class="section-head reveal">
+      <div class="n">— 006</div>
+      <h2 class="display">Domande <span class="italic">frequenti</span></h2>
+      <div class="m">Quello che ci chiedono sempre</div>
+    </div>
+    <div class="faq-list reveal">
+      <details open>
+        <summary>Come si arriva a un preventivo?</summary>
+        <p>Ogni progetto è diverso, e per noi è giusto trattarlo come tale. Prima di darti un numero vogliamo capire chi sei, dove vuoi arrivare e cosa serve davvero. Per questo partiamo sempre con una chiacchierata e una piccola fase di studio: solo dopo costruiamo una proposta su misura, chiara e senza sorprese.</p>
+      </details>
+      <details>
+        <summary>Lavorate anche con piccole realtà e startup?</summary>
+        <p>Sì, volentieri. Quello che ci interessa non è la dimensione del cliente: è l'idea. Se hai un progetto vero da raccontare, troviamo il modo giusto per farlo.</p>
+      </details>
+      <details>
+        <summary>Come funziona la prima call?</summary>
+        <p>Mezz'ora, senza impegno, di persona o via Meet. Ci racconti chi sei e cosa vorresti fare; noi ti diciamo come la vediamo e se ce la sentiamo di accompagnarti. Da lì partiamo per costruire una proposta.</p>
+      </details>
+      <details>
+        <summary>Lavorate solo in Veneto?</summary>
+        <p>Per ora la maggior parte dei nostri clienti è in Veneto, ma non è una regola: lavoriamo da remoto senza problemi e siamo pronti a seguire progetti in tutta Italia e in Europa. Le distanze, oggi, sono un'idea vecchia.</p>
+      </details>
+      <details>
+        <summary>Ma non siete troppo giovani?</summary>
+        <p>Siamo giovani abbastanza per avere idee fresche, e consapevoli abbastanza per portarle a terra. Se cerchi uno studio che fa le stesse cose da sempre, non siamo noi. Se invece vuoi qualcuno che non ti dica mai "si è sempre fatto così", forse è il momento di parlarci.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ CONTATTI ============ -->
+  <section class="contact" id="contatti">
+    <div class="kicker">— 007 · Iniziamo</div>
+    <h2 class="display">Parliamone<span class="italic">,</span><br/>davanti a un caffè.</h2>
+    <a class="mail" href="mailto:mlpstudiocreativo@gmail.com" data-magnet>mlpstudiocreativo@gmail.com</a>
+    <div class="socials">
+      <a href="https://www.instagram.com/mlpstudiocreativo/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div>© 2026 MLP Studio Creativo</div>
+    <div>San Donà di Piave <span class="dot"></span> Venezia</div>
+    <div>mlpstudiocreativo@gmail.com</div>
+  </footer>
+
+  <script>
+    (function(){
+      // ========= INTRO cleanup + counter =========
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var intro = document.getElementById('intro');
+      var curtain = document.getElementById('curtain');
+      var pct = document.getElementById('pct');
+      if(reduced){
+        if(intro) intro.style.display='none';
+        if(curtain) curtain.style.display='none';
+      } else {
+        // Counter 000 → 100 in ~2.2s
+        if(pct){
+          var start = performance.now();
+          var dur = 2200;
+          (function tick(){
+            var t = Math.min(1, (performance.now()-start)/dur);
+            pct.textContent = String(Math.floor(t*100)).padStart(3,'0');
+            if(t<1) requestAnimationFrame(tick);
+          })();
+        }
+        setTimeout(function(){
+          if(intro) intro.style.display='none';
+          if(curtain) curtain.style.display='none';
+        }, 4200);
+      }
+
+      // ========= CUSTOM CURSOR =========
+      var cursor = document.getElementById('cursor');
+      var cx=0, cy=0, tx=0, ty=0;
+      if(cursor && !reduced){
+        window.addEventListener('mousemove', function(e){
+          tx = e.clientX; ty = e.clientY;
+        });
+        (function loop(){
+          cx += (tx-cx)*0.22;
+          cy += (ty-cy)*0.22;
+          cursor.style.transform = 'translate('+cx+'px, '+cy+'px) translate(-50%,-50%)';
+          requestAnimationFrame(loop);
+        })();
+        // Hover states
+        document.querySelectorAll('a, button, details summary, .pf-row, [data-magnet]').forEach(function(el){
+          el.addEventListener('mouseenter', function(){ cursor.classList.add('is-hover'); });
+          el.addEventListener('mouseleave', function(){ cursor.classList.remove('is-hover'); });
+        });
+        document.addEventListener('mouseleave', function(){ cursor.classList.add('is-hidden'); });
+        document.addEventListener('mouseenter', function(){ cursor.classList.remove('is-hidden'); });
+      } else if (cursor){
+        cursor.style.display='none';
+      }
+
+      // ========= MAGNETIC BUTTONS =========
+      if(!reduced){
+        document.querySelectorAll('[data-magnet]').forEach(function(btn){
+          btn.addEventListener('mousemove', function(e){
+            var r = btn.getBoundingClientRect();
+            var x = e.clientX - r.left - r.width/2;
+            var y = e.clientY - r.top - r.height/2;
+            btn.style.transform = 'translate('+(x*0.25)+'px,'+(y*0.35)+'px)';
+          });
+          btn.addEventListener('mouseleave', function(){
+            btn.style.transform = '';
+          });
+        });
+      }
+
+      // ========= SCROLL REVEAL =========
+      if('IntersectionObserver' in window){
+        var obs = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){
+            if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }
+          });
+        }, { threshold:0.12, rootMargin:'0px 0px -50px 0px' });
+        document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+      } else {
+        document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+      }
+
+      // ========= PORTFOLIO PREVIEW FOLLOW CURSOR =========
+      document.querySelectorAll('.pf-row').forEach(function(row){
+        var preview = row.querySelector('.pf-preview');
+        if(!preview) return;
+        row.addEventListener('mousemove', function(e){
+          var r = row.getBoundingClientRect();
+          var x = e.clientX - r.left;
+          preview.style.left = (x - 130) + 'px';
+          preview.style.right = 'auto';
+        });
+      });
+    })();
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Sostituire https://www.mlpstudiocreativo.it/ con il dominio reale quando il sito va online.
+  Ultimo aggiornamento: 2026-04-16
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://www.mlpstudiocreativo.it/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.mlpstudiocreativo.it/services.html</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url><loc>https://www.mlpstudiocreativo.it/projects/alfabeto-nord.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.mlpstudiocreativo.it/projects/amaro-selvatico.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.mlpstudiocreativo.it/projects/atlante-materie.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.mlpstudiocreativo.it/projects/biys.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.mlpstudiocreativo.it/projects/camera.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.mlpstudiocreativo.it/projects/camera-oscura.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.mlpstudiocreativo.it/projects/casa-verde-hotel.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.mlpstudiocreativo.it/projects/corte.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.mlpstudiocreativo.it/projects/de-piccoli.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.mlpstudiocreativo.it/projects/dott-mr-medicina.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.mlpstudiocreativo.it/projects/elena-p-coach.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.mlpstudiocreativo.it/projects/fornara-caffe.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.mlpstudiocreativo.it/projects/forte48.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.mlpstudiocreativo.it/projects/internoventi.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.mlpstudiocreativo.it/projects/ipotesi-stella.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.mlpstudiocreativo.it/projects/light-bistrot.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.mlpstudiocreativo.it/projects/lorenzo-b-chef.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.mlpstudiocreativo.it/projects/nero.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.mlpstudiocreativo.it/projects/nordika-skincare.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.mlpstudiocreativo.it/projects/origo.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.mlpstudiocreativo.it/projects/osservatorio.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.mlpstudiocreativo.it/projects/ottica-borin.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.mlpstudiocreativo.it/projects/piave-pesca.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.mlpstudiocreativo.it/projects/retro-specialisti-carne.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.mlpstudiocreativo.it/projects/rivista-oblique.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.mlpstudiocreativo.it/projects/specimen.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.mlpstudiocreativo.it/projects/stanze.html</loc><lastmod>2026-04-16</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+
+</urlset>

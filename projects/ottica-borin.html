@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+<title>Ottica Borin — MLP Studio Creativo</title>
+<meta name="description" content="Caso studio: Ottica Borin — Comunicazione costruita da zero per uno storico negozio di ottica: identità social, calendario editoriale, shooting di stagione e personal brand della famiglia titolare. Da silenzio digitale a community riconoscibile." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,800;0,900;1,300;1,400&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0a0a;--paper:#ffffff;--paper-2:#f3f3f3;--muted:#7a7a7a;--line:#0a0a0a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Roboto',Arial,sans-serif;font-weight:300;background:var(--paper);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .display{font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;font-weight:300;letter-spacing:-0.03em}
+  .italic{font-style:italic;font-family:'Nunito Sans',serif}
+
+  /* CURSOR */
+  .cursor{position:fixed;top:0;left:0;width:8px;height:8px;background:var(--ink);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .25s ease,height .25s ease,background .25s ease,opacity .2s ease;mix-blend-mode:difference;will-change:transform}
+  .cursor.is-hover{width:52px;height:52px;background:var(--paper)}
+  .cursor.is-hidden{opacity:0}
+  @media (hover:none){.cursor{display:none}}
+
+  /* TOPBAR */
+  .topbar{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:18px 32px;font-size:11px;text-transform:uppercase;letter-spacing:0.22em;background:rgba(255,255,255,0.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .topbar .brand{display:flex;align-items:center;gap:14px;text-transform:none;letter-spacing:0;padding:6px 10px;margin:-6px -10px;transition:transform .35s cubic-bezier(0.25,0.46,0.45,0.94)}
+  .topbar .brand:hover{transform:scale(0.96)}
+  .topbar .brand img{height:48px;width:auto;transition:transform .4s cubic-bezier(0.25,0.46,0.45,0.94);transform-origin:left center}
+  .topbar .brand:hover img{transform:scale(1.05)}
+  .topbar .brand-tag{font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);border-left:1px solid var(--paper-2);padding-left:14px;line-height:1.3}
+  .topbar .brand-tag strong{color:var(--ink);font-weight:500;display:block}
+  .topbar nav{display:flex;gap:28px}
+  .topbar nav a{position:relative;padding:4px 0}
+  .topbar nav a::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;background:var(--ink);transition:width .3s}
+  .topbar nav a:hover::after{width:100%}
+  .topbar .meta{color:var(--muted)}
+
+  /* BACK LINK */
+  .back-bar{padding:120px 32px 0;display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted)}
+  .back-bar a{display:inline-flex;align-items:center;gap:8px;color:var(--ink);transition:gap .25s}
+  .back-bar a:hover{gap:14px}
+
+  /* HERO PROGETTO */
+  .project-hero{padding:50px 32px 60px;border-bottom:1px solid var(--line)}
+  .project-hero .meta-row{display:flex;flex-wrap:wrap;gap:32px;margin-bottom:30px;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted)}
+  .project-hero .meta-row strong{display:block;color:var(--ink);font-weight:500;margin-top:4px;font-size:14px;letter-spacing:0.08em}
+  .project-hero h1{font-size:clamp(56px,11vw,180px);line-height:0.9;letter-spacing:-0.05em;margin-bottom:24px}
+  .project-hero h1 .italic{font-family:'Nunito Sans',serif;font-weight:200;color:var(--muted)}
+  .project-hero .lead{font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;font-weight:300;font-size:clamp(20px,2.4vw,32px);line-height:1.35;letter-spacing:-0.015em;max-width:62ch;margin-top:30px;color:var(--ink)}
+
+  /* COVER */
+  .cover{height:62vh;min-height:420px;border-bottom:1px solid var(--line);background:linear-gradient(200deg,#0a0a0a 0%,#3a3a3a 55%,#9a9a9a 100%);display:flex;align-items:flex-end;padding:32px;color:var(--paper);position:relative;overflow:hidden}
+  .cover::before{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 60%)}
+  .cover .cover-cap{position:relative;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;opacity:0.8}
+
+  /* CHALLENGE / SOLUTION */
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
+  .grid-2 > div{padding:80px 40px;border-right:1px solid var(--paper-2)}
+  .grid-2 > div:last-child{border-right:none}
+  .grid-2 .num{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-bottom:32px}
+  .grid-2 h2{font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;font-weight:300;font-size:clamp(32px,4.4vw,56px);letter-spacing:-0.03em;line-height:1.05;margin-bottom:24px}
+  .grid-2 h2 .italic{font-family:'Nunito Sans',serif;font-weight:200;color:var(--muted)}
+  .grid-2 p{font-size:16px;line-height:1.75;margin-bottom:16px;max-width:50ch;color:var(--ink)}
+
+  /* GALLERY base */
+  .gallery{display:grid;grid-template-columns:repeat(12,1fr);border-bottom:1px solid var(--line)}
+  .gallery > *{border-right:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;position:relative}
+  .gallery .gi{aspect-ratio:4/3;background-size:cover;background-position:center;filter:grayscale(100%);transition:filter .6s ease}
+  .gallery .gi:hover{filter:grayscale(60%) contrast(1.05)}
+  .gallery .span-12{grid-column:span 12}
+  .gallery .span-7{grid-column:span 7}
+  .gallery .span-6{grid-column:span 6}
+  .gallery .span-5{grid-column:span 5}
+  .gallery .span-4{grid-column:span 4}
+  .gallery .span-3{grid-column:span 3}
+  .gallery .ar-16-10{aspect-ratio:16/10}
+  .gallery .ar-1-1{aspect-ratio:1/1}
+  .gallery .ar-4-3{aspect-ratio:4/3}
+  .gallery .ar-3-4{aspect-ratio:3/4}
+
+  /* MOCKUP — Phone / Reels frame */
+  .mk-phone{background:#0a0a0a;display:flex;align-items:center;justify-content:center;padding:30px;color:#fff}
+  .mk-phone .frame{width:62%;max-width:230px;aspect-ratio:9/19.5;background:#1a1a1a;border-radius:28px;border:2px solid #2a2a2a;padding:8px;display:flex;flex-direction:column;position:relative;box-shadow:0 30px 80px rgba(0,0,0,0.6)}
+  .mk-phone .notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:32%;height:18px;background:#0a0a0a;border-radius:0 0 12px 12px;z-index:2}
+  .mk-phone .screen{flex:1;background:#0a0a0a;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+  .mk-phone .ig-bar{height:34px;display:flex;align-items:center;gap:6px;padding:0 10px;border-bottom:1px solid #1a1a1a;font-size:9px;letter-spacing:0.05em}
+  .mk-phone .ig-bar .av{width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#fff 0%,#777 100%)}
+  .mk-phone .ig-bar .nm{flex:1;color:#eee;font-weight:500}
+  .mk-phone .ig-bar .dot{color:#777;letter-spacing:0.2em}
+  .mk-phone .reel-img{flex:1;background:linear-gradient(160deg,#2a2a2a 0%,#0a0a0a 80%);position:relative}
+  .mk-phone .reel-img::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:0;height:0;border-style:solid;border-width:14px 0 14px 22px;border-color:transparent transparent transparent rgba(255,255,255,0.85)}
+  .mk-phone .ig-stats{padding:10px;color:#fff;font-size:9px;display:flex;flex-direction:column;gap:5px}
+  .mk-phone .ig-stats .row{display:flex;gap:14px;align-items:center}
+  .mk-phone .ig-stats .ic{width:14px;height:14px;border:1.4px solid #fff;border-radius:50%}
+  .mk-phone .ig-stats .ic.sq{border-radius:0;transform:rotate(45deg)}
+  .mk-phone .cap{font-size:8.5px;color:#bbb;line-height:1.5;letter-spacing:0.02em}
+  .mk-phone .cap b{color:#fff;font-weight:500}
+
+  /* MOCKUP — Instagram 3x3 grid */
+  .mk-grid{background:#fff;padding:0;display:flex;flex-direction:column}
+  .mk-grid .ig-head{padding:18px 22px;display:flex;align-items:center;gap:14px;border-bottom:1px solid var(--paper-2)}
+  .mk-grid .ig-head .av{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#1a1a1a,#7a7a7a);flex-shrink:0}
+  .mk-grid .ig-head .nm{font-size:12px;letter-spacing:0.04em;font-weight:500}
+  .mk-grid .ig-head .nm .h{display:block;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin-top:3px;font-weight:400}
+  .mk-grid .ig-head .stats{margin-left:auto;display:flex;gap:18px;text-align:center}
+  .mk-grid .ig-head .stats .v{font-size:13px;font-weight:500;display:block}
+  .mk-grid .ig-head .stats .l{font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+  .mk-grid .grid9{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--paper-2);flex:1}
+  .mk-grid .gpost{aspect-ratio:1/1;background:#1a1a1a;display:flex;align-items:flex-end;padding:10px;color:#fff;font-size:9px;letter-spacing:0.05em;line-height:1.3;position:relative;overflow:hidden}
+  .mk-grid .gpost::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,0.7) 100%)}
+  .mk-grid .gpost span{position:relative;z-index:1;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;font-size:8.5px}
+  .mk-grid .gp-1{background:linear-gradient(135deg,#1a1a1a,#5a5a5a)}
+  .mk-grid .gp-2{background:linear-gradient(160deg,#2a2a2a,#0a0a0a)}
+  .mk-grid .gp-3{background:linear-gradient(135deg,#fff 0%,#dadada 100%);color:#0a0a0a}
+  .mk-grid .gp-3::before{background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,0.05) 100%)}
+  .mk-grid .gp-3 span{color:#0a0a0a}
+  .mk-grid .gp-4{background:linear-gradient(200deg,#0a0a0a,#3a3a3a)}
+  .mk-grid .gp-5{background:#0a0a0a;display:flex;align-items:center;justify-content:center}
+  .mk-grid .gp-5 span{font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:200;font-size:18px;letter-spacing:-0.03em;text-transform:none}
+  .mk-grid .gp-6{background:linear-gradient(135deg,#bababa,#1a1a1a)}
+  .mk-grid .gp-7{background:linear-gradient(160deg,#3a3a3a,#0a0a0a)}
+  .mk-grid .gp-8{background:linear-gradient(135deg,#fff,#9a9a9a);color:#0a0a0a}
+  .mk-grid .gp-8::before{background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,0.05) 100%)}
+  .mk-grid .gp-8 span{color:#0a0a0a}
+  .mk-grid .gp-9{background:linear-gradient(200deg,#1a1a1a,#7a7a7a)}
+
+  /* MOCKUP — Pull-quote tile (text block on dark) */
+  .mk-quote{background:#0a0a0a;color:#fff;padding:32px;display:flex;flex-direction:column;justify-content:center;font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:300;font-size:clamp(16px,1.7vw,22px);line-height:1.35;letter-spacing:-0.015em}
+  .mk-quote .tag{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:#777;margin-bottom:18px;font-family:'Roboto',sans-serif;font-weight:300}
+  .mk-quote .body{max-width:30ch}
+  .mk-quote .body em{font-family:'Nunito Sans',serif;font-style:italic;color:#bbb;font-weight:200}
+
+  /* MOCKUP — Numero/dato grande */
+  .mk-stat{background:#fff;color:#0a0a0a;padding:32px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+  .mk-stat .big{font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:200;font-size:clamp(54px,8vw,140px);line-height:0.9;letter-spacing:-0.04em}
+  .mk-stat .big em{font-family:'Nunito Sans',serif;font-weight:200;color:var(--muted);font-style:italic;font-size:0.55em;vertical-align:0.25em}
+  .mk-stat .lbl{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);margin-top:14px;max-width:24ch;line-height:1.5}
+  .mk-stat.invert{background:#0a0a0a;color:#fff}
+  .mk-stat.invert .lbl{color:#999}
+
+  /* MOCKUP — Book spread */
+  .mk-spread{background:#0a0a0a;display:flex;padding:24px;gap:1px}
+  .mk-spread .pg{flex:1;background:#fff;color:#0a0a0a;padding:22px 18px;display:flex;flex-direction:column;justify-content:space-between;font-size:9px;line-height:1.5;font-family:'Roboto',sans-serif;font-weight:300;position:relative}
+  .mk-spread .pg .num{position:absolute;bottom:8px;font-size:8px;letter-spacing:0.2em;color:var(--muted)}
+  .mk-spread .pg.left .num{left:18px}
+  .mk-spread .pg.right .num{right:18px}
+  .mk-spread .pg.dark{background:#0a0a0a;color:#eee}
+  .mk-spread .pg .photo{width:100%;aspect-ratio:4/5;background:linear-gradient(160deg,#1a1a1a 0%,#0a0a0a 70%);margin-bottom:12px}
+  .mk-spread .pg .ttl{font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:200;font-size:18px;line-height:1;letter-spacing:-0.02em;margin-bottom:8px}
+  .mk-spread .pg .it{font-family:'Nunito Sans',serif;font-style:italic;color:var(--muted)}
+  .mk-spread .pg.dark .it{color:#777}
+  .mk-spread .pg .meta{font-size:7.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+  .mk-spread .pg.dark .meta{color:#777}
+
+  /* MOCKUP — Cover libro */
+  .mk-cover{background:#1a1a1a;display:flex;align-items:center;justify-content:center;padding:32px;color:#fff}
+  .mk-cover .book{aspect-ratio:3/4;width:62%;max-width:280px;background:#0a0a0a;border:1px solid #1a1a1a;display:flex;flex-direction:column;justify-content:space-between;padding:32px;position:relative;box-shadow:30px 30px 80px rgba(0,0,0,0.6),-2px 0 0 #0a0a0a inset}
+  .mk-cover .book .top{font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:#777}
+  .mk-cover .book .hole{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:42%;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle,#3a3a3a 0%,#1a1a1a 60%,#0a0a0a 100%);border:1px solid #2a2a2a}
+  .mk-cover .book .bot{font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:200;font-size:14px;letter-spacing:0.02em;color:#fff}
+
+  /* MOCKUP — Specimen tipografico */
+  .mk-spec{background:#fff;color:#0a0a0a;padding:0;display:flex;flex-direction:column;font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:200;letter-spacing:-0.04em;position:relative}
+  .mk-spec .head{padding:14px 22px;border-bottom:1px solid #0a0a0a;display:flex;justify-content:space-between;font-family:'Roboto',sans-serif;font-weight:400;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted)}
+  .mk-spec .big{flex:1;display:flex;align-items:center;justify-content:center;font-size:clamp(140px,22vw,320px);line-height:0.85;padding:20px}
+  .mk-spec .row{padding:14px 22px;border-top:1px solid var(--paper-2);font-size:13px;letter-spacing:-0.01em;line-height:1.4;font-weight:300;text-align:center}
+  .mk-spec .row.lab{font-family:'Roboto',sans-serif;font-weight:400;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);text-align:left}
+
+  /* MOCKUP — Specimen alfabeto completo */
+  .mk-alpha{background:#fff;padding:30px 22px;display:flex;flex-direction:column;justify-content:space-between;font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:200;letter-spacing:-0.03em;line-height:1}
+  .mk-alpha .label{font-family:'Roboto',sans-serif;font-weight:400;font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+  .mk-alpha .alpha{font-size:clamp(20px,3.6vw,42px);word-spacing:0.18em;line-height:1.18}
+  .mk-alpha .num{font-size:clamp(28px,4vw,52px);letter-spacing:-0.02em;margin-top:14px}
+  .mk-alpha .meta{font-family:'Roboto',sans-serif;font-weight:400;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin-top:18px;display:flex;justify-content:space-between}
+
+  /* MOCKUP — Logo / brand mark tile */
+  .mk-mark{background:#fff;color:#0a0a0a;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px}
+  .mk-mark.invert{background:#0a0a0a;color:#fff}
+  .mk-mark svg{width:60%;max-width:200px;height:auto}
+  .mk-mark .label{font-family:'Roboto',sans-serif;font-weight:400;font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);margin-top:18px}
+  .mk-mark.invert .label{color:#999}
+
+  /* MOCKUP — Poster */
+  .mk-poster{background:#0a0a0a;color:#fff;padding:32px 26px;display:flex;flex-direction:column;justify-content:space-between;font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:200;letter-spacing:-0.03em}
+  .mk-poster .top{font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:#999;font-family:'Roboto',sans-serif;font-weight:400}
+  .mk-poster .ttl{font-size:clamp(34px,5vw,68px);line-height:0.95;margin:18px 0}
+  .mk-poster .ttl em{font-family:'Nunito Sans',serif;font-weight:200;color:#999}
+  .mk-poster .bot{font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:#999;font-family:'Roboto',sans-serif;font-weight:400;display:flex;justify-content:space-between}
+
+  /* MOCKUP — Sky chart (per Osservatorio) */
+  .mk-sky{background:#0a0a0a;position:relative;overflow:hidden}
+  .mk-sky svg{width:100%;height:100%;display:block}
+
+  /* MOCKUP — Brand color/material swatch */
+  .mk-swatch{display:flex;align-items:center;justify-content:center;padding:24px;color:#fff;font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:200;font-size:clamp(28px,3.6vw,46px);line-height:1;letter-spacing:-0.03em;text-align:center}
+  .mk-swatch.dk{background:#0a0a0a}
+  .mk-swatch.lt{background:#f3f3f3;color:#0a0a0a}
+
+  /* MOCKUP — Wordmark/lockup grande */
+  .mk-lockup{background:#fff;color:#0a0a0a;display:flex;flex-direction:column;justify-content:space-between;padding:48px 40px}
+  .mk-lockup.invert{background:#0a0a0a;color:#fff}
+  .mk-lockup .lk-meta{font-family:'Roboto',sans-serif;font-weight:400;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between}
+  .mk-lockup.invert .lk-meta{color:#888}
+  .mk-lockup .lk-word{font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:200;font-size:clamp(72px,13vw,220px);line-height:0.88;letter-spacing:-0.055em}
+  .mk-lockup .lk-word em{font-family:'Nunito Sans',serif;font-weight:200;font-style:italic;color:var(--muted)}
+  .mk-lockup.invert .lk-word em{color:#888}
+  .mk-lockup .lk-tag{font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:300;font-size:clamp(16px,1.6vw,22px);letter-spacing:-0.01em;color:var(--muted);max-width:30ch;line-height:1.4}
+
+  /* MOCKUP — Bottle (wine/oil label) */
+  .mk-bottle{background:#1a1a1a;display:flex;align-items:flex-end;justify-content:center;padding:24px 20px 28px;color:#fff;position:relative}
+  .mk-bottle .bot{width:38%;max-width:150px;aspect-ratio:1/4.2;background:linear-gradient(180deg,#0a0a0a 0%,#0a0a0a 28%,#1a1a1a 28%,#1a1a1a 100%);position:relative;border-radius:4px 4px 0 0}
+  .mk-bottle .bot::before{content:"";position:absolute;top:0;left:38%;right:38%;height:11%;background:#0a0a0a;border-radius:3px 3px 0 0}
+  .mk-bottle .bot::after{content:"";position:absolute;top:11%;left:32%;right:32%;height:6%;background:#1a1a1a;border-top:1px solid #2a2a2a;border-bottom:1px solid #2a2a2a}
+  .mk-bottle .label{position:absolute;left:8%;right:8%;top:48%;background:#fff;color:#0a0a0a;padding:10px 8px;text-align:center;font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:200;line-height:1;letter-spacing:-0.01em;border:0.5px solid #0a0a0a}
+  .mk-bottle .label .l-top{font-family:'Roboto',sans-serif;font-weight:400;font-size:6.5px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+  .mk-bottle .label .l-main{font-size:18px;letter-spacing:-0.03em;line-height:1}
+  .mk-bottle .label .l-main em{font-family:'Nunito Sans',serif;font-style:italic;color:var(--muted);font-weight:200;font-size:0.85em}
+  .mk-bottle .label .l-sub{font-family:'Roboto',sans-serif;font-weight:300;font-size:7px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+  .mk-bottle .cap{position:absolute;bottom:8px;left:20px;font-family:'Roboto',sans-serif;font-weight:400;font-size:8px;letter-spacing:0.28em;text-transform:uppercase;color:#777}
+
+  /* MOCKUP — Coffee bag (packaging) */
+  .mk-bag{background:#f3f3f3;display:flex;align-items:center;justify-content:center;padding:24px;color:#0a0a0a}
+  .mk-bag .bag{width:60%;max-width:200px;aspect-ratio:3/4;background:#0a0a0a;color:#fff;padding:18px 16px;display:flex;flex-direction:column;justify-content:space-between;position:relative;box-shadow:20px 28px 48px rgba(0,0,0,0.35)}
+  .mk-bag .bag::before{content:"";position:absolute;top:-10px;left:6%;right:6%;height:16px;background:#0a0a0a;clip-path:polygon(0 100%,50% 0,100% 100%)}
+  .mk-bag .bag .bg-tag{font-family:'Roboto',sans-serif;font-weight:400;font-size:8px;letter-spacing:0.28em;text-transform:uppercase;color:#888}
+  .mk-bag .bag .bg-name{font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:200;font-size:38px;line-height:0.95;letter-spacing:-0.04em;margin:14px 0 4px}
+  .mk-bag .bag .bg-var{font-family:'Nunito Sans',serif;font-style:italic;font-weight:200;font-size:14px;color:#aaa;letter-spacing:-0.015em}
+  .mk-bag .bag .bg-bot{font-family:'Roboto',sans-serif;font-weight:300;font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:#888;border-top:0.5px solid #333;padding-top:10px}
+
+  /* MOCKUP — Business card / biglietto */
+  .mk-card-pair{background:#dadada;display:flex;align-items:center;justify-content:center;gap:12px;padding:24px;position:relative}
+  .mk-card-pair .c{aspect-ratio:7/4;width:42%;max-width:175px;padding:14px 14px;font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:300;letter-spacing:-0.015em;box-shadow:8px 12px 22px rgba(0,0,0,0.12);display:flex;flex-direction:column;justify-content:space-between}
+  .mk-card-pair .c.lt{background:#fff;color:#0a0a0a}
+  .mk-card-pair .c.dk{background:#0a0a0a;color:#fff;transform:translateY(14px) rotate(-2deg)}
+  .mk-card-pair .c .c-mark{font-weight:200;font-size:18px;letter-spacing:-0.035em;line-height:1}
+  .mk-card-pair .c .c-mark em{font-family:'Nunito Sans',serif;font-style:italic;color:var(--muted);font-weight:200}
+  .mk-card-pair .c.dk .c-mark em{color:#888}
+  .mk-card-pair .c .c-bot{font-family:'Roboto',sans-serif;font-weight:400;font-size:7.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);line-height:1.6}
+  .mk-card-pair .c.dk .c-bot{color:#888}
+
+  /* MOCKUP — Segnaletica / room number */
+  .mk-sign{background:#0a0a0a;color:#fff;display:flex;align-items:center;justify-content:center;padding:24px;position:relative;flex-direction:column}
+  .mk-sign .plate{background:#f3f3f3;color:#0a0a0a;aspect-ratio:3/4;width:50%;max-width:160px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:20px 14px;box-shadow:12px 18px 32px rgba(0,0,0,0.5)}
+  .mk-sign .plate .top{font-family:'Roboto',sans-serif;font-weight:400;font-size:8px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted)}
+  .mk-sign .plate .big{font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:200;font-size:clamp(52px,7vw,90px);line-height:1;letter-spacing:-0.05em}
+  .mk-sign .plate .bot{font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:300;font-size:11px;letter-spacing:0.04em;color:#0a0a0a}
+  .mk-sign .cap{font-family:'Roboto',sans-serif;font-weight:400;font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:#888;margin-top:14px}
+
+  /* MOCKUP — Menu / carta */
+  .mk-menu{background:#fff;color:#0a0a0a;padding:26px 24px;display:flex;flex-direction:column;gap:12px;font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:300}
+  .mk-menu .m-head{display:flex;justify-content:space-between;border-bottom:1px solid #0a0a0a;padding-bottom:10px;font-family:'Roboto',sans-serif;font-weight:400;font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--muted)}
+  .mk-menu .m-row{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;letter-spacing:-0.01em;line-height:1.2;gap:12px;padding-bottom:8px;border-bottom:1px dotted var(--paper-2)}
+  .mk-menu .m-row .n{flex:1}
+  .mk-menu .m-row .n em{font-family:'Nunito Sans',serif;font-style:italic;color:var(--muted);font-weight:300;font-size:11px;display:block;margin-top:2px}
+  .mk-menu .m-row .p{font-family:'Roboto',sans-serif;font-weight:400;font-size:12px;color:#0a0a0a;letter-spacing:0.01em}
+
+  /* MOCKUP — Carousel slide (didattica) */
+  .mk-slide{background:#fff;color:#0a0a0a;padding:30px;display:flex;flex-direction:column;justify-content:space-between;font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:300}
+  .mk-slide.dk{background:#0a0a0a;color:#fff}
+  .mk-slide .pg{font-family:'Roboto',sans-serif;font-weight:400;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted)}
+  .mk-slide .ttl{font-size:clamp(22px,3vw,36px);line-height:1.05;letter-spacing:-0.025em;font-weight:200;max-width:18ch}
+  .mk-slide .ttl em{font-family:'Nunito Sans',serif;font-weight:200;color:var(--muted)}
+  .mk-slide .bot{font-family:'Roboto',sans-serif;font-weight:300;font-size:11px;letter-spacing:0.05em;color:var(--muted)}
+  .mk-slide.dk .pg,.mk-slide.dk .bot{color:#888}
+  .mk-slide.dk .ttl em{color:#888}
+
+  /* CREDITS */
+  .credits{padding:80px 32px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:start}
+  .credits .label{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted)}
+  .credits dl{display:grid;grid-template-columns:1fr 1fr;gap:24px 40px}
+  .credits dt{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .credits dd{font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;font-weight:300;font-size:18px;letter-spacing:-0.01em}
+
+  /* RESULTS */
+  .results{padding:90px 32px;border-bottom:1px solid var(--line)}
+  .results .head{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-bottom:40px}
+  .results .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line)}
+  .results .cell{padding:40px 24px;border-right:1px solid var(--paper-2);border-bottom:1px solid var(--paper-2)}
+  .results .cell:nth-child(4n){border-right:none}
+  .results .cell:nth-last-child(-n+4){border-bottom:none}
+  .results .cell .big{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
+    font-weight:200;font-size:clamp(44px,5.5vw,88px);line-height:1;letter-spacing:-0.03em;
+    margin-bottom:14px;
+  }
+  .results .cell .big .italic{font-family:'Nunito Sans',serif;font-weight:200;color:var(--muted)}
+  .results .cell .lbl{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);line-height:1.5}
+
+  /* QUOTE */
+  .quote-block{background:var(--ink);color:var(--paper);padding:90px 32px;border-bottom:1px solid var(--line);text-align:center}
+  .quote-block blockquote{font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;font-weight:200;font-size:clamp(28px,4vw,52px);line-height:1.25;letter-spacing:-0.02em;max-width:24ch;margin:0 auto 32px}
+  .quote-block blockquote::before{content:"\201C";font-family:'Nunito Sans',serif;font-size:1.4em;line-height:0;vertical-align:-0.3em;margin-right:0.05em;color:#999}
+  .quote-block cite{font-style:normal;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.6)}
+  .quote-block cite strong{display:block;color:var(--paper);font-weight:500;margin-bottom:4px}
+
+  /* NEXT PROJECT */
+  .next{padding:80px 32px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr auto;gap:30px;align-items:center;cursor:pointer;transition:padding .35s, background .35s}
+  .next:hover{padding-left:50px;background:var(--paper-2)}
+  .next .lab{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted)}
+  .next .title{font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;font-weight:300;font-size:clamp(36px,6vw,80px);letter-spacing:-0.035em;line-height:1;transition:transform .35s}
+  .next:hover .title{transform:translateX(14px)}
+  .next .arr{font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;font-size:36px;font-weight:200;transition:transform .35s}
+  .next:hover .arr{transform:translateX(10px)}
+
+  /* FOOTER */
+  footer{display:flex;justify-content:space-between;align-items:center;padding:26px 32px;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);flex-wrap:wrap;gap:10px}
+  footer .dot{width:6px;height:6px;border-radius:50%;background:var(--ink);display:inline-block;margin:0 8px;vertical-align:middle;animation:pulse 2s ease-in-out infinite}
+  @keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:0.5}}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .9s ease-out, transform .9s ease-out}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  /* RESPONSIVE */
+  @media (max-width:900px){
+    .topbar{padding:14px 20px}
+    .topbar nav{display:none}
+    .back-bar,.project-hero,.cover,.credits,.quote-block,.next,footer{padding-left:20px;padding-right:20px}
+    .project-hero h1{font-size:clamp(48px,12vw,90px)}
+    .grid-2{grid-template-columns:1fr}
+    .grid-2 > div{padding:50px 20px;border-right:none;border-bottom:1px solid var(--paper-2)}
+    .grid-2 > div:last-child{border-bottom:none}
+    .gallery{grid-template-columns:repeat(6,1fr)}
+    .gallery .span-12,.gallery .span-7,.gallery .span-6,.gallery .span-5,.gallery .span-4{grid-column:span 6}
+    .gallery .span-3{grid-column:span 3}
+    .mk-spec .big{font-size:clamp(110px,30vw,180px)}
+    .credits{grid-template-columns:1fr;gap:20px;padding:50px 20px}
+    .credits dl{grid-template-columns:1fr}
+    .next{grid-template-columns:1fr;text-align:left;gap:14px;padding:50px 20px}
+    .next .arr{font-size:28px}
+  }
+</style>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <a href="../index.html" class="brand">
+      <img src="../logo.svg" alt="MLP Studio Creativo" />
+      <span class="brand-tag"><strong>Studio Creativo</strong>San Donà / Venezia</span>
+    </a>
+    <nav>
+      <a href="../index.html#servizi">Servizi</a>
+      <a href="../index.html#portfolio">Portfolio</a>
+      <a href="../index.html#about">Studio</a>
+      <a href="../index.html#contatti">Contatti</a>
+    </nav>
+    <div class="meta">Case · 04/07</div>
+  </header>
+
+  <!-- BACK -->
+  <div class="back-bar">
+    <a href="../index.html#portfolio">← Torna al portfolio</a>
+    <span>Caso studio · 04/07</span>
+  </div>
+
+  <!-- HERO -->
+  <section class="project-hero">
+    <div class="meta-row">
+      <div>Cliente<strong>Ottica Borin</strong></div>
+      <div>Categoria<strong>Personal Brand · Social · Shooting</strong></div>
+      <div>Servizi<strong>Identità · Content · Shooting · Direzione</strong></div>
+      <div>Settore<strong>Ottica · Retail</strong></div>
+    </div>
+    <h1 class="display">Ottica <span class="italic">Borin.</span></h1>
+    <p class="lead">Comunicazione costruita da zero per uno storico negozio di ottica: identità social, calendario editoriale, shooting di stagione e personal brand della famiglia titolare. Da silenzio digitale a community riconoscibile.</p>
+  </section>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-cap">— Cover progetto · Comunicazione · 2025–2026</div>
+  </div>
+
+  <!-- CHALLENGE / SOLUTION -->
+  <section class="grid-2">
+    <div class="reveal">
+      <div class="num">— 001 · La sfida</div>
+      <h2 class="display">Tradurre cinquant'anni di storia in un linguaggio social credibile.</h2>
+      <p>Negozio di ottica con una storia importante, ma comunicazione digitale praticamente inesistente. Il rischio nel mondo dell'ottica social è altissimo: o si finisce in un look-da-influencer-occhialato, o si resta in un linguaggio puramente prodotto-prezzo. Volevamo trovare la terza via: serietà professionale + cura editoriale + persone vere.</p>
+    </div>
+    <div class="reveal">
+      <div class="num">— 002 · Cosa abbiamo fatto</div>
+      <h2 class="display">Identità, shooting, voce. Tutto da capo.</h2>
+      <p>Abbiamo lanciato un nuovo profilo, definito una linea visiva (bianco/nero, ritratti corti, tipografia sobria), prodotto un primo shooting di stagione con modelli reali (clienti del negozio, non influencer) e costruito un calendario editoriale che alterna ritratti, prodotto e storia di famiglia. La famiglia titolare è entrata davanti alla camera con calma, senza forzature, e oggi è la voce riconoscibile del brand sui social.</p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery">
+    <div class="span-7 ar-16-10 mk-grid">
+      <div class="ig-head">
+        <div class="av"></div>
+        <div class="nm">@otticaborin<span class="h">Ottica Borin · dal 1968</span></div>
+        <div class="stats">
+          <div><span class="v">8.6K</span><span class="l">Follower</span></div>
+        </div>
+      </div>
+      <div class="grid9">
+        <div class="gpost gp-3"><span>Frame</span></div>
+        <div class="gpost gp-1"><span>Shooting</span></div>
+        <div class="gpost gp-2"><span>Misura</span></div>
+        <div class="gpost gp-7"><span>Marchio</span></div>
+        <div class="gpost gp-5"><span>Borin.</span></div>
+        <div class="gpost gp-4"><span>Cliente</span></div>
+        <div class="gpost gp-8"><span>Vetrina</span></div>
+        <div class="gpost gp-6"><span>Editorial</span></div>
+        <div class="gpost gp-9"><span>Famiglia</span></div>
+      </div>
+    </div>
+    <div class="span-5 ar-1-1 mk-quote">
+      <div class="tag">— Identità</div>
+      <div class="body">Negozio storico, comunicazione zero. L'abbiamo costruita da capo: shooting, voce, calendario. <em>E persone</em> dentro al brand.</div>
+    </div>
+    <div class="span-4 ar-1-1 mk-stat">
+      <div class="big">0 → 8.6<em>K</em></div>
+      <div class="lbl">Da profilo nuovo a community, in un anno</div>
+    </div>
+    <div class="span-4 ar-1-1 mk-phone">
+      <div class="frame">
+        <div class="notch"></div>
+        <div class="screen">
+          <div class="ig-bar"><div class="av"></div><div class="nm">otticaborin</div><div class="dot">···</div></div>
+          <div class="reel-img"></div>
+          <div class="ig-stats">
+            <div class="row"><div class="ic"></div><div class="ic"></div><div class="ic sq"></div></div>
+            <div class="cap"><b>otticaborin</b> Lo shooting di stagione, dietro le quinte. <em>Persone</em>, prima dei prodotti.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="span-4 ar-1-1 mk-swatch lt">Borin<br/><em>1968</em></div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="results reveal">
+    <div class="head">— 002b · Comunicazione da zero, in 12 mesi</div>
+    <div class="grid">
+      <div class="cell">
+        <div class="big display">0 → 8.6<span class="italic">K</span></div>
+        <div class="lbl">Follower Instagram (profilo nuovo)</div>
+      </div>
+      <div class="cell">
+        <div class="big display">2</div>
+        <div class="lbl">Shooting stagionali prodotti</div>
+      </div>
+      <div class="cell">
+        <div class="big display">+38<span class="italic">%</span></div>
+        <div class="lbl">Visite in negozio citando i social</div>
+      </div>
+      <div class="cell">
+        <div class="big display">12</div>
+        <div class="lbl">Mesi di lavoro per nuovo posizionamento</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote-block reveal">
+    <blockquote>Cinquant'anni di negozio e zero racconto online. Adesso le persone entrano in negozio già conoscendoci. È un'altra accoglienza, un altro mestiere.</blockquote>
+    <cite><strong>Famiglia Borin</strong>Ottica Borin</cite>
+  </section>
+
+  <!-- CREDITS -->
+  <section class="credits reveal">
+    <div class="label">— 003 · Crediti & dettagli</div>
+    <dl>
+      <div><dt>Anno</dt><dd>2025–2026</dd></div>
+      <div><dt>Discipline</dt><dd>Brand Identity, Content Strategy, Shooting, Direzione</dd></div>
+      <div><dt>Direzione creativa</dt><dd>MLP Studio Creativo</dd></div>
+      <div><dt>Sede cliente</dt><dd>Veneto, Italia</dd></div>
+    </dl>
+  </section>
+
+  <!-- NEXT -->
+  <a href="nero.html" class="next">
+    <span class="lab">— Prossimo progetto</span>
+    <span class="title display">Nero</span>
+    <span class="arr">→</span>
+  </a>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>© 2026 MLP Studio Creativo</div>
+    <div>San Donà di Piave <span class="dot"></span> Venezia</div>
+    <div>mlpstudiocreativo@gmail.com</div>
+  </footer>
+
+  <script>
+    (function(){
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var cursor = document.getElementById('cursor');
+      if(cursor && !reduced){
+        var cx=0,cy=0,tx=0,ty=0;
+        window.addEventListener('mousemove', function(e){tx=e.clientX;ty=e.clientY});
+        (function loop(){
+          cx+=(tx-cx)*0.22; cy+=(ty-cy)*0.22;
+          cursor.style.transform='translate('+cx+'px,'+cy+'px) translate(-50%,-50%)';
+          requestAnimationFrame(loop);
+        })();
+        document.querySelectorAll('a,button,details summary').forEach(function(el){
+          el.addEventListener('mouseenter',function(){cursor.classList.add('is-hover')});
+          el.addEventListener('mouseleave',function(){cursor.classList.remove('is-hover')});
+        });
+        document.addEventListener('mouseleave',function(){cursor.classList.add('is-hidden')});
+        document.addEventListener('mouseenter',function(){cursor.classList.remove('is-hidden')});
+      } else if(cursor){ cursor.style.display='none'; }
+      if('IntersectionObserver' in window){
+        var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:0.12,rootMargin:'0px 0px -50px 0px'});
+        document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+      } else { document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')}); }
+    })();
+  </script>
+</body>
+</html>

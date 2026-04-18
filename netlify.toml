@@ -1,0 +1,45 @@
+# Configurazione Netlify per MLP Studio Creativo
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/projects/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Redirect puliti: rimuove l'estensione .html
+[[redirects]]
+  from = "/services"
+  to   = "/services.html"
+  status = 200
+
+[[redirects]]
+  from = "/projects/:slug"
+  to   = "/projects/:slug.html"
+  status = 200
+
+# 404
+[[redirects]]
+  from = "/*"
+  to   = "/index.html"
+  status = 404

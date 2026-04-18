@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+<title>Rivista Oblique — MLP Studio Creativo</title>
+<meta name="description" content="Caso studio: Rivista Oblique — Direzione artistica e progetto editoriale di un quadrimestrale culturale indipendente: una rivista che si fa leggere prima ancora di essere letta." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,800;0,900;1,300;1,400&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0a0a;--paper:#ffffff;--paper-2:#f3f3f3;--muted:#7a7a7a;--line:#0a0a0a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Roboto',Arial,sans-serif;font-weight:300;background:var(--paper);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .display{font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;font-weight:300;letter-spacing:-0.03em}
+  .italic{font-style:italic;font-family:'Nunito Sans',serif}
+
+  /* CURSOR */
+  .cursor{position:fixed;top:0;left:0;width:8px;height:8px;background:var(--ink);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .25s ease,height .25s ease,background .25s ease,opacity .2s ease;mix-blend-mode:difference;will-change:transform}
+  .cursor.is-hover{width:52px;height:52px;background:var(--paper)}
+  .cursor.is-hidden{opacity:0}
+  @media (hover:none){.cursor{display:none}}
+
+  /* TOPBAR */
+  .topbar{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:18px 32px;font-size:11px;text-transform:uppercase;letter-spacing:0.22em;background:rgba(255,255,255,0.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .topbar .brand{display:flex;align-items:center;gap:14px;text-transform:none;letter-spacing:0;padding:6px 10px;margin:-6px -10px;transition:transform .35s cubic-bezier(0.25,0.46,0.45,0.94)}
+  .topbar .brand:hover{transform:scale(0.96)}
+  .topbar .brand img{height:48px;width:auto;transition:transform .4s cubic-bezier(0.25,0.46,0.45,0.94);transform-origin:left center}
+  .topbar .brand:hover img{transform:scale(1.05)}
+  .topbar .brand-tag{font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);border-left:1px solid var(--paper-2);padding-left:14px;line-height:1.3}
+  .topbar .brand-tag strong{color:var(--ink);font-weight:500;display:block}
+  .topbar nav{display:flex;gap:28px}
+  .topbar nav a{position:relative;padding:4px 0}
+  .topbar nav a::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;background:var(--ink);transition:width .3s}
+  .topbar nav a:hover::after{width:100%}
+  .topbar .meta{color:var(--muted)}
+
+  /* BACK LINK */
+  .back-bar{padding:120px 32px 0;display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted)}
+  .back-bar a{display:inline-flex;align-items:center;gap:8px;color:var(--ink);transition:gap .25s}
+  .back-bar a:hover{gap:14px}
+
+  /* HERO PROGETTO */
+  .project-hero{padding:50px 32px 60px;border-bottom:1px solid var(--line)}
+  .project-hero .meta-row{display:flex;flex-wrap:wrap;gap:32px;margin-bottom:30px;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted)}
+  .project-hero .meta-row strong{display:block;color:var(--ink);font-weight:500;margin-top:4px;font-size:14px;letter-spacing:0.08em}
+  .project-hero h1{font-size:clamp(56px,11vw,180px);line-height:0.9;letter-spacing:-0.05em;margin-bottom:24px}
+  .project-hero h1 .italic{font-family:'Nunito Sans',serif;font-weight:200;color:var(--muted)}
+  .project-hero .lead{font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;font-weight:300;font-size:clamp(20px,2.4vw,32px);line-height:1.35;letter-spacing:-0.015em;max-width:62ch;margin-top:30px;color:var(--ink)}
+
+  /* COVER */
+  .cover{height:62vh;min-height:420px;border-bottom:1px solid var(--line);background:linear-gradient(160deg,#0a0a0a 0%,#3a3a3a 60%,#7a7a7a 100%);display:flex;align-items:flex-end;padding:32px;color:var(--paper);position:relative;overflow:hidden}
+  .cover::before{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 60%)}
+  .cover .cover-cap{position:relative;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;opacity:0.8}
+
+  /* CHALLENGE / SOLUTION */
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
+  .grid-2 > div{padding:80px 40px;border-right:1px solid var(--paper-2)}
+  .grid-2 > div:last-child{border-right:none}
+  .grid-2 .num{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-bottom:32px}
+  .grid-2 h2{font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;font-weight:300;font-size:clamp(32px,4.4vw,56px);letter-spacing:-0.03em;line-height:1.05;margin-bottom:24px}
+  .grid-2 h2 .italic{font-family:'Nunito Sans',serif;font-weight:200;color:var(--muted)}
+  .grid-2 p{font-size:16px;line-height:1.75;margin-bottom:16px;max-width:50ch;color:var(--ink)}
+
+  /* GALLERY */
+  .gallery{display:grid;grid-template-columns:repeat(12,1fr);border-bottom:1px solid var(--line)}
+  .gallery .gi{aspect-ratio:4/3;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background-size:cover;background-position:center;filter:grayscale(100%);transition:filter .6s ease}
+  .gallery .gi:hover{filter:grayscale(60%) contrast(1.05)}
+  .gallery .gi:nth-child(1){grid-column:span 7;aspect-ratio:16/10}
+  .gallery .gi:nth-child(2){grid-column:span 5;aspect-ratio:1/1}
+  .gallery .gi:nth-child(3){grid-column:span 4;aspect-ratio:1/1}
+  .gallery .gi:nth-child(4){grid-column:span 4;aspect-ratio:1/1}
+  .gallery .gi:nth-child(5){grid-column:span 4;aspect-ratio:1/1}
+  .gallery .g1{background:linear-gradient(135deg,#1a1a1a 0%,#9a9a9a 100%)}
+  .gallery .g2{background:linear-gradient(160deg,#2a2a2a 0%,#7a7a7a 100%)}
+  .gallery .g3{background:linear-gradient(135deg,#dadada 0%,#3a3a3a 100%)}
+  .gallery .g4{background:linear-gradient(200deg,#0a0a0a 0%,#8a8a8a 100%)}
+  .gallery .g5{background:linear-gradient(135deg,#bababa 0%,#1a1a1a 100%)}
+
+  /* CREDITS */
+  .credits{padding:80px 32px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:start}
+  .credits .label{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted)}
+  .credits dl{display:grid;grid-template-columns:1fr 1fr;gap:24px 40px}
+  .credits dt{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .credits dd{font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;font-weight:300;font-size:18px;letter-spacing:-0.01em}
+
+  /* QUOTE */
+  .quote-block{background:var(--ink);color:var(--paper);padding:90px 32px;border-bottom:1px solid var(--line);text-align:center}
+  .quote-block blockquote{font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;font-weight:200;font-size:clamp(28px,4vw,52px);line-height:1.25;letter-spacing:-0.02em;max-width:24ch;margin:0 auto 32px}
+  .quote-block blockquote::before{content:"\201C";font-family:'Nunito Sans',serif;font-size:1.4em;line-height:0;vertical-align:-0.3em;margin-right:0.05em;color:#999}
+  .quote-block cite{font-style:normal;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.6)}
+  .quote-block cite strong{display:block;color:var(--paper);font-weight:500;margin-bottom:4px}
+
+  /* NEXT PROJECT */
+  .next{padding:80px 32px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr auto;gap:30px;align-items:center;cursor:pointer;transition:padding .35s, background .35s}
+  .next:hover{padding-left:50px;background:var(--paper-2)}
+  .next .lab{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted)}
+  .next .title{font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;font-weight:300;font-size:clamp(36px,6vw,80px);letter-spacing:-0.035em;line-height:1;transition:transform .35s}
+  .next:hover .title{transform:translateX(14px)}
+  .next .arr{font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;font-size:36px;font-weight:200;transition:transform .35s}
+  .next:hover .arr{transform:translateX(10px)}
+
+  /* FOOTER */
+  footer{display:flex;justify-content:space-between;align-items:center;padding:26px 32px;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);flex-wrap:wrap;gap:10px}
+  footer .dot{width:6px;height:6px;border-radius:50%;background:var(--ink);display:inline-block;margin:0 8px;vertical-align:middle;animation:pulse 2s ease-in-out infinite}
+  @keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:0.5}}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .9s ease-out, transform .9s ease-out}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  /* RESPONSIVE */
+  @media (max-width:900px){
+    .topbar{padding:14px 20px}
+    .topbar nav{display:none}
+    .back-bar,.project-hero,.cover,.credits,.quote-block,.next,footer{padding-left:20px;padding-right:20px}
+    .project-hero h1{font-size:clamp(48px,12vw,90px)}
+    .grid-2{grid-template-columns:1fr}
+    .grid-2 > div{padding:50px 20px;border-right:none;border-bottom:1px solid var(--paper-2)}
+    .grid-2 > div:last-child{border-bottom:none}
+    .gallery{grid-template-columns:repeat(6,1fr)}
+    .gallery .gi:nth-child(1){grid-column:span 6}
+    .gallery .gi:nth-child(2){grid-column:span 6}
+    .gallery .gi:nth-child(3),.gallery .gi:nth-child(4),.gallery .gi:nth-child(5){grid-column:span 2}
+    .credits{grid-template-columns:1fr;gap:20px;padding:50px 20px}
+    .credits dl{grid-template-columns:1fr}
+    .next{grid-template-columns:1fr;text-align:left;gap:14px;padding:50px 20px}
+    .next .arr{font-size:28px}
+  }
+</style>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <a href="../index.html" class="brand">
+      <img src="../logo.svg" alt="MLP Studio Creativo" />
+      <span class="brand-tag"><strong>Studio Creativo</strong>San Donà / Venezia</span>
+    </a>
+    <nav>
+      <a href="../index.html#servizi">Servizi</a>
+      <a href="../index.html#portfolio">Portfolio</a>
+      <a href="../index.html#about">Studio</a>
+      <a href="../index.html#contatti">Contatti</a>
+    </nav>
+    <div class="meta">Case · 02/06</div>
+  </header>
+
+  <!-- BACK -->
+  <div class="back-bar">
+    <a href="../index.html#portfolio">← Torna al portfolio</a>
+    <span>Caso studio · 02/06</span>
+  </div>
+
+  <!-- HERO -->
+  <section class="project-hero">
+    <div class="meta-row">
+      <div>Cliente<strong>Rivista Oblique</strong></div>
+      <div>Categoria<strong>Editoriale</strong></div>
+      <div>Servizi<strong>Direzione artistica · Impaginazione</strong></div>
+      <div>Settore<strong>Cultura & Editoria</strong></div>
+    </div>
+    <h1 class="display">Rivista <span class="italic">Oblique</span>.</h1>
+    <p class="lead">Direzione artistica e progetto editoriale di un quadrimestrale culturale indipendente: una rivista che si fa leggere prima ancora di essere letta.</p>
+  </section>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-cap">— Cover progetto · Editoriale · 2025</div>
+  </div>
+
+  <!-- CHALLENGE / SOLUTION -->
+  <section class="grid-2">
+    <div class="reveal">
+      <div class="num">— 001 · La sfida</div>
+      <h2 class="display">Riportare la rivista al centro, in un mondo di feed.</h2>
+      <p>Il committente voleva un oggetto editoriale che chiedesse tempo: bello da tenere in mano, da sfogliare, da riprendere a distanza di mesi. La sfida era costruire un sistema visivo abbastanza rigoroso da reggere quattro numeri all'anno e abbastanza libero da non annoiare mai chi lo legge.</p>
+    </div>
+    <div class="reveal">
+      <div class="num">— 002 · Cosa abbiamo fatto</div>
+      <h2 class="display">Una griglia tipografica che sa rompersi.</h2>
+      <p>Abbiamo definito una griglia editoriale a sei colonne, una palette tipografica con un serif d'editoriale e un sans neutro, e regole compositive precise. Poi abbiamo costruito un sistema di "licenze creative" — momenti in cui le regole si rompono apposta — per dare ritmo alla lettura e personalità a ogni numero.</p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery">
+    <div class="gi g1"></div>
+    <div class="gi g2"></div>
+    <div class="gi g3"></div>
+    <div class="gi g4"></div>
+    <div class="gi g5"></div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote-block reveal">
+    <blockquote>Rigorosi sul progetto, divertenti nel processo. Una combinazione rarissima nel nostro settore.</blockquote>
+    <cite><strong>Giorgio R.</strong>Direttore, Rivista Oblique</cite>
+  </section>
+
+  <!-- CREDITS -->
+  <section class="credits reveal">
+    <div class="label">— 003 · Crediti & dettagli</div>
+    <dl>
+      <div><dt>Anno</dt><dd>2025</dd></div>
+      <div><dt>Discipline</dt><dd>Editorial Design, Tipografia, Art Direction</dd></div>
+      <div><dt>Direzione creativa</dt><dd>MLP Studio Creativo</dd></div>
+      <div><dt>Sede cliente</dt><dd>Padova, Italia</dd></div>
+    </dl>
+  </section>
+
+  <!-- NEXT -->
+  <a href="casa-verde-hotel.html" class="next">
+    <span class="lab">— Prossimo progetto</span>
+    <span class="title display">Casa Verde Hotel</span>
+    <span class="arr">→</span>
+  </a>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>© 2026 MLP Studio Creativo</div>
+    <div>San Donà di Piave <span class="dot"></span> Venezia</div>
+    <div>mlpstudiocreativo@gmail.com</div>
+  </footer>
+
+  <script>
+    (function(){
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var cursor = document.getElementById('cursor');
+      if(cursor && !reduced){
+        var cx=0,cy=0,tx=0,ty=0;
+        window.addEventListener('mousemove', function(e){tx=e.clientX;ty=e.clientY});
+        (function loop(){
+          cx+=(tx-cx)*0.22; cy+=(ty-cy)*0.22;
+          cursor.style.transform='translate('+cx+'px,'+cy+'px) translate(-50%,-50%)';
+          requestAnimationFrame(loop);
+        })();
+        document.querySelectorAll('a,button,details summary').forEach(function(el){
+          el.addEventListener('mouseenter',function(){cursor.classList.add('is-hover')});
+          el.addEventListener('mouseleave',function(){cursor.classList.remove('is-hover')});
+        });
+        document.addEventListener('mouseleave',function(){cursor.classList.add('is-hidden')});
+        document.addEventListener('mouseenter',function(){cursor.classList.remove('is-hidden')});
+      } else if(cursor){ cursor.style.display='none'; }
+      if('IntersectionObserver' in window){
+        var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:0.12,rootMargin:'0px 0px -50px 0px'});
+        document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+      } else { document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')}); }
+    })();
+  </script>
+</body>
+</html>
