@@ -1005,9 +1005,11 @@
         <p>Compila il modulo con qualche informazione in più: ci aiuta a capire se il tuo progetto è nelle nostre corde e a prepararci al meglio per la prima chiacchierata. Tutti i dati sono trattati in conformità al GDPR.</p>
       </div>
 
-      <form name="contact" method="POST" netlify data-netlify="true" data-netlify-honeypot="bot-field" action="/?form-sent=1">
-        <input type="hidden" name="form-name" value="contact" />
-        <p class="hp"><label>Non compilare: <input name="bot-field" /></label></p>
+      <form name="contact" method="POST" action="https://api.web3forms.com/submit">
+        <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY_PLACEHOLDER" />
+        <input type="hidden" name="subject" value="Nuova richiesta dal sito MLP Studio Creativo" />
+        <input type="hidden" name="from_name" value="MLP Studio Creativo - Form Contatti" />
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" aria-hidden="true" />
 
         <div class="row">
           <div class="field">
@@ -1241,17 +1243,16 @@
           btn.disabled = true;
           btn.textContent = 'Invio in corso...';
 
-          var data = new URLSearchParams(new FormData(form)).toString();
-          fetch('/', {
+          var formData = new FormData(form);
+          fetch('https://api.web3forms.com/submit', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: data
-          }).then(function(res){
-            if(res.ok){
+            body: formData
+          }).then(function(res){ return res.json(); }).then(function(data){
+            if(data.success){
               formWrap.classList.add('submitted');
               formWrap.scrollIntoView({ behavior:'smooth', block:'center' });
             } else {
-              throw new Error('Network response was not ok');
+              throw new Error(data.message || 'Invio non riuscito');
             }
           }).catch(function(){
             btn.disabled = false;

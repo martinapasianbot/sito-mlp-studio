@@ -1,0 +1,18 @@
+# Security headers per tutto il sito
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# HTML non cacheato (sempre aggiornato)
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# SVG cacheato a lungo
+/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+# Immagini progetti cacheate a lungo
+/projects/img/*
+  Cache-Control: public, max-age=31536000, immutable
