@@ -990,9 +990,135 @@
   <section class="contact" id="contatti">
     <div class="kicker">— 007 · Iniziamo</div>
     <h2 class="display">Parliamone<span class="italic">,</span><br/>davanti a un caffè.</h2>
-    <a class="mail" href="mailto:info@mlpstudiocreativo.com" data-magnet>info@mlpstudiocreativo.com</a>
+    <a class="mail" href="mailto:info@mlpstudiocreativo.com?subject=Parliamone%20davanti%20a%20un%20caff%C3%A8" data-magnet>info@mlpstudiocreativo.com</a>
     <div class="socials">
       <a href="https://www.instagram.com/mlpstudiocreativo/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+
+    <!-- ============ CONTACT FORM ============ -->
+    <div class="contact-form" id="form-contatti">
+      <div class="form-intro">
+        <div>
+          <div class="label">— 008 · Richiedi un contatto</div>
+          <h3>Raccontaci il tuo progetto.<br/><span class="italic">Ti rispondiamo entro 48h.</span></h3>
+        </div>
+        <p>Compila il modulo con qualche informazione in più: ci aiuta a capire se il tuo progetto è nelle nostre corde e a prepararci al meglio per la prima chiacchierata. Tutti i dati sono trattati in conformità al GDPR.</p>
+      </div>
+
+      <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hp"><label>Non compilare: <input name="bot-field" /></label></p>
+
+        <div class="row">
+          <div class="field">
+            <label for="f-azienda">Nome azienda <span class="req">*</span></label>
+            <input id="f-azienda" type="text" name="azienda" required autocomplete="organization" />
+          </div>
+          <div class="field">
+            <label for="f-referente">Nome e cognome referente <span class="req">*</span></label>
+            <input id="f-referente" type="text" name="referente" required autocomplete="name" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="f-email">Email <span class="req">*</span></label>
+            <input id="f-email" type="email" name="email" required autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="f-tel">Cellulare <span class="req">*</span></label>
+            <input id="f-tel" type="tel" name="cellulare" required autocomplete="tel" pattern="[0-9 +\-()]{7,}" placeholder="+39 ..." />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="f-servizio">Servizio di interesse <span class="req">*</span></label>
+            <select id="f-servizio" name="servizio" required>
+              <option value="">Seleziona un servizio...</option>
+              <option>Brand identity &amp; Logo</option>
+              <option>Web design &amp; Sviluppo</option>
+              <option>Editoriale &amp; Stampa</option>
+              <option>Social media &amp; Contenuti</option>
+              <option>Comunicazione visiva</option>
+              <option>Progetto completo (360°)</option>
+              <option>Altro / non so ancora</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-budget">Budget mensile <span class="req">*</span></label>
+            <select id="f-budget" name="budget" required>
+              <option value="">Seleziona una fascia...</option>
+              <option>800 — 1.500 € / mese</option>
+              <option>1.500 — 3.000 € / mese</option>
+              <option>3.000 — 5.000 € / mese</option>
+              <option>Oltre 5.000 € / mese</option>
+              <option value="altro">Altro (specifica sotto)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row row-1" id="budget-altro-row" hidden>
+          <div class="field">
+            <label for="f-budget-altro">Specifica il tuo budget</label>
+            <input id="f-budget-altro" type="text" name="budget-altro" placeholder="Es. budget una tantum, range diverso, ecc." />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="f-timeline">Timeline del progetto <span class="req">*</span></label>
+            <select id="f-timeline" name="timeline" required>
+              <option value="">Seleziona...</option>
+              <option>Urgente — entro 1 mese</option>
+              <option>1 — 3 mesi</option>
+              <option>3 — 6 mesi</option>
+              <option>Flessibile / non definita</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-referral">Come ci hai conosciuto? <span class="req">*</span></label>
+            <select id="f-referral" name="referral" required>
+              <option value="">Seleziona...</option>
+              <option>Instagram</option>
+              <option>Google</option>
+              <option>Passaparola</option>
+              <option>LinkedIn</option>
+              <option>Evento / conferenza</option>
+              <option>Altro</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row row-1">
+          <div class="field">
+            <label for="f-sito">Sito web attuale (se presente)</label>
+            <input id="f-sito" type="url" name="sito" placeholder="https://..." autocomplete="url" />
+          </div>
+        </div>
+
+        <div class="row row-1">
+          <div class="field">
+            <label for="f-note">Raccontaci il progetto <span class="req">*</span></label>
+            <textarea id="f-note" name="note" required placeholder="Descrivi brevemente la tua azienda, gli obiettivi e cosa vorresti realizzare insieme a noi."></textarea>
+          </div>
+        </div>
+
+        <label class="consent">
+          <input type="checkbox" name="privacy" required />
+          <span>Ho letto e accetto la <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> e autorizzo il trattamento dei miei dati personali ai sensi del Reg. UE 2016/679 (GDPR). <span class="req">*</span></span>
+        </label>
+
+        <div class="submit-row">
+          <div class="submit-note">Ti rispondiamo entro 48h lavorative. Se preferisci, scrivici direttamente a <a href="mailto:info@mlpstudiocreativo.com?subject=Parliamone%20davanti%20a%20un%20caff%C3%A8">info@mlpstudiocreativo.com</a>.</div>
+          <button type="submit">Invia richiesta</button>
+        </div>
+      </form>
+
+      <div class="form-success" role="status" aria-live="polite">
+        <h4>Richiesta inviata.</h4>
+        <p>Grazie per averci scritto. Ti risponderemo entro 48h lavorative all'email indicata. Nel frattempo, prendi un caffè.</p>
+      </div>
     </div>
   </section>
 
@@ -1000,7 +1126,7 @@
   <footer>
     <div>© 2026 MLP Studio Creativo</div>
     <div>San Donà di Piave <span class="dot"></span> Venezia</div>
-    <div>info@mlpstudiocreativo.com</div>
+    <div><a href="mailto:info@mlpstudiocreativo.com?subject=Parliamone%20davanti%20a%20un%20caff%C3%A8">info@mlpstudiocreativo.com</a> <span class="dot"></span> <a href="privacy.html">Privacy</a></div>
   </footer>
 
   <script>
@@ -1092,9 +1218,50 @@
           preview.style.right = 'auto';
         });
       });
+
+      // ========= CONTACT FORM =========
+      var formWrap = document.getElementById('form-contatti');
+      if(formWrap){
+        var form = formWrap.querySelector('form');
+        var budgetSelect = document.getElementById('f-budget');
+        var budgetAltroRow = document.getElementById('budget-altro-row');
+        var budgetAltroInput = document.getElementById('f-budget-altro');
+
+        budgetSelect.addEventListener('change', function(){
+          var isAltro = budgetSelect.value === 'altro';
+          budgetAltroRow.hidden = !isAltro;
+          if(isAltro){ budgetAltroInput.focus(); } else { budgetAltroInput.value = ''; }
+        });
+
+        form.addEventListener('submit', function(e){
+          e.preventDefault();
+          if(!form.checkValidity()){ form.reportValidity(); return; }
+          var btn = form.querySelector('button[type="submit"]');
+          var originalText = btn.textContent;
+          btn.disabled = true;
+          btn.textContent = 'Invio in corso...';
+
+          var data = new URLSearchParams(new FormData(form)).toString();
+          fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: data
+          }).then(function(res){
+            if(res.ok){
+              formWrap.classList.add('submitted');
+              formWrap.scrollIntoView({ behavior:'smooth', block:'center' });
+            } else {
+              throw new Error('Network response was not ok');
+            }
+          }).catch(function(){
+            btn.disabled = false;
+            btn.textContent = originalText;
+            alert("C'è stato un problema con l'invio. Riprova o scrivici direttamente a info@mlpstudiocreativo.com");
+          });
+        });
+      }
     })();
 
   </script>
-<!-- Deploy test 2026-04-18 -->
 </body>
 </html>
