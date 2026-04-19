@@ -1,11 +1,13 @@
 (function(){
   'use strict';
 
-  var STORAGE_COOKIE = 'mlp_cookie_ok';
-  var STORAGE_NL     = 'mlp_nl_dismissed_at';
-  var NL_DISMISS_MS  = 30 * 24 * 60 * 60 * 1000; // 30 giorni
-  var NL_DELAY_MS    = 12000;                    // 12 secondi
-  var NL_SCROLL_PCT  = 0.4;                      // 40% scroll
+  var STORAGE_COOKIE   = 'mlp_cookie_ok';
+  var STORAGE_NL_DIS   = 'mlp_nl_dismissed_at';
+  var STORAGE_NL_SUB   = 'mlp_nl_subscribed_at';
+  var NL_DISMISS_MS    = 24 * 60 * 60 * 1000;        // 1 giorno dopo chiusura
+  var NL_SUB_MS        = 180 * 24 * 60 * 60 * 1000;  // 6 mesi dopo iscrizione
+  var NL_DELAY_MS      = 12000;                      // 12 secondi
+  var NL_SCROLL_PCT    = 0.4;                        // 40% scroll
 
   // Path relativo a privacy.html (dalla root o da /projects/)
   var inProjects = /\/projects\//.test(location.pathname);
@@ -37,11 +39,12 @@
 
   function shouldShowNewsletter(){
     if(nlShown) return false;
-    var raw = localStorage.getItem(STORAGE_NL);
-    if(!raw) return true;
-    var ts = parseInt(raw, 10);
-    if(isNaN(ts)) return true;
-    return (Date.now() - ts) > NL_DISMISS_MS;
+    var now = Date.now();
+    var sub = parseInt(localStorage.getItem(STORAGE_NL_SUB), 10);
+    if(!isNaN(sub) && (now - sub) < NL_SUB_MS) return false;
+    var dis = parseInt(localStorage.getItem(STORAGE_NL_DIS), 10);
+    if(!isNaN(dis) && (now - dis) < NL_DISMISS_MS) return false;
+    return true;
   }
 
   var BREVO_FORM_ACTION = 'https://75a27d84.sibforms.com/serve/MUIFAIE1bFH8aH6KtJnwwS-uApveOv9hAsxEZYZSmW_VgIlDYiB1ms77CmmZFWv_tp44quWcYhh8pS8P6VMjrRFAL9wu2K_29-p15ur2bD-_4hjqYGGF9q6-Q4XMVG6TtafB6ZxkCKJHaaozNMItPkrWvPaC5WOIIahVE6hyo2iGQOfXrsFl6FDv696Q0BukmRARTkfRFJO8dRkg6Q==';
@@ -82,7 +85,7 @@
     document.body.appendChild(el);
 
     function close(persist){
-      if(persist){ localStorage.setItem(STORAGE_NL, String(Date.now())); }
+      if(persist){ localStorage.setItem(STORAGE_NL_DIS, String(Date.now())); }
       el.classList.remove('is-on');
       setTimeout(function(){ el.remove(); document.body.style.overflow=''; }, 500);
     }
@@ -116,7 +119,7 @@
       setTimeout(function(){
         if(submitted && !el.classList.contains('is-sent')){
           el.classList.add('is-sent');
-          localStorage.setItem(STORAGE_NL, String(Date.now()));
+          localStorage.setItem(STORAGE_NL_SUB, String(Date.now()));
           setTimeout(function(){ close(false); }, 3200);
         }
       }, 8000);
@@ -125,7 +128,7 @@
     iframe.addEventListener('load', function(){
       if(!submitted) return; // ignora il primo load vuoto
       el.classList.add('is-sent');
-      localStorage.setItem(STORAGE_NL, String(Date.now()));
+      localStorage.setItem(STORAGE_NL_SUB, String(Date.now()));
       setTimeout(function(){ close(false); }, 3200);
     });
 
