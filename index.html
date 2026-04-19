@@ -1005,11 +1005,11 @@
         <p>Compila il modulo con qualche informazione in più: ci aiuta a capire se il tuo progetto è nelle nostre corde e a prepararci al meglio per la prima chiacchierata. Tutti i dati sono trattati in conformità al GDPR.</p>
       </div>
 
-      <form name="contact" method="POST" action="https://api.web3forms.com/submit">
-        <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY_PLACEHOLDER" />
-        <input type="hidden" name="subject" value="Nuova richiesta dal sito MLP Studio Creativo" />
-        <input type="hidden" name="from_name" value="MLP Studio Creativo - Form Contatti" />
-        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" aria-hidden="true" />
+      <form name="contact" method="POST" action="https://formsubmit.co/info@mlpstudiocreativo.com">
+        <input type="hidden" name="_subject" value="Nuova richiesta dal sito MLP Studio Creativo" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="text" name="_honey" class="hp" tabindex="-1" aria-hidden="true" autocomplete="off" />
 
         <div class="row">
           <div class="field">
@@ -1244,11 +1244,12 @@
           btn.textContent = 'Invio in corso...';
 
           var formData = new FormData(form);
-          fetch('https://api.web3forms.com/submit', {
+          fetch('https://formsubmit.co/ajax/info@mlpstudiocreativo.com', {
             method: 'POST',
+            headers: { 'Accept': 'application/json' },
             body: formData
           }).then(function(res){ return res.json(); }).then(function(data){
-            if(data.success){
+            if(data.success === 'true' || data.success === true){
               formWrap.classList.add('submitted');
               formWrap.scrollIntoView({ behavior:'smooth', block:'center' });
             } else {
