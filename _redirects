@@ -2,6 +2,3 @@
 /services       /services.html        200
 /projects/:slug /projects/:slug.html  200
 /privacy        /privacy.html         200
-
-# 404 fallback
-/*              /index.html           404
