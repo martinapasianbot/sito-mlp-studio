@@ -98,6 +98,7 @@
   margin-top:18px;font-size:11px;letter-spacing:0.04em;color:#b0b0b0;text-align:center;
 }
 .mlp-nl-hp{position:absolute;left:-9999px;opacity:0;pointer-events:none}
+.mlp-nl-frame{position:absolute;width:0;height:0;border:0;visibility:hidden;pointer-events:none}
 .mlp-nl-success{
   display:none;text-align:center;padding:24px 0 8px;
 }

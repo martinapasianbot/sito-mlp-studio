@@ -44,6 +44,8 @@
     return (Date.now() - ts) > NL_DISMISS_MS;
   }
 
+  var BREVO_FORM_ACTION = 'https://75a27d84.sibforms.com/serve/MUIFAIE1bFH8aH6KtJnwwS-uApveOv9hAsxEZYZSmW_VgIlDYiB1ms77CmmZFWv_tp44quWcYhh8pS8P6VMjrRFAL9wu2K_29-p15ur2bD-_4hjqYGGF9q6-Q4XMVG6TtafB6ZxkCKJHaaozNMItPkrWvPaC5WOIIahVE6hyo2iGQOfXrsFl6FDv696Q0BukmRARTkfRFJO8dRkg6Q==';
+
   function buildNewsletterModal(){
     if(document.querySelector('.mlp-nl')) return;
     var el = document.createElement('div');
@@ -57,26 +59,24 @@
         '<div class="mlp-nl-kicker">— Newsletter</div>'+
         '<h3 class="mlp-nl-title">Parliamoci<span class="italic">,</span><br/>quando ne vale la pena.</h3>'+
         '<p class="mlp-nl-text">Niente cadenza, niente riempitivi. Scriviamo solo quando c\u2019\u00e8 qualcosa che vale: un progetto, una lettura, un\u2019idea che ha preso forma. Se non abbiamo nulla di interessante da dire, stiamo zitti.</p>'+
-        '<form class="mlp-nl-form" action="https://formsubmit.co/info@mlpstudiocreativo.com" method="POST" novalidate>'+
-          '<input type="hidden" name="_subject" value="Nuova iscrizione newsletter \u2014 MLP Studio Creativo" />'+
-          '<input type="hidden" name="_template" value="table" />'+
-          '<input type="hidden" name="_captcha" value="false" />'+
-          '<input type="hidden" name="origine" value="Newsletter popup" />'+
-          '<input type="text" name="_honey" class="mlp-nl-hp" tabindex="-1" aria-hidden="true" autocomplete="off" />'+
+        '<form class="mlp-nl-form" method="POST" action="'+BREVO_FORM_ACTION+'" target="mlp-nl-frame" data-type="subscription" novalidate>'+
+          '<input type="hidden" name="locale" value="it" />'+
+          '<input type="text" name="email_address_check" value="" class="mlp-nl-hp" tabindex="-1" aria-hidden="true" autocomplete="off" />'+
           '<div class="mlp-nl-field">'+
             '<label for="mlp-nl-email">Email <span aria-hidden="true">*</span></label>'+
-            '<input id="mlp-nl-email" type="email" name="email" required autocomplete="email" />'+
+            '<input id="mlp-nl-email" type="email" name="EMAIL" required autocomplete="email" />'+
           '</div>'+
           '<label class="mlp-nl-consent">'+
-            '<input type="checkbox" name="privacy" required />'+
+            '<input type="checkbox" name="privacy_consent" required />'+
             '<span>Accetto la <a href="'+PRIVACY_HREF+'" target="_blank" rel="noopener">Privacy Policy</a> e il trattamento dei dati ai sensi del GDPR.</span>'+
           '</label>'+
           '<button type="submit">Iscrivimi</button>'+
-          '<div class="mlp-nl-foot">Puoi cancellarti quando vuoi con un click.</div>'+
+          '<div class="mlp-nl-foot">Riceverai un\u2019email di conferma. Puoi cancellarti quando vuoi con un click.</div>'+
         '</form>'+
+        '<iframe name="mlp-nl-frame" class="mlp-nl-frame" title="Submission handler" aria-hidden="true"></iframe>'+
         '<div class="mlp-nl-success">'+
           '<h4>Siamo in contatto.</h4>'+
-          '<p>Grazie. Ti scriviamo solo quando c\u2019\u00e8 davvero qualcosa che vale.</p>'+
+          '<p>Controlla la tua casella email per confermare l\u2019iscrizione. Ti scriviamo solo quando c\u2019\u00e8 davvero qualcosa che vale.</p>'+
         '</div>'+
       '</div>';
     document.body.appendChild(el);
@@ -94,31 +94,39 @@
     });
 
     var form = el.querySelector('form');
+    var iframe = el.querySelector('iframe.mlp-nl-frame');
+    var submitted = false;
+    var btn = form.querySelector('button[type="submit"]');
+    var btnOriginal = btn.textContent;
+
+    // Il privacy_consent è solo validazione client-side: lo rimuovo prima che vada a Brevo
     form.addEventListener('submit', function(e){
-      e.preventDefault();
-      if(!form.checkValidity()){ form.reportValidity(); return; }
-      var btn = form.querySelector('button[type="submit"]');
-      var original = btn.textContent;
+      if(!form.checkValidity()){
+        e.preventDefault();
+        form.reportValidity();
+        return;
+      }
+      // Rimuovo il checkbox privacy dal submit (Brevo non lo aspetta, double opt-in copre GDPR)
+      var consent = form.querySelector('input[name="privacy_consent"]');
+      if(consent){ consent.disabled = true; }
+      submitted = true;
       btn.disabled = true;
       btn.textContent = 'Invio in corso...';
-      var fd = new FormData(form);
-      fetch('https://formsubmit.co/ajax/info@mlpstudiocreativo.com', {
-        method:'POST',
-        headers:{ 'Accept':'application/json' },
-        body: fd
-      }).then(function(r){ return r.json(); }).then(function(data){
-        if(data.success === 'true' || data.success === true){
-          localStorage.setItem(STORAGE_NL, String(Date.now()));
+      // Fallback di sicurezza se l\u2019iframe non scatena il load entro 8s
+      setTimeout(function(){
+        if(submitted && !el.classList.contains('is-sent')){
           el.classList.add('is-sent');
-          setTimeout(function(){ close(false); }, 2800);
-        } else {
-          throw new Error(data.message || 'Errore');
+          localStorage.setItem(STORAGE_NL, String(Date.now()));
+          setTimeout(function(){ close(false); }, 3200);
         }
-      }).catch(function(){
-        btn.disabled = false;
-        btn.textContent = original;
-        alert('Non siamo riusciti a iscriverti. Riprova o scrivici a info@mlpstudiocreativo.com');
-      });
+      }, 8000);
+    });
+
+    iframe.addEventListener('load', function(){
+      if(!submitted) return; // ignora il primo load vuoto
+      el.classList.add('is-sent');
+      localStorage.setItem(STORAGE_NL, String(Date.now()));
+      setTimeout(function(){ close(false); }, 3200);
     });
 
     requestAnimationFrame(function(){
