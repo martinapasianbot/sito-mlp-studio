@@ -1005,7 +1005,7 @@
         <p>Compila il modulo con qualche informazione in più: ci aiuta a capire se il tuo progetto è nelle nostre corde e a prepararci al meglio per la prima chiacchierata. Tutti i dati sono trattati in conformità al GDPR.</p>
       </div>
 
-      <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+      <form name="contact" method="POST" netlify data-netlify="true" data-netlify-honeypot="bot-field" action="/?form-sent=1">
         <input type="hidden" name="form-name" value="contact" />
         <p class="hp"><label>Non compilare: <input name="bot-field" /></label></p>
 
