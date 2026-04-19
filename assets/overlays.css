@@ -1,0 +1,121 @@
+/* ============== COOKIE BANNER ============== */
+.mlp-cookie{
+  position:fixed !important;left:16px;right:16px;bottom:16px;z-index:9500;
+  background:#0a0a0a;color:#fff;padding:18px 22px;
+  display:flex;align-items:center;gap:24px;flex-wrap:wrap;
+  font-family:'Nunito Sans','Roboto',sans-serif;font-weight:300;font-size:13px;line-height:1.55;
+  opacity:0 !important;transform:translateY(20px) !important;pointer-events:none;
+  transition:opacity .5s ease, transform .5s ease !important;
+  animation:none !important;
+  max-width:920px;margin:0 auto;
+  box-shadow:0 12px 48px rgba(0,0,0,0.22);
+}
+.mlp-cookie.is-on{opacity:1 !important;transform:translateY(0) !important;pointer-events:auto}
+.mlp-cookie p{flex:1;min-width:240px;margin:0;color:rgba(255,255,255,0.82)}
+.mlp-cookie a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.mlp-cookie a:hover{text-decoration-thickness:2px}
+.mlp-cookie button{
+  background:#fff;color:#0a0a0a;border:none;cursor:pointer;
+  padding:12px 28px;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;
+  font-family:inherit;font-weight:400;
+  transition:letter-spacing .3s ease, background .3s ease;
+}
+.mlp-cookie button:hover{letter-spacing:0.42em}
+@media (max-width:640px){
+  .mlp-cookie{flex-direction:column;align-items:stretch;gap:14px;padding:16px 18px;font-size:12px}
+  .mlp-cookie button{width:100%}
+}
+
+/* ============== NEWSLETTER MODAL ============== */
+.mlp-nl{
+  position:fixed !important;inset:0;z-index:9600;
+  display:flex !important;align-items:center;justify-content:center;
+  padding:24px;
+  background:rgba(10,10,10,0);
+  opacity:0 !important;pointer-events:none;
+  transition:opacity .5s ease, background .5s ease !important;
+  animation:none !important;transform:none !important;
+}
+.mlp-nl.is-on{opacity:1 !important;pointer-events:auto;background:rgba(10,10,10,0.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.mlp-nl-card{
+  background:#fff;color:#0a0a0a;max-width:560px;width:100%;
+  padding:48px 44px 40px;position:relative;
+  transform:translateY(30px) scale(0.98);opacity:0;
+  transition:transform .6s cubic-bezier(0.25,0.46,0.45,0.94), opacity .5s ease;
+  font-family:'Nunito Sans','Roboto',sans-serif;font-weight:300;line-height:1.6;
+  max-height:calc(100vh - 48px);overflow-y:auto;
+}
+.mlp-nl.is-on .mlp-nl-card{transform:translateY(0) scale(1);opacity:1}
+.mlp-nl-close{
+  position:absolute;top:16px;right:16px;
+  background:transparent;border:none;cursor:pointer;
+  width:36px;height:36px;padding:0;
+  font-size:20px;line-height:1;color:#0a0a0a;
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .3s ease;
+}
+.mlp-nl-close:hover{transform:rotate(90deg)}
+.mlp-nl-kicker{
+  font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:#7a7a7a;
+  margin-bottom:18px;
+}
+.mlp-nl-title{
+  font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
+  font-weight:300;font-size:clamp(28px,4vw,38px);letter-spacing:-0.028em;line-height:1.05;
+  margin-bottom:18px;
+}
+.mlp-nl-title .italic{font-family:'Nunito Sans',serif;font-weight:200;color:#7a7a7a;font-style:normal}
+.mlp-nl-text{font-size:14.5px;color:#2a2a2a;line-height:1.65;margin-bottom:28px}
+.mlp-nl-form .mlp-nl-field{margin-bottom:20px}
+.mlp-nl-form label{
+  display:block;font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:#7a7a7a;
+  margin-bottom:10px;font-weight:300;
+}
+.mlp-nl-form input[type="email"]{
+  width:100%;border:none;border-bottom:1px solid #0a0a0a;
+  background:transparent;padding:8px 0 12px;
+  font-family:inherit;font-size:16px;font-weight:300;color:#0a0a0a;
+  border-radius:0;-webkit-appearance:none;appearance:none;
+  transition:border-bottom-width .2s ease;
+}
+.mlp-nl-form input[type="email"]:focus{outline:none;border-bottom-width:2px}
+.mlp-nl-consent{
+  display:flex;gap:12px;align-items:flex-start;
+  font-size:12px;color:#7a7a7a;line-height:1.55;margin:6px 0 24px;
+}
+.mlp-nl-consent input{margin-top:2px;accent-color:#0a0a0a}
+.mlp-nl-consent a{color:#0a0a0a;text-decoration:underline;text-underline-offset:3px}
+.mlp-nl-form button[type="submit"]{
+  background:#0a0a0a;color:#fff;border:none;cursor:pointer;
+  padding:16px 32px;width:100%;
+  font-size:11px;letter-spacing:0.3em;text-transform:uppercase;
+  font-family:inherit;font-weight:400;
+  transition:letter-spacing .3s ease, background .3s ease;
+}
+.mlp-nl-form button[type="submit"]:hover{letter-spacing:0.42em;background:#1a1a1a}
+.mlp-nl-form button[type="submit"]:disabled{opacity:0.6;cursor:wait}
+.mlp-nl-foot{
+  margin-top:18px;font-size:11px;letter-spacing:0.04em;color:#b0b0b0;text-align:center;
+}
+.mlp-nl-hp{position:absolute;left:-9999px;opacity:0;pointer-events:none}
+.mlp-nl-success{
+  display:none;text-align:center;padding:24px 0 8px;
+}
+.mlp-nl.is-sent .mlp-nl-form,
+.mlp-nl.is-sent .mlp-nl-text,
+.mlp-nl.is-sent .mlp-nl-kicker{display:none}
+.mlp-nl.is-sent .mlp-nl-success{display:block}
+.mlp-nl-success h4{
+  font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
+  font-weight:300;font-size:clamp(24px,3.4vw,32px);letter-spacing:-0.02em;
+  margin-bottom:14px;
+}
+.mlp-nl-success p{font-size:14px;color:#2a2a2a}
+@media (max-width:640px){
+  .mlp-nl{padding:16px}
+  .mlp-nl-card{padding:40px 26px 30px}
+}
+@media (prefers-reduced-motion: reduce){
+  .mlp-cookie,.mlp-nl,.mlp-nl-card{transition:opacity .2s ease}
+  .mlp-nl-card{transform:none}
+}
