@@ -41,3 +41,9 @@ yarn-error.log*
 # Archivi temporanei (mantieni i file sorgente, non gli zip generati)
 sito-mlp-studio.zip
 *.zip
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
