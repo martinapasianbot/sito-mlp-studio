@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<title>MLP Studio Creativo — La comunicazione online che ti rende il primo nome del tuo settore</title>
+<meta name="description" content="Studio creativo veneto. Costruiamo la comunicazione online delle aziende strutturate: strategia, video, contenuti, social. Posizionamento mentale, non lead domani. Fissa una chiamata gratuita." />
+<meta name="robots" content="noindex,nofollow" />
+
+<meta property="og:title" content="MLP Studio Creativo — La comunicazione online che ti posiziona nella testa del tuo cliente" />
+<meta property="og:description" content="Studio creativo veneto. Strategia, video, social, contenuti per aziende strutturate. Fissa una call gratuita di 30 minuti con Martina." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="it_IT" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Roboto:ital,wght@0,300;0,400;0,500;1,400&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#0a0a0a;
+    --paper:#ffffff;
+    --paper-2:#f3f3f3;
+    --muted:#7a7a7a;
+    --logo:#231f20;
+
+    --max:1280px;
+    --gap:clamp(24px, 4vw, 64px);
+    --section:clamp(96px, 14vw, 200px);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Roboto', Arial, sans-serif;
+    font-weight:400;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+  /* TYPOGRAPHY */
+  .display{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans', sans-serif;
+    font-weight:300;
+    letter-spacing:-0.02em;
+    line-height:1.05;
+  }
+  .italic{
+    font-style:italic;
+    font-family:'Nunito Sans', serif;
+    font-weight:300;
+  }
+  .mono{
+    font-family:'Roboto Mono','Roboto', monospace;
+    font-variant-numeric:tabular-nums;
+    letter-spacing:0;
+  }
+  .kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    font-family:'Roboto', sans-serif;
+    font-size:11px;
+    font-weight:400;
+    letter-spacing:0.3em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  .kicker::before{
+    content:'';
+    width:24px;height:1px;
+    background:var(--ink);
+    display:inline-block;
+  }
+
+  /* LAYOUT */
+  .wrap{
+    max-width:var(--max);
+    padding-left:clamp(20px, 5vw, 64px);
+    padding-right:clamp(20px, 5vw, 64px);
+    margin:0 auto;
+  }
+  section{
+    padding-top:var(--section);
+    padding-bottom:var(--section);
+  }
+  .section-head{margin-bottom:clamp(48px, 8vw, 96px)}
+  .section-head h2{
+    margin-top:20px;
+    font-size:clamp(36px, 5.6vw, 72px);
+    line-height:1.05;
+    max-width:24ch;
+  }
+
+  /* HEADER */
+  .site-header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--paper);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s ease;
+  }
+  .site-header.is-scrolled{border-bottom-color:var(--paper-2)}
+  .site-header .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+    padding-top:18px;
+    padding-bottom:18px;
+  }
+  .logo{height:22px;width:auto}
+  .header-right{display:flex;align-items:center;gap:24px}
+  .header-meta{
+    font-size:12px;
+    color:var(--muted);
+    letter-spacing:0.05em;
+  }
+  .header-meta strong{color:var(--ink);font-weight:400}
+  .header-cta{
+    font-size:13px;
+    letter-spacing:0.04em;
+    padding:10px 18px;
+    border:1px solid var(--ink);
+    background:var(--ink);
+    color:var(--paper);
+    transition:background .25s ease, color .25s ease;
+    white-space:nowrap;
+  }
+  .header-cta:hover{background:var(--paper);color:var(--ink)}
+  .header-tel{
+    font-family:'Roboto Mono', monospace;
+    font-size:13px;
+    color:var(--ink);
+    letter-spacing:0.02em;
+    border-bottom:1px solid var(--paper-2);
+    padding-bottom:2px;
+    transition:border-color .2s ease;
+  }
+  .header-tel:hover{border-color:var(--ink)}
+  @media (max-width:1024px){.header-tel{display:none}}
+  @media (max-width:768px){
+    .header-cta{padding:9px 14px;font-size:12px}
+  }
+
+  /* HERO */
+  .hero{
+    padding-top:clamp(32px, 4vw, 56px);
+    padding-bottom:clamp(48px, 6vw, 96px);
+    position:relative;
+    min-height:calc(100vh - 56px);
+    display:flex;
+    align-items:center;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:clamp(32px, 5vw, 64px);
+    width:100%;
+    align-items:center;
+  }
+  @media (min-width:960px){
+    .hero-grid{grid-template-columns:1.4fr 1fr}
+  }
+  .hero-text .promise{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Roboto Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--ink);
+    padding:8px 14px;
+    background:var(--paper-2);
+    margin-bottom:32px;
+  }
+  .hero-text .promise::before{
+    content:'';
+    width:6px;height:6px;
+    background:var(--ink);
+    border-radius:50%;
+    display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(38px, 6.6vw, 84px);
+    margin-bottom:32px;
+    max-width:20ch;
+    line-height:1.02;
+  }
+  .hero h1 .italic{font-style:italic;font-family:'Nunito Sans', serif;font-weight:300}
+  .hero-sub{
+    max-width:48ch;
+    font-size:clamp(16px, 1.3vw, 19px);
+    color:var(--ink);
+    line-height:1.6;
+    margin-bottom:36px;
+  }
+  .hero-cta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px 24px;
+    align-items:center;
+    margin-bottom:36px;
+  }
+  .hero-cta-row .secondary{
+    font-size:14px;
+    color:var(--muted);
+    border-bottom:1px solid var(--paper-2);
+    padding-bottom:4px;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  .hero-cta-row .secondary:hover{color:var(--ink);border-color:var(--ink)}
+  .hero-trust{
+    display:flex;
+    flex-wrap:wrap;
+    gap:24px clamp(24px, 4vw, 56px);
+    align-items:center;
+    padding-top:24px;
+    border-top:1px solid var(--paper-2);
+  }
+  .hero-trust .label{
+    display:block;
+    font-size:11px;
+    letter-spacing:0.3em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:8px;
+  }
+  .slot-line{
+    font-family:'Roboto Mono', monospace;
+    font-variant-numeric:tabular-nums;
+    font-size:14px;
+    line-height:1.7;
+    color:var(--ink);
+  }
+  .slot-line .sep{color:var(--muted);margin:0 8px}
+
+  .hero-video{
+    position:relative;
+    aspect-ratio:9/16;
+    overflow:hidden;
+    background:var(--ink);
+    max-width:380px;
+    width:100%;
+    justify-self:end;
+  }
+  .hero-video video{
+    width:100%;height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .hero-video .video-meta{
+    position:absolute;
+    bottom:16px;left:16px;right:16px;
+    color:var(--paper);
+    font-family:'Roboto Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    text-shadow:0 1px 4px rgba(0,0,0,.6);
+    pointer-events:none;
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+  }
+  @media (max-width:960px){
+    .hero-video{max-width:none;justify-self:stretch;aspect-ratio:9/13;max-height:70vh}
+  }
+
+  /* CTA BUTTONS */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:14px;
+    padding:18px 28px;
+    border:1px solid var(--ink);
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Roboto', sans-serif;
+    font-size:14px;
+    letter-spacing:0.04em;
+    transition:background .25s ease, color .25s ease;
+  }
+  .btn:hover{background:var(--ink);color:var(--paper)}
+  .btn .arrow{
+    width:24px;height:1px;
+    background:currentColor;
+    position:relative;
+    transition:width .25s ease;
+  }
+  .btn .arrow::after{
+    content:'';
+    position:absolute;
+    right:0;top:-3px;
+    width:8px;height:8px;
+    border-top:1px solid currentColor;
+    border-right:1px solid currentColor;
+    transform:rotate(45deg);
+  }
+  .btn:hover .arrow{width:36px}
+  .btn-solid{background:var(--ink);color:var(--paper)}
+  .btn-solid:hover{background:var(--paper);color:var(--ink)}
+
+  /* TRUST STRIP */
+  .trust-strip{
+    border-top:1px solid var(--paper-2);
+    border-bottom:1px solid var(--paper-2);
+    padding:clamp(24px, 3vw, 36px) 0;
+  }
+  .trust-strip .wrap{
+    display:flex;
+    flex-wrap:wrap;
+    gap:24px clamp(32px, 5vw, 80px);
+    justify-content:space-between;
+    align-items:center;
+  }
+  .trust-item{
+    font-family:'Roboto Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.05em;
+    color:var(--muted);
+  }
+  .trust-item strong{color:var(--ink);font-weight:400}
+
+  /* CREDENTIALS GRID (big names) */
+  .credentials{
+    background:var(--paper);
+    padding-top:clamp(64px, 8vw, 96px);
+    padding-bottom:clamp(64px, 8vw, 96px);
+    border-top:1px solid var(--paper-2);
+    border-bottom:1px solid var(--paper-2);
+  }
+  .credentials .label{
+    text-align:center;
+    display:block;
+    font-size:11px;
+    letter-spacing:0.3em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:48px;
+  }
+  .credentials-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:1px;
+    background:var(--paper-2);
+    border:1px solid var(--paper-2);
+  }
+  @media (min-width:768px){
+    .credentials-grid{grid-template-columns:repeat(3, 1fr)}
+  }
+  .cred-cell{
+    background:var(--paper);
+    padding:clamp(28px, 4vw, 48px) clamp(20px, 3vw, 32px);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    text-align:center;
+    min-height:160px;
+    transition:background .25s ease;
+  }
+  .cred-cell:hover{background:var(--paper-2)}
+  .cred-cell .cred-img{
+    max-width:100px;
+    max-height:50px;
+    object-fit:contain;
+    filter:grayscale(100%) opacity(0.85);
+    margin-bottom:6px;
+  }
+  .cred-cell .cred-name{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans', sans-serif;
+    font-weight:300;
+    letter-spacing:-0.01em;
+    font-size:clamp(22px, 2.4vw, 30px);
+    line-height:1.1;
+    color:var(--ink);
+  }
+  .cred-cell .cred-meta{
+    font-family:'Roboto Mono', monospace;
+    font-size:10px;
+    letter-spacing:0.25em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+
+  /* PROCESS 3-STEP */
+  .process-three{
+    background:var(--paper);
+    padding-top:var(--section);
+    padding-bottom:clamp(48px, 6vw, 80px);
+  }
+  .process-three .section-head{margin-bottom:clamp(40px, 6vw, 64px);text-align:center}
+  .process-three .section-head .kicker{justify-content:center}
+  .process-three .section-head h2{
+    margin-left:auto;margin-right:auto;
+    text-align:center;
+    max-width:18ch;
+  }
+  .three-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:0;
+    border-top:1px solid var(--paper-2);
+    border-bottom:1px solid var(--paper-2);
+  }
+  @media (min-width:768px){
+    .three-grid{grid-template-columns:repeat(3, 1fr)}
+  }
+  .three-step{
+    padding:clamp(32px, 4vw, 48px) clamp(24px, 3vw, 40px);
+    border-bottom:1px solid var(--paper-2);
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .three-step:last-child{border-bottom:none}
+  @media (min-width:768px){
+    .three-step{border-bottom:none;border-right:1px solid var(--paper-2)}
+    .three-step:last-child{border-right:none}
+  }
+  .three-step .num{
+    font-family:'Roboto Mono', monospace;
+    font-size:13px;
+    color:var(--muted);
+    letter-spacing:0.15em;
+  }
+  .three-step h3{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans', sans-serif;
+    font-weight:300;
+    font-size:clamp(22px, 2.4vw, 28px);
+    line-height:1.2;
+    letter-spacing:-0.01em;
+    max-width:14ch;
+  }
+  .three-step h3 .italic{font-style:italic;font-family:'Nunito Sans', serif}
+  .three-step p{
+    font-size:14px;
+    line-height:1.6;
+    color:var(--ink);
+    max-width:32ch;
+  }
+
+  /* CONCEPT (white-bg manifesto) */
+  .concept{
+    background:var(--paper);
+  }
+  .concept .wrap{max-width:1100px}
+  .concept-q{
+    margin-top:32px;
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans', sans-serif;
+    font-weight:300;
+    font-size:clamp(32px, 5vw, 64px);
+    line-height:1.08;
+    letter-spacing:-0.02em;
+    max-width:24ch;
+    color:var(--ink);
+  }
+  .concept-q .italic{
+    font-style:italic;font-family:'Nunito Sans', serif;font-weight:300;
+  }
+  .concept-a{
+    margin-top:48px;
+    padding-top:32px;
+    border-top:1px solid var(--paper-2);
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans', sans-serif;
+    font-weight:300;
+    font-size:clamp(28px, 4vw, 48px);
+    line-height:1.1;
+    letter-spacing:-0.01em;
+    max-width:22ch;
+    color:var(--ink);
+  }
+  .concept-a .italic{font-style:italic;font-family:'Nunito Sans', serif;font-weight:300}
+  .concept-body{
+    margin-top:64px;
+    max-width:60ch;
+    font-size:17px;
+    line-height:1.7;
+    color:var(--ink);
+  }
+  .concept-body p + p{margin-top:18px}
+
+  /* PULL QUOTE (signature lines) */
+  .pullquote{
+    background:var(--ink);
+    color:var(--paper);
+    padding:clamp(96px, 14vw, 180px) 0;
+    text-align:center;
+  }
+  .pullquote .wrap{max-width:1100px}
+  .pullquote .kicker{
+    color:var(--muted);
+    justify-content:center;
+    margin-bottom:48px;
+  }
+  .pullquote .kicker::before{background:var(--paper)}
+  .pullquote-text{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans', sans-serif;
+    font-weight:200;
+    font-size:clamp(40px, 7.4vw, 104px);
+    line-height:1.02;
+    letter-spacing:-0.03em;
+    max-width:22ch;
+    margin:0 auto;
+    color:var(--paper);
+  }
+  .pullquote-text .italic{font-style:italic;font-family:'Nunito Sans', serif;font-weight:300}
+  .pullquote-attr{
+    margin-top:48px;
+    font-family:'Roboto Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.3em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+
+  /* MANIFESTO (concept) */
+  .manifesto{
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .manifesto .kicker{color:var(--muted)}
+  .manifesto .kicker::before{background:var(--paper)}
+  .manifesto-display{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans', sans-serif;
+    font-weight:300;
+    letter-spacing:-0.02em;
+    line-height:1.08;
+    font-size:clamp(34px, 5.4vw, 72px);
+    margin-top:40px;
+    max-width:22ch;
+  }
+  .manifesto-display .italic{font-style:italic;font-family:'Nunito Sans', serif;font-weight:300}
+  .manifesto-answer{
+    margin-top:64px;
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans', sans-serif;
+    font-weight:200;
+    font-size:clamp(36px, 5.6vw, 80px);
+    line-height:1.05;
+    letter-spacing:-0.03em;
+    color:var(--paper);
+    max-width:24ch;
+    padding-top:48px;
+    border-top:1px solid var(--muted);
+  }
+  .manifesto-answer .italic{
+    font-style:italic;
+    font-family:'Nunito Sans', serif;
+    font-weight:200;
+  }
+  .manifesto-second{
+    margin-top:clamp(80px, 12vw, 160px);
+    padding-top:clamp(56px, 8vw, 96px);
+    border-top:1px solid var(--muted);
+  }
+  .manifesto-body{
+    margin-top:48px;
+    max-width:60ch;
+    font-size:clamp(16px, 1.3vw, 19px);
+    line-height:1.7;
+    color:var(--paper);
+  }
+  .manifesto-body p + p{margin-top:18px}
+
+  /* SECTION WITH VIDEO (text + video side by side) */
+  .section-video{padding-top:var(--section);padding-bottom:var(--section)}
+  .section-video.alt{background:var(--paper-2)}
+  .section-video.dark{background:var(--ink);color:var(--paper)}
+  .section-video.dark .kicker{color:var(--muted)}
+  .section-video.dark .kicker::before{background:var(--paper)}
+
+  .sv-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:clamp(40px, 6vw, 80px);
+    align-items:center;
+  }
+  @media (min-width:900px){
+    .sv-grid{grid-template-columns:1.2fr 1fr}
+    .sv-grid.reverse{grid-template-columns:1fr 1.2fr}
+    .sv-grid.reverse .sv-text{order:2}
+    .sv-grid.reverse .sv-video{order:1}
+  }
+  .sv-text h2{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans', sans-serif;
+    font-weight:300;
+    letter-spacing:-0.02em;
+    line-height:1.05;
+    font-size:clamp(32px, 5vw, 64px);
+    margin-top:20px;
+    max-width:18ch;
+  }
+  .sv-text h2 .italic{font-style:italic;font-family:'Nunito Sans', serif;font-weight:300}
+  .sv-text p{
+    margin-top:24px;
+    max-width:50ch;
+    font-size:16px;
+    line-height:1.7;
+  }
+  .sv-text p + p{margin-top:14px}
+
+  .sv-video{
+    aspect-ratio:9/16;
+    background:var(--ink);
+    max-width:380px;
+    width:100%;
+    overflow:hidden;
+    position:relative;
+    justify-self:end;
+  }
+  .sv-video video{width:100%;height:100%;object-fit:cover;display:block}
+  .sv-video .video-meta{
+    position:absolute;
+    bottom:16px;left:16px;
+    color:var(--paper);
+    font-family:'Roboto Mono', monospace;
+    font-size:10px;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    text-shadow:0 1px 4px rgba(0,0,0,.6);
+    pointer-events:none;
+  }
+  @media (max-width:900px){
+    .sv-video{justify-self:center;max-width:340px}
+  }
+
+  /* INLINE CTA */
+  .inline-cta{
+    text-align:center;
+    padding:clamp(56px, 8vw, 96px) 0;
+    border-top:1px solid var(--paper-2);
+  }
+  .inline-cta .label{
+    display:block;
+    font-size:11px;
+    letter-spacing:0.3em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:24px;
+  }
+  .inline-cta .question{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans', sans-serif;
+    font-weight:300;
+    letter-spacing:-0.01em;
+    line-height:1.2;
+    font-size:clamp(24px, 3vw, 36px);
+    margin-bottom:32px;
+    max-width:30ch;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .inline-cta .question .italic{font-style:italic;font-family:'Nunito Sans', serif}
+  .inline-cta a.text-link{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    font-size:14px;
+    letter-spacing:0.04em;
+    border-bottom:1px solid var(--ink);
+    padding-bottom:6px;
+    transition:gap .25s ease;
+  }
+  .inline-cta a.text-link:hover{gap:20px}
+  .inline-cta a.text-link .arrow-min{
+    width:18px;height:1px;background:currentColor;position:relative;display:inline-block;
+  }
+  .inline-cta a.text-link .arrow-min::after{
+    content:'';position:absolute;right:0;top:-3px;width:7px;height:7px;
+    border-top:1px solid currentColor;border-right:1px solid currentColor;
+    transform:rotate(45deg);
+  }
+
+  /* NUMBERS / CASE */
+  .numbers{background:var(--paper-2)}
+  .numbers .wrap{max-width:var(--max)}
+  .numbers-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:clamp(40px, 6vw, 80px);
+    align-items:center;
+  }
+  @media (min-width:900px){
+    .numbers-grid{grid-template-columns:1fr 1fr}
+  }
+  .numbers-text h2{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans', sans-serif;
+    font-weight:300;
+    font-size:clamp(32px, 5vw, 64px);
+    line-height:1.05;
+    letter-spacing:-0.02em;
+    margin-top:20px;
+    max-width:18ch;
+  }
+  .numbers-text h2 .italic{font-style:italic;font-family:'Nunito Sans', serif}
+  .numbers-text .lead{
+    margin-top:24px;
+    max-width:48ch;
+    font-size:16px;
+    line-height:1.7;
+  }
+  .numbers-grid-stats{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:32px clamp(24px, 4vw, 56px);
+    margin-top:48px;
+  }
+  .stat .figure{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans', sans-serif;
+    font-weight:200;
+    font-size:clamp(72px, 12vw, 160px);
+    line-height:0.95;
+    letter-spacing:-0.04em;
+    margin-bottom:14px;
+  }
+  .stat .figure .small{font-size:0.5em;color:var(--muted);margin-left:4px}
+  .stat .caption{
+    font-size:13px;
+    color:var(--muted);
+    line-height:1.5;
+    max-width:24ch;
+  }
+
+  /* TEAM */
+  .team{background:var(--paper)}
+  .team-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:1px;
+    background:var(--paper-2);
+    border-top:1px solid var(--paper-2);
+    border-bottom:1px solid var(--paper-2);
+  }
+  @media (min-width:768px){
+    .team-grid{grid-template-columns:repeat(4, 1fr)}
+  }
+  .team-cell{
+    background:var(--paper);
+    padding:clamp(28px, 3vw, 40px) clamp(24px, 3vw, 32px);
+  }
+  .team-cell .role{
+    font-family:'Roboto Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:18px;
+  }
+  .team-cell .name{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans', sans-serif;
+    font-weight:300;
+    font-size:clamp(22px, 2.4vw, 28px);
+    line-height:1.15;
+    letter-spacing:-0.01em;
+    margin-bottom:14px;
+  }
+  .team-cell .desc{
+    font-size:14px;
+    color:var(--ink);
+    line-height:1.6;
+  }
+
+  /* INCONTRA MARTINA */
+  .meet{background:var(--paper-2)}
+  .meet-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:clamp(40px, 6vw, 80px);
+    align-items:center;
+  }
+  @media (min-width:900px){
+    .meet-grid{grid-template-columns:1fr 1.4fr}
+  }
+  .meet-photo{
+    aspect-ratio:3/4;
+    overflow:hidden;
+    background:var(--ink);
+    max-width:420px;
+    width:100%;
+  }
+  .meet-photo img{width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:grayscale(15%)}
+  .meet-text h2{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans', sans-serif;
+    font-weight:300;
+    font-size:clamp(28px, 4vw, 48px);
+    line-height:1.1;
+    letter-spacing:-0.02em;
+    margin-top:16px;
+    max-width:18ch;
+  }
+  .meet-text h2 .italic{font-style:italic;font-family:'Nunito Sans', serif}
+  .meet-text p{margin-top:18px;font-size:16px;line-height:1.7;max-width:50ch}
+  .meet-bullets{
+    margin-top:32px;
+    list-style:none;
+    padding:0;
+    border-top:1px solid var(--paper);
+  }
+  .meet-bullets li{
+    padding:14px 0;
+    border-bottom:1px solid var(--paper);
+    font-size:14px;
+    line-height:1.6;
+    display:flex;
+    gap:16px;
+  }
+  .meet-bullets li::before{
+    content:'—';
+    color:var(--muted);
+    flex-shrink:0;
+  }
+
+  /* ANTI-PITCH */
+  .anti{background:var(--ink);color:var(--paper)}
+  .anti .kicker{color:var(--muted)}
+  .anti .kicker::before{background:var(--paper)}
+  .anti .section-head h2{color:var(--paper)}
+  .anti-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:clamp(40px, 6vw, 80px);
+    align-items:start;
+  }
+  @media (min-width:900px){
+    .anti-grid{grid-template-columns:1fr 1.2fr}
+  }
+  .anti-list{
+    display:flex;
+    flex-direction:column;
+  }
+  .anti-item{
+    border-top:1px solid var(--paper);
+    padding:clamp(20px, 3vw, 32px) 0;
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:clamp(20px, 3vw, 48px);
+    align-items:baseline;
+  }
+  .anti-item:last-child{border-bottom:1px solid var(--paper)}
+  .anti-item .x{
+    font-family:'Roboto Mono', monospace;
+    font-size:12px;
+    color:var(--muted);
+    letter-spacing:0.15em;
+    white-space:nowrap;
+  }
+  .anti-item .text{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans', sans-serif;
+    font-weight:300;
+    letter-spacing:-0.01em;
+    font-size:clamp(18px, 2.2vw, 24px);
+    line-height:1.3;
+    max-width:46ch;
+  }
+  .anti-item .text .italic{font-style:italic;font-family:'Nunito Sans', serif}
+  .anti-closing{
+    margin-top:56px;
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans', sans-serif;
+    font-weight:300;
+    font-size:clamp(24px, 3.4vw, 40px);
+    line-height:1.2;
+    letter-spacing:-0.02em;
+    max-width:36ch;
+  }
+  .anti-closing .italic{font-style:italic;font-family:'Nunito Sans', serif}
+
+  /* FAQ */
+  .faq{background:var(--paper)}
+  .faq-list{max-width:780px;margin:0 auto;border-top:1px solid var(--paper-2)}
+  .faq-item{
+    border-bottom:1px solid var(--paper-2);
+  }
+  .faq-q{
+    width:100%;
+    text-align:left;
+    padding:clamp(20px, 3vw, 28px) 0;
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans', sans-serif;
+    font-weight:300;
+    font-size:clamp(18px, 2vw, 22px);
+    letter-spacing:-0.01em;
+    line-height:1.3;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:24px;
+    color:var(--ink);
+  }
+  .faq-q .plus{
+    font-family:'Roboto Mono', monospace;
+    font-size:18px;
+    color:var(--muted);
+    flex-shrink:0;
+    transition:transform .3s ease;
+  }
+  .faq-item.open .faq-q .plus{transform:rotate(45deg)}
+  .faq-a{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .4s ease;
+  }
+  .faq-a-inner{
+    padding-bottom:clamp(20px, 3vw, 32px);
+    font-size:15px;
+    line-height:1.7;
+    max-width:60ch;
+    color:var(--ink);
+  }
+
+  /* FORM */
+  .form-section{
+    padding-top:var(--section);
+    padding-bottom:clamp(120px, 16vw, 200px);
+    background:var(--paper-2);
+  }
+  .form-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:clamp(40px, 6vw, 80px);
+  }
+  @media (min-width:900px){
+    .form-grid{grid-template-columns:5fr 7fr}
+  }
+  .form-intro h2{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans', sans-serif;
+    font-weight:300;
+    font-size:clamp(28px, 4vw, 48px);
+    line-height:1.1;
+    letter-spacing:-0.02em;
+    margin-top:16px;
+    max-width:14ch;
+  }
+  .form-intro h2 .italic{font-style:italic;font-family:'Nunito Sans', serif}
+  .form-intro p{
+    margin-top:24px;
+    max-width:36ch;
+    color:var(--ink);
+    font-size:16px;
+    line-height:1.7;
+  }
+  .form-intro p + p{margin-top:14px}
+  .form-intro .signature{
+    margin-top:24px;
+    font-style:italic;
+    color:var(--muted);
+  }
+  form.qualifying{
+    display:flex;
+    flex-direction:column;
+    gap:32px;
+    background:var(--paper);
+    padding:clamp(32px, 5vw, 56px);
+  }
+  .field{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    border-bottom:1px solid var(--ink);
+    padding-bottom:8px;
+  }
+  .field label{
+    font-size:11px;
+    letter-spacing:0.3em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  .field input,
+  .field textarea{
+    border:none;
+    background:transparent;
+    font-family:'Roboto', sans-serif;
+    font-size:17px;
+    color:var(--ink);
+    padding:8px 0;
+    width:100%;
+    outline:none;
+    line-height:1.5;
+  }
+  .field input::placeholder,
+  .field textarea::placeholder{color:var(--muted);opacity:1}
+  .field textarea{resize:vertical;min-height:96px}
+  .field-row{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:32px;
+  }
+  @media (min-width:600px){
+    .field-row{grid-template-columns:1fr 1fr}
+  }
+  .form-submit{
+    margin-top:8px;
+    display:flex;
+    align-items:center;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+  .form-note{
+    font-size:13px;
+    color:var(--muted);
+    line-height:1.6;
+    max-width:32ch;
+  }
+  .hp{position:absolute;left:-9999px;visibility:hidden}
+
+  /* FOOTER */
+  .site-footer{
+    border-top:1px solid var(--paper-2);
+    padding:clamp(48px, 6vw, 80px) 0;
+    background:var(--paper);
+  }
+  .site-footer .wrap{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:32px;
+    align-items:start;
+  }
+  @media (min-width:768px){
+    .site-footer .wrap{grid-template-columns:1fr auto auto;align-items:center}
+  }
+  .site-footer .signature{font-size:13px;color:var(--muted);line-height:1.7}
+  .site-footer .signature strong{color:var(--ink);font-weight:400}
+  .site-footer nav{display:flex;gap:24px;flex-wrap:wrap;font-size:13px}
+  .site-footer nav a{color:var(--muted);transition:color .2s ease}
+  .site-footer nav a:hover{color:var(--ink)}
+  .site-footer .colophon{
+    font-family:'Roboto Mono', monospace;
+    font-size:11px;
+    color:var(--muted);
+    letter-spacing:0.05em;
+  }
+
+  /* REVEAL ON SCROLL */
+  .reveal{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity .8s ease, transform .8s ease;
+  }
+  .reveal.is-visible{opacity:1;transform:translateY(0)}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header" id="header">
+  <div class="wrap">
+    <a href="/" aria-label="MLP Studio Creativo">
+      <img src="logo.svg" alt="MLP Studio Creativo" class="logo" />
+    </a>
+    <div class="header-right">
+      <a href="tel:+393484815282" class="header-tel">+39 348 481 5282</a>
+      <a href="#parliamone" class="header-cta">Fissa una chiamata</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-text reveal">
+          <span class="promise">Studio creativo · Veneto · 2024</span>
+          <h1 class="display">
+            Devono pensare a te. <span class="italic">Per primo.</span>
+          </h1>
+          <p class="hero-sub">
+            Costruiamo la <strong>comunicazione online</strong> delle aziende che vogliono diventare il riferimento del loro settore. Strategia, video, contenuti, social. Niente sponsorizzate facili che si spengono. Un metodo che resta nel tempo.
+          </p>
+          <div class="hero-cta-row">
+            <a href="#parliamone" class="btn btn-solid">
+              <span>Fissa una chiamata gratuita</span>
+              <span class="arrow"></span>
+            </a>
+            <a href="https://wa.me/393484815282" class="secondary" target="_blank" rel="noopener">oppure scrivici su WhatsApp →</a>
+          </div>
+          <div class="hero-trust">
+            <div>
+              <span class="label">Cosa ottieni</span>
+              <div class="slot-line"><strong>30 minuti</strong> di call gratuita <span class="sep">·</span> con Martina <span class="sep">·</span> senza impegno</div>
+            </div>
+            <div>
+              <span class="label">Sede</span>
+              <div class="slot-line">San Donà di Piave (VE) <span class="sep">·</span> Veneto e Italia</div>
+            </div>
+          </div>
+        </div>
+
+        <figure class="hero-video reveal">
+          <video controls preload="metadata" playsinline>
+            <source src="videos/mlp_1_posizionamento.mp4" type="video/mp4" />
+            Il tuo browser non supporta i video HTML5.
+          </video>
+          <figcaption class="video-meta">
+            <span>Guarda · 57s</span>
+            <span>Martina</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <section class="trust-strip">
+    <div class="wrap">
+      <div class="trust-item"><strong>Studio creativo</strong> · non agenzia</div>
+      <div class="trust-item"><strong>Pochi progetti</strong> · trattati come nostri</div>
+      <div class="trust-item">Strategia · contenuti · video · social · paid</div>
+      <div class="trust-item">Sede in <strong>Veneto</strong> · attivi in tutta Italia</div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS GRID (big names) -->
+  <section class="credentials">
+    <div class="wrap">
+      <span class="label">Martina ha lavorato con</span>
+      <div class="credentials-grid">
+        <!-- Per upgrade: sostituire <h3> con <img class="cred-img" src="assets/credentials/<file>.svg|.png" alt="..."> -->
+        <div class="cred-cell">
+          <h3 class="cred-name">Salmo</h3>
+          <span class="cred-meta">Videoclip</span>
+        </div>
+        <div class="cred-cell">
+          <h3 class="cred-name">Orietta Berti</h3>
+          <span class="cred-meta">Videoclip</span>
+        </div>
+        <div class="cred-cell">
+          <h3 class="cred-name">The Kolors</h3>
+          <span class="cred-meta">Videoclip</span>
+        </div>
+        <div class="cred-cell">
+          <h3 class="cred-name">Red Bull</h3>
+          <span class="cred-meta">Eventi</span>
+        </div>
+        <div class="cred-cell">
+          <h3 class="cred-name">Warsteiner</h3>
+          <span class="cred-meta">Eventi</span>
+        </div>
+        <div class="cred-cell">
+          <h3 class="cred-name">Intesa San Paolo</h3>
+          <span class="cred-meta">Tour fotografico</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO / IL CONCETTO -->
+  <section class="concept">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="kicker">Provaci subito</span>
+        <p class="concept-q">
+          Il primo ristorante che ti viene in mente a Jesolo. La prima agenzia immobiliare a San Donà. <span class="italic">A chi pensi?</span>
+        </p>
+        <p class="concept-a reveal">
+          Ecco. Quello è il <span class="italic">posizionamento mentale</span>.
+        </p>
+      </div>
+      <div class="concept-body reveal">
+        <p>Vediamo ogni settimana aziende con il prodotto migliore della zona e una comunicazione online che non sfruttano. Mentre il loro competitor — magari pure meno bravo — pubblica con costanza, parla, si fa vedere, e senza accorgersene sta diventando il primo nome che la gente associa a quel settore.</p>
+        <p>Il posizionamento mentale non si compra con una sponsorizzata che parte domani. Si costruisce nel tempo. E quando ce l'hai, <strong>resta</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: ONESTÀ — clienti domani è una bugia (video MLP_3) -->
+  <section class="section-video">
+    <div class="wrap">
+      <div class="sv-grid">
+        <div class="sv-text reveal">
+          <span class="kicker">Onestà intellettuale</span>
+          <h2>Non ti portiamo clienti <span class="italic">domani.</span></h2>
+          <p>Te lo diciamo subito. Il 90% delle agenzie ti promette lead a 30 giorni e ROI a 60. Se guidi un'azienda strutturata, sai di cosa stiamo parlando.</p>
+          <p>Il problema è uno: quando si spengono le sponsorizzate, tutto sparisce. La tua azienda torna invisibile.</p>
+          <p>Quello che costruiamo noi è diverso. Richiede più tempo perché stiamo costruendo uno spazio mentale: una persona, quando avrà bisogno del tuo prodotto o servizio, penserà subito al tuo nome. Perché ti ha visto, ti ha sentito parlare, sa chi sei. Lo abbiamo costruito attraverso strategia, video, social, contenuti — tutti gli strumenti della comunicazione online che lavorano insieme.</p>
+          <p><strong>Non è la strategia più veloce. È quella che resta quando gli altri spengono il budget.</strong></p>
+        </div>
+        <figure class="sv-video reveal">
+          <video controls preload="metadata" playsinline>
+            <source src="videos/mlp_3_onesta.mp4" type="video/mp4" />
+          </video>
+          <figcaption class="video-meta">Video · 40s</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- INLINE CTA #1 -->
+  <section class="inline-cta reveal">
+    <div class="wrap">
+      <span class="label">Pausa breve</span>
+      <p class="question">Se è il <span class="italic">tuo modo</span> di pensare, parliamone.</p>
+      <a href="#parliamone" class="text-link">
+        <span>Fissa una chiamata gratuita</span>
+        <span class="arrow-min"></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- SECTION: METODO — 3 riunioni (video MLP_2) -->
+  <section class="section-video alt">
+    <div class="wrap">
+      <div class="sv-grid reverse">
+        <div class="sv-text reveal">
+          <span class="kicker">Il Metodo MLP</span>
+          <h2>Tre riunioni senza riprese <span class="italic">prima</span> di accendere la telecamera.</h2>
+          <p>Le agenzie ti propongono pacchetti da otto post al mese, otto reel, otto storie, e poi fino al mese prossimo non ci si vede. A quel punto il contenuto non rappresenta la tua azienda — è un copione standard che ti hanno messo in bocca. E si vede.</p>
+          <p>Il <strong>Metodo MLP</strong> fa l'esatto opposto. Prima di girare un video, prima di scrivere una sola riga di copy, prima di pianificare una campagna paid — studiamo te. Come parli, come si muove la tua azienda, cosa ti fa ridere, quali parole usi sempre senza accorgertene.</p>
+          <p><strong>Perché la comunicazione online funziona solo se è la tua. Non la tua versione patinata.</strong></p>
+        </div>
+        <figure class="sv-video reveal">
+          <video controls preload="metadata" playsinline>
+            <source src="videos/mlp_2_metodo.mp4" type="video/mp4" />
+          </video>
+          <figcaption class="video-meta">Video · 40s</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUMBERS / CASE 133K (video MLP_4) -->
+  <section class="numbers">
+    <div class="wrap">
+      <div class="numbers-grid">
+        <div class="numbers-text reveal">
+          <span class="kicker">Cosa succede quando il metodo funziona</span>
+          <h2>Un solo video. <span class="italic">Centotrentatré</span>mila visualizzazioni.</h2>
+          <p class="lead">Quando abbiamo proposto a un'agenzia immobiliare di San Donà di metterci la faccia nei social, ci hanno guardato come se fossimo matti. Pensavano: vendo case, devo pubblicare le case. Manca lo step prima. La fiducia non si crea pubblicando immobili — si crea facendo vedere chi sei.</p>
+          <div class="numbers-grid-stats">
+            <div class="stat">
+              <div class="figure">133<span class="small">k</span></div>
+              <div class="caption">Visualizzazioni con un solo video, fatto con la nostra strategia</div>
+            </div>
+            <div class="stat">
+              <div class="figure">150<span class="small">+</span></div>
+              <div class="caption">Commenti di persone che chiedevano prezzo, dettagli, informazioni</div>
+            </div>
+          </div>
+        </div>
+        <figure class="sv-video reveal" style="justify-self:center">
+          <video controls preload="metadata" playsinline>
+            <source src="videos/mlp_4_caso.mp4" type="video/mp4" />
+          </video>
+          <figcaption class="video-meta">Video · 38s</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- INLINE CTA #2 -->
+  <section class="inline-cta reveal">
+    <div class="wrap">
+      <span class="label">Stiamo per concludere</span>
+      <p class="question">Una call. <span class="italic">Trenta minuti.</span> Capiamo se possiamo aiutarti.</p>
+      <a href="#parliamone" class="text-link">
+        <span>Fissa una chiamata gratuita</span>
+        <span class="arrow-min"></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- SECTION: TEAM — anti-freelance (video MLP_5) -->
+  <section class="section-video">
+    <div class="wrap">
+      <div class="sv-grid">
+        <div class="sv-text reveal">
+          <span class="kicker">La trappola del dipendente interno</span>
+          <h2>Come puoi affidare la comunicazione a <span class="italic">una sola persona</span>?</h2>
+          <p>Pensaci con un esempio concreto. Vai al ristorante. La stessa persona ti cuoce il piatto, ti sparecchia il tavolo, ti lava i piatti, ti serve. Può essere un servizio di alto livello?</p>
+          <p>Non può.</p>
+          <p>Eppure tante aziende prendono una sola persona — interna o freelance — e le chiedono di fare copywriter, content creator, advertiser, videomaker, editor. Risultato: risultati mediocri.</p>
+        </div>
+        <figure class="sv-video reveal">
+          <video controls preload="metadata" playsinline>
+            <source src="videos/mlp_5_team.mp4" type="video/mp4" />
+          </video>
+          <figcaption class="video-meta">Video · 43s</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- PULL QUOTE — frase signature -->
+  <section class="pullquote">
+    <div class="wrap">
+      <span class="kicker reveal">Il punto</span>
+      <p class="pullquote-text reveal">
+        Quello che investi nella tua azienda è il <span class="italic">valore</span> che le stai dando.
+      </p>
+      <p class="pullquote-attr reveal">— Martina Pasian</p>
+    </div>
+  </section>
+
+  <!-- INCONTRA MARTINA -->
+  <section class="meet">
+    <div class="wrap">
+      <div class="meet-grid">
+        <figure class="meet-photo reveal">
+          <img src="martina.png" alt="Martina Pasian — fondatrice MLP Studio Creativo" />
+        </figure>
+        <div class="meet-text reveal">
+          <span class="kicker">Chi ti risponderà alla call</span>
+          <h2>Sono Martina Pasian. <span class="italic">Faccio</span> video e fotografia da quando ho 14 anni.</h2>
+          <p>Quando lasci il contatto, ti rispondo io. Non un assistente, non un account manager.</p>
+          <ul class="meet-bullets">
+            <li>Laurea in <strong>Scienze della Comunicazione</strong> (test motivazionale: 4.000 candidati, 50 posti)</li>
+            <li>Master in <strong>produzione cinematografica</strong> a Milano</li>
+            <li>Videoclip musicali con <strong>Salmo</strong>, <strong>Orietta Berti</strong>, <strong>The Kolors</strong></li>
+            <li>Eventi con <strong>Red Bull</strong> e <strong>Warsteiner</strong></li>
+            <li>Tour fotografico nazionale per <strong>Intesa San Paolo</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANTI-PITCH (video MLP_6) -->
+  <section class="anti">
+    <div class="wrap">
+      <div class="anti-grid">
+        <div class="reveal">
+          <span class="kicker">Prima che tu prenda l'appuntamento</span>
+          <h2 class="display" style="margin-top:16px;font-size:clamp(28px, 4vw, 48px);">Non siamo per tutti. <span class="italic">Meglio dirlo subito.</span></h2>
+          <figure class="sv-video reveal" style="margin-top:32px;justify-self:start">
+            <video controls preload="metadata" playsinline>
+              <source src="videos/mlp_6_valore.mp4" type="video/mp4" />
+            </video>
+            <figcaption class="video-meta">Video · 55s</figcaption>
+          </figure>
+        </div>
+        <div class="reveal">
+          <div class="anti-list">
+            <div class="anti-item">
+              <span class="x">01 / NO</span>
+              <p class="text"><span class="italic">Pacchetti a prezzi da svendita.</span> Quelle cifre non coprono nemmeno gli strumenti di lavoro. Dire alla tua azienda che vale così poco è il modo più veloce di svalutare quello che hai costruito.</p>
+            </div>
+            <div class="anti-item">
+              <span class="x">02 / NO</span>
+              <p class="text"><span class="italic">Lead a 30 giorni.</span> Esistono agenzie che lo promettono. Noi no, perché sappiamo che non funziona così.</p>
+            </div>
+            <div class="anti-item">
+              <span class="x">03 / NO</span>
+              <p class="text"><span class="italic">Delegare e sparire.</span> Le tre riunioni iniziali servono per davvero. Senza di te in quella stanza, la comunicazione non parte.</p>
+            </div>
+            <div class="anti-item">
+              <span class="x">04 / NO</span>
+              <p class="text"><span class="italic">Video uguali a quelli di tutti.</span> Studiamo il tuo carattere prima di girare. Se quello che esce non sei tu, non lo pubblichiamo.</p>
+            </div>
+          </div>
+          <p class="anti-closing">Guidi un'azienda strutturata. Hai una visione. Sei stanco dell'improvvisazione. — <span class="italic">Allora fissiamo la chiamata.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="wrap">
+      <div class="section-head reveal" style="text-align:center">
+        <span class="kicker" style="justify-content:center">Prima di chiamarci</span>
+        <h2 class="display" style="margin-left:auto;margin-right:auto;text-align:center">Domande <span class="italic">frequenti</span>.</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>Cosa fate esattamente?</span>
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Costruiamo la <strong>comunicazione online</strong> di aziende strutturate. Significa: strategia di posizionamento, contenuti video, gestione social, pianificazione editoriale, campagne paid. Tutto orchestrato come un unico sistema, non come servizi sciolti. Non facciamo siti web né SEO tecnica — per quelli ti indirizziamo a partner di fiducia.
+          </div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>Quanto costa lavorare con MLP?</span>
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Dipende dal progetto. Lavoriamo su pacchetti su misura — ogni azienda ha esigenze diverse, settori diversi, fasi diverse. In call capiamo cosa serve davvero al tuo caso e ti diamo un range preciso. Senza impegno e senza listini standard, perché non funziona così.
+          </div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>Quanto tempo per vedere risultati?</span>
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            <strong>Sei mesi</strong> per vedere i primi segnali concreti. <strong>Due anni</strong> per costruire vero posizionamento mentale. Non promettiamo lead domani perché non funziona così.
+          </div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>Lavorate solo in Veneto?</span>
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            La nostra base è San Donà di Piave. La maggior parte dei clienti è veneta. Per progetti selezionati ci spostiamo in tutta Italia.
+          </div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>Cosa succede dopo che lascio i miei dati?</span>
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Ti scrive Martina <strong>entro 48 ore</strong> con tre orari per la call. La call dura 30 minuti, è su Google Meet o di persona se sei della zona, è gratuita e senza impegno. In call capiamo se siamo il fit giusto e cosa potremmo fare insieme.
+          </div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>Come fate diverso dalle agenzie?</span>
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Pochi clienti per scelta. Tre riunioni di studio del carattere prima di accendere la telecamera. Nessun copione preconfezionato. Risposta diretta dalla fondatrice, non dall'account manager di turno.
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3-STEP PROCESS -->
+  <section class="process-three">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Come funziona dopo</span>
+        <h2 class="display">Tre passaggi. <span class="italic">Niente più.</span></h2>
+      </div>
+      <div class="three-grid">
+        <article class="three-step reveal">
+          <span class="num">01</span>
+          <h3>Lasci il <span class="italic">contatto</span></h3>
+          <p>Compili il form qui sotto. Ti basta un minuto. Solo i dati che servono davvero.</p>
+        </article>
+        <article class="three-step reveal">
+          <span class="num">02</span>
+          <h3>Ti scrive <span class="italic">Martina</span></h3>
+          <p>Entro 48 ore ti scrive direttamente lei con tre orari per la call. 30 minuti su Google Meet o di persona se sei della zona.</p>
+        </article>
+        <article class="three-step reveal">
+          <span class="num">03</span>
+          <h3>Capiamo se <span class="italic">è il momento</span></h3>
+          <p>In call analizziamo la tua azienda e ti diciamo se siamo il fit giusto. Se sì, ti mandiamo una proposta su misura. Se no, te lo diciamo e ti indichiamo chi può aiutarti.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="form-section" id="parliamone">
+    <div class="wrap">
+      <div class="form-grid">
+        <div class="form-intro reveal">
+          <span class="kicker">Il tuo posto per la call</span>
+          <h2>Lascia il contatto. <span class="italic">Ti scrive Martina</span> entro 48 ore.</h2>
+          <p>30 minuti. Gratis. Senza impegno.</p>
+          <p>Capiamo la tua azienda — settore, fase, obiettivi — e ti diciamo se siamo il fit giusto. Se non lo siamo, te lo diciamo — e ti indichiamo chi può aiutarti meglio.</p>
+          <p class="signature">— Martina</p>
+        </div>
+
+        <form class="qualifying reveal" name="call-strategica" method="POST" action="/grazie.html" data-netlify="true" data-netlify-honeypot="bot-field" netlify>
+          <input type="hidden" name="form-name" value="call-strategica" />
+          <p class="hp"><label>Non riempire questo campo: <input name="bot-field" /></label></p>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="nome">Nome e cognome</label>
+              <input type="text" id="nome" name="nome" required autocomplete="name" placeholder="Es. Mario Rossi" />
+            </div>
+            <div class="field">
+              <label for="azienda">Nome azienda</label>
+              <input type="text" id="azienda" name="azienda" required autocomplete="organization" placeholder="Es. Rossi Immobiliare srl" />
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="nome@dominio.it" />
+            </div>
+            <div class="field">
+              <label for="telefono">Telefono / WhatsApp</label>
+              <input type="tel" id="telefono" name="telefono" required autocomplete="tel" placeholder="+39 ..." />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="attivita">Raccontaci il tuo progetto</label>
+            <textarea id="attivita" name="attivita" required placeholder="Es. agenzia immobiliare a San Donà, 8 collaboratori. Vogliamo costruire la nostra comunicazione online da zero — siamo invisibili rispetto ai competitor."></textarea>
+          </div>
+
+          <div class="form-submit">
+            <button type="submit" class="btn btn-solid">
+              <span>Fissa la chiamata</span>
+              <span class="arrow"></span>
+            </button>
+            <p class="form-note">I tuoi dati arrivano via email a Martina. Niente liste, niente automation, niente cinque chiamate al giorno.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="signature">
+      <strong>MLP Studio Creativo</strong><br>
+      Studio creativo · San Donà di Piave (VE) · Veneto<br>
+      <a href="mailto:info@mlpstudiocreativo.com">info@mlpstudiocreativo.com</a> · <a href="tel:+393484815282">+39 348 481 5282</a>
+    </div>
+    <nav>
+      <a href="https://www.mlpstudiocreativo.com">Sito principale</a>
+      <a href="https://instagram.com/mlpstudiocreativo" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://wa.me/393484815282" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+    <div class="colophon">© 2026 · MLP</div>
+  </div>
+</footer>
+
+<script>
+  // Header border on scroll
+  const header = document.getElementById('header');
+  const onScroll = () => {
+    if (window.scrollY > 4) header.classList.add('is-scrolled');
+    else header.classList.remove('is-scrolled');
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    reveals.forEach((el) => io.observe(el));
+  } else {
+    reveals.forEach((el) => el.classList.add('is-visible'));
+  }
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach((item) => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const open = item.classList.toggle('open');
+      q.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) {
+        a.style.maxHeight = a.scrollHeight + 'px';
+      } else {
+        a.style.maxHeight = '0px';
+      }
+    });
+  });
+
+  // Pause other videos when one plays
+  const videos = document.querySelectorAll('video');
+  videos.forEach((v) => {
+    v.addEventListener('play', () => {
+      videos.forEach((other) => { if (other !== v) other.pause(); });
+    });
+  });
+</script>
+
+</body>
+</html>
