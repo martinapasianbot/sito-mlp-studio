@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <title>Grazie — MLP Studio Creativo</title>
-<meta name="description" content="Grazie. Stai per ricevere un'email da Martina entro 48 ore." />
+<meta name="description" content="Grazie. Martina ti chiama entro 48 ore al numero che hai lasciato." />
 <meta name="robots" content="noindex,nofollow" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -138,14 +138,12 @@
     border-top:1px solid var(--paper-2);
   }
   .thank-list li{
-    padding:18px 0;
+    padding:20px 0;
     border-bottom:1px solid var(--paper-2);
     display:grid;
     grid-template-columns:auto 1fr;
-    gap:16px;
+    gap:20px;
     align-items:start;
-    font-size:15px;
-    line-height:1.6;
   }
   .thank-list li::before{
     content:counter(step, decimal-leading-zero);
@@ -154,9 +152,23 @@
     font-size:12px;
     color:var(--muted);
     letter-spacing:0.1em;
-    padding-top:3px;
+    padding-top:5px;
   }
   .thank-list{counter-reset:step}
+  .thank-list .step-title{
+    display:block;
+    font-weight:500;
+    color:var(--ink);
+    font-size:16px;
+    line-height:1.35;
+    margin-bottom:6px;
+  }
+  .thank-list .step-body{
+    display:block;
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.6;
+  }
 
   .thank-photo{
     aspect-ratio:3/4;
@@ -303,15 +315,30 @@
       <div class="thank-grid">
         <div class="thank-text">
           <span class="kicker">Tutto ok</span>
-          <h1 class="display">Stai per ricevere <span class="italic">un'email da me.</span></h1>
+          <h1 class="display"><span class="italic">Ti chiamo io.</span></h1>
           <div class="thank-lead">
             <p>Ciao, sono Martina. Hai appena lasciato i contatti per fissare una chiamata gratuita con MLP. Sarà un piacere conoscerti.</p>
             <p>Cosa succede ora:</p>
           </div>
           <ol class="thank-list">
-            <li>Ti scrivo io <strong>entro 48 ore</strong> con tre orari disponibili per la call.</li>
-            <li>L'email arriva sull'indirizzo che hai inserito. <strong>Controlla anche lo spam</strong> — alcune caselle aziendali sono pignole.</li>
-            <li>La call dura <strong>30 minuti</strong>, è su Google Meet (o di persona se sei della zona), è gratis e non ha impegno.</li>
+            <li>
+              <div>
+                <span class="step-title">Ti chiamo io entro 48 ore</span>
+                <span class="step-body">Ti contatto al numero di cellulare che hai lasciato per concordare un orario per la call.</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="step-title">Se non rispondi, ti scrivo</span>
+                <span class="step-body">Ti mando un messaggio WhatsApp o un'email all'indirizzo che hai inserito. Controlla anche lo spam — alcune caselle aziendali sono pignole.</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span class="step-title">La call dura 30 minuti</span>
+                <span class="step-body">Su Google Meet, oppure di persona se sei della zona. Gratis, senza impegno.</span>
+              </div>
+            </li>
           </ol>
         </div>
 
