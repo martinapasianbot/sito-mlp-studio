@@ -115,11 +115,11 @@
         history.push({ role:'assistant', content: data.reply });
         addBotMessage(data.reply);
       } else {
-        addBotMessage('Scusa, al momento non riesco a rispondere. Puoi scriverci direttamente a info@mlpstudiocreativo.com.');
+        addBotMessage('Scusa, al momento non riesco a rispondere. Puoi scriverci direttamente a mlpstudiocreativo@gmail.com.');
       }
     }).catch(function(){
       typing.remove();
-      addBotMessage('Qualcosa non ha funzionato. Se hai fretta, puoi scriverci a info@mlpstudiocreativo.com o usare il form contatti.');
+      addBotMessage('Qualcosa non ha funzionato. Se hai fretta, puoi scriverci a mlpstudiocreativo@gmail.com o usare il form contatti.');
     }).finally(function(){
       isSending = false;
       sendBtn.disabled = false;
