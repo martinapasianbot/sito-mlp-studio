@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<title>MLP Production — Casa di produzione audiovisiva | MLP Studio Creativo</title>
+<meta name="description" content="MLP Production è la divisione di produzione audiovisiva di MLP Studio Creativo: spot TV, brand video, corporate, videoclip. Strategia, regia e produzione sotto un unico tetto." />
+<meta property="og:title" content="MLP Production — Casa di produzione audiovisiva" />
+<meta property="og:description" content="Spot TV, brand video, corporate e videoclip prodotti in Veneto. Strategia e produzione integrate." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.mlpstudiocreativo.com/production.html" />
+<link rel="canonical" href="https://www.mlpstudiocreativo.com/production.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,800;0,900;1,300;1,400&family=Roboto:ital,wght@0,300;0,400;0,500;0,700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0a0a0a;--paper:#ffffff;--paper-2:#f3f3f3;--muted:#7a7a7a;--line:#0a0a0a}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Nunito Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+    font-weight:300;font-size:16px;line-height:1.6;color:var(--ink);background:var(--paper);
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  a{color:inherit;text-decoration:none}
+  .display{font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;font-weight:300}
+  .italic{font-family:'Nunito Sans',serif;font-weight:200;font-style:normal;color:var(--muted)}
+
+  /* ============== TOPBAR ============== */
+  .topbar{
+    position:sticky;top:0;z-index:50;background:var(--paper);
+    border-bottom:1px solid var(--line);
+    display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+    padding:18px 32px;gap:30px;
+  }
+  .topbar .brand{display:flex;align-items:center;gap:14px}
+  .topbar .brand img{height:22px;width:auto}
+  .topbar .brand-tag{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;line-height:1.3}
+  .topbar .brand-tag strong{color:var(--ink);font-weight:400}
+  .topbar nav{display:flex;gap:28px;justify-content:center}
+  .topbar nav a{
+    font-size:11px;letter-spacing:0.25em;text-transform:uppercase;
+    position:relative;padding:4px 0;
+  }
+  .topbar nav a::after{
+    content:"";position:absolute;left:0;bottom:0;width:100%;
+    height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;
+    transition:transform .4s ease;
+  }
+  .topbar nav a:hover::after{transform:scaleX(1);transform-origin:left}
+  .topbar nav a.current::after{transform:scaleX(1)}
+  .topbar .meta{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);text-align:right}
+  @media (max-width:900px){
+    .topbar{grid-template-columns:1fr auto;gap:12px;padding:14px 20px}
+    .topbar nav{display:none}
+    .topbar .meta{display:none}
+  }
+
+  /* ============== MASTHEAD ============== */
+  .prod-hero{
+    padding:140px 32px 110px;border-bottom:1px solid var(--line);
+    background:var(--ink);color:var(--paper);
+    display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;
+    position:relative;overflow:hidden;
+  }
+  .prod-hero .kicker{font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:32px}
+  .prod-hero h1{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
+    font-weight:300;font-size:clamp(56px,8vw,128px);
+    letter-spacing:-0.04em;line-height:0.92;
+  }
+  .prod-hero h1 .italic{color:rgba(255,255,255,0.55)}
+  .prod-hero .lead{font-size:18px;line-height:1.7;color:rgba(255,255,255,0.75);max-width:48ch}
+  .prod-hero .lead strong{color:var(--paper);font-weight:400}
+  @media (max-width:900px){
+    .prod-hero{grid-template-columns:1fr;gap:32px;padding:80px 20px 60px}
+  }
+
+  /* ============== INTRO COPY ============== */
+  .prod-intro{
+    padding:110px 32px;border-bottom:1px solid var(--paper-2);
+    display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start;
+  }
+  .prod-intro .col-l .label{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+  .prod-intro .col-l h2{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
+    font-weight:300;font-size:clamp(34px,4vw,52px);
+    letter-spacing:-0.02em;line-height:1.05;
+  }
+  .prod-intro .col-r p{font-size:17px;line-height:1.75;color:var(--ink);margin:0 0 18px;max-width:62ch}
+  .prod-intro .col-r p.muted{color:var(--muted)}
+  @media (max-width:900px){
+    .prod-intro{grid-template-columns:1fr;gap:36px;padding:64px 20px}
+  }
+
+  /* ============== SERVIZI PRODUCTION ============== */
+  .prod-svc{
+    display:grid;grid-template-columns:80px 1fr 1fr;gap:64px;
+    padding:100px 32px;border-bottom:1px solid var(--paper-2);
+    align-items:center;
+  }
+  .prod-svc:last-of-type{border-bottom:none}
+  .prod-svc .svc-num{
+    font-size:11px;letter-spacing:0.28em;color:var(--muted);
+    align-self:start;padding-top:8px;
+    font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:300;
+  }
+  .prod-svc .svc-media{
+    aspect-ratio:16/10;background:var(--ink);position:relative;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .prod-svc .svc-media::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 30% 40%, rgba(255,255,255,0.06), transparent 60%);
+  }
+  .prod-svc .svc-media .marker{
+    position:relative;color:rgba(255,255,255,0.18);
+    font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:300;
+    font-size:clamp(80px,10vw,150px);letter-spacing:-0.04em;line-height:1;
+  }
+  .prod-svc:nth-of-type(even) .svc-media{order:1}
+  .prod-svc:nth-of-type(even) .svc-body{order:2}
+  .prod-svc .svc-body{max-width:54ch}
+  .prod-svc .svc-kicker{
+    font-size:10px;letter-spacing:0.28em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:18px;
+  }
+  .prod-svc .svc-title{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
+    font-weight:300;font-size:clamp(36px,4.4vw,62px);
+    letter-spacing:-0.03em;line-height:1;margin:0 0 28px;
+  }
+  .prod-svc .svc-title .italic{font-family:'Nunito Sans',serif;font-weight:200;color:var(--muted)}
+  .prod-svc .svc-desc{font-size:16px;line-height:1.75;color:var(--ink);margin:0 0 22px}
+  .prod-svc .svc-desc-muted{font-size:15px;line-height:1.75;color:var(--muted);margin:0 0 30px}
+  .prod-svc .svc-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--paper-2)}
+  .prod-svc .svc-list li{
+    font-size:11px;letter-spacing:0.18em;text-transform:uppercase;
+    padding:14px 0;border-bottom:1px solid var(--paper-2);
+    display:flex;align-items:center;gap:14px;color:var(--ink);
+    font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:400;
+  }
+  .prod-svc .svc-list li::before{content:"→";color:var(--muted);font-weight:300}
+  @media (max-width:900px){
+    .prod-svc{grid-template-columns:1fr;gap:28px;padding:60px 20px}
+    .prod-svc:nth-of-type(even) .svc-media{order:initial}
+    .prod-svc:nth-of-type(even) .svc-body{order:initial}
+    .prod-svc .svc-num{padding-top:0}
+    .prod-svc .svc-title{font-size:34px}
+  }
+
+  /* ============== PROCESSO ============== */
+  .prod-process{
+    padding:110px 32px;background:var(--paper-2);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
+  .prod-process .head{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;margin-bottom:60px}
+  .prod-process .head .label{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+  .prod-process .head h2{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
+    font-weight:300;font-size:clamp(34px,4vw,52px);
+    letter-spacing:-0.02em;line-height:1.05;
+  }
+  .prod-process .head p{font-size:17px;line-height:1.75;color:var(--ink);max-width:60ch}
+  .prod-process .steps{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:32px;
+  }
+  .prod-process .step{border-top:1px solid var(--line);padding-top:22px}
+  .prod-process .step .n{font-size:10px;letter-spacing:0.28em;color:var(--muted);margin-bottom:14px}
+  .prod-process .step h3{
+    font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:300;
+    font-size:22px;letter-spacing:-0.01em;margin:0 0 12px;
+  }
+  .prod-process .step p{font-size:14px;line-height:1.65;color:var(--muted)}
+  @media (max-width:900px){
+    .prod-process{padding:64px 20px}
+    .prod-process .head{grid-template-columns:1fr;gap:24px;margin-bottom:36px}
+    .prod-process .steps{grid-template-columns:1fr 1fr;gap:20px}
+  }
+
+  /* ============== STANDARD ============== */
+  .prod-standard{
+    padding:110px 32px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;
+  }
+  .prod-standard .col-l .label{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+  .prod-standard .col-l h2{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
+    font-weight:300;font-size:clamp(34px,4vw,52px);
+    letter-spacing:-0.02em;line-height:1.05;
+  }
+  .prod-standard ul{list-style:none;padding:0;margin:0;border-top:1px solid var(--paper-2)}
+  .prod-standard ul li{
+    display:grid;grid-template-columns:80px 1fr;gap:24px;
+    padding:22px 0;border-bottom:1px solid var(--paper-2);
+    font-size:15px;line-height:1.6;
+  }
+  .prod-standard ul li .k{
+    font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:var(--muted);padding-top:3px;
+  }
+  @media (max-width:900px){
+    .prod-standard{grid-template-columns:1fr;gap:32px;padding:64px 20px}
+    .prod-standard ul li{grid-template-columns:1fr;gap:6px}
+  }
+
+  /* ============== CTA ============== */
+  .prod-cta{
+    padding:120px 32px;border-top:1px solid var(--line);
+    display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;
+    background:var(--ink);color:var(--paper);
+  }
+  .prod-cta h3{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
+    font-weight:300;font-size:clamp(36px,4.6vw,68px);
+    letter-spacing:-0.03em;line-height:1;
+  }
+  .prod-cta .italic{color:rgba(255,255,255,0.55)}
+  .prod-cta .btn{
+    font-size:11px;letter-spacing:0.28em;text-transform:uppercase;
+    border:1px solid var(--paper);padding:20px 30px;transition:background .3s,color .3s;
+  }
+  .prod-cta .btn:hover{background:var(--paper);color:var(--ink)}
+  @media (max-width:900px){
+    .prod-cta{grid-template-columns:1fr;padding:64px 20px;gap:24px}
+  }
+
+  /* ============== FOOTER ============== */
+  footer{
+    padding:44px 32px;background:var(--paper-2);
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;
+    font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);
+  }
+  @media (max-width:900px){
+    footer{padding:28px 20px;flex-direction:column;align-items:flex-start}
+  }
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .9s ease,transform .9s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+</style>
+<link rel="stylesheet" href="assets/overlays.css" />
+<script src="assets/overlays.js" defer></script>
+<link rel="stylesheet" href="assets/chat.css" />
+<script src="assets/chat.js" defer></script>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <a href="index.html" class="brand">
+    <img src="logo.svg" alt="MLP Studio Creativo" />
+    <span class="brand-tag"><strong>Studio Creativo</strong>San Donà / Venezia</span>
+  </a>
+  <nav>
+    <a href="services.html">Servizi</a>
+    <a href="production.html" class="current">Production</a>
+    <a href="index.html#portfolio">Portfolio</a>
+    <a href="index.html#about">Studio</a>
+    <a href="index.html#contatti">Contatti</a>
+  </nav>
+  <div class="meta">Production · Vol. I</div>
+</header>
+
+<!-- HERO -->
+<section class="prod-hero">
+  <div>
+    <div class="kicker">— MLP Production · Casa di produzione</div>
+    <h1>Film <span class="italic">&amp;</span><br/>forma.</h1>
+  </div>
+  <p class="lead"><strong>MLP Production</strong> è la divisione di produzione audiovisiva di MLP Studio Creativo. Spot TV, brand video, corporate, videoclip. Strategia, regia e produzione sotto un unico tetto, in Veneto.</p>
+</section>
+
+<!-- INTRO -->
+<section class="prod-intro reveal">
+  <div class="col-l">
+    <div class="label">— 001 · Manifesto</div>
+    <h2>Un film, non un<br/><span class="italic">contenuto.</span></h2>
+  </div>
+  <div class="col-r">
+    <p>Negli ultimi anni il video è diventato la lingua più diffusa del marketing. Anche quella più trascurata: format ripetuti, montaggi di servizio, spot che potrebbero essere di chiunque. MLP Production nasce per fare il contrario.</p>
+    <p>Lavoriamo come una casa di produzione vera — regia, direzione della fotografia, sound design, post — ma con il DNA editoriale dello studio che ci sta dietro. Ogni progetto parte da una domanda di posizionamento, non da una richiesta tecnica.</p>
+    <p class="muted">Il risultato è un film che porta firma, non una clip che galleggia nel feed.</p>
+  </div>
+</section>
+
+<!-- SERVIZI -->
+
+<!-- 01 SPOT TV -->
+<article class="prod-svc reveal">
+  <div class="svc-num">01</div>
+  <div class="svc-body">
+    <div class="svc-kicker">— Advertising</div>
+    <h3 class="svc-title">Spot <span class="italic">TV</span></h3>
+    <p class="svc-desc">Spot pubblicitari per televisione nazionale e locale, web advertising e campagne always-on. Dal concept allo storyboard, dalla regia alla post: 15, 30 o 45 secondi pensati per fermare lo zapping e per vivere su tutte le piattaforme.</p>
+    <p class="svc-desc-muted">Riadattamento nativo in formato 9:16 per social, 1:1 per display, 16:9 per YouTube e broadcast. Un unico shooting, una libreria di formati.</p>
+    <ul class="svc-list">
+      <li>Concept &amp; storyboard</li>
+      <li>Regia &amp; direzione fotografia</li>
+      <li>Cast, location, scenografia</li>
+      <li>Edit, color, sound design</li>
+    </ul>
+  </div>
+  <div class="svc-media"><span class="marker">15"</span></div>
+</article>
+
+<!-- 02 BRAND VIDEO -->
+<article class="prod-svc reveal">
+  <div class="svc-num">02</div>
+  <div class="svc-body">
+    <div class="svc-kicker">— Manifesto</div>
+    <h3 class="svc-title">Brand <span class="italic">Video</span></h3>
+    <p class="svc-desc">Il film che racconta chi è il brand. Manifesto di apertura del sito, video da proiettare in fiera, racconto dell'azienda per investitori, retail o stampa. Un pezzo lungo che dura nel tempo, riutilizzabile per anni.</p>
+    <p class="svc-desc-muted">Lavoriamo a partire dalla scrittura: una voce narrante, una sceneggiatura asciutta, immagini che non riempiono ma fanno respirare. Niente "video aziendale" da archivio.</p>
+    <ul class="svc-list">
+      <li>Sceneggiatura &amp; voce narrante</li>
+      <li>Direzione fotografia cinematografica</li>
+      <li>Sound design originale</li>
+      <li>Versioni 60", 90", 2'</li>
+    </ul>
+  </div>
+  <div class="svc-media"><span class="marker">M.</span></div>
+</article>
+
+<!-- 03 CORPORATE -->
+<article class="prod-svc reveal">
+  <div class="svc-num">03</div>
+  <div class="svc-body">
+    <div class="svc-kicker">— Impresa</div>
+    <h3 class="svc-title">Corporate <span class="italic">&amp; Industrial</span></h3>
+    <p class="svc-desc">Video istituzionali, racconti di fabbrica e di filiera, interviste a fondatori e management, aftermovie di evento, video formazione interna. Tutto quello che racconta l'azienda alle persone che ci lavorano, ai clienti, ai partner.</p>
+    <p class="svc-desc-muted">Approccio documentaristico, non promozionale. Entriamo in azienda con la troupe giusta — leggera o piena — e usciamo con un girato che dura anni.</p>
+    <ul class="svc-list">
+      <li>Video istituzionale</li>
+      <li>Interviste &amp; ritratti d'autore</li>
+      <li>Aftermovie evento</li>
+      <li>Industrial &amp; product film</li>
+    </ul>
+  </div>
+  <div class="svc-media"><span class="marker">Co.</span></div>
+</article>
+
+<!-- 04 VIDEOCLIP -->
+<article class="prod-svc reveal">
+  <div class="svc-num">04</div>
+  <div class="svc-body">
+    <div class="svc-kicker">— Musica</div>
+    <h3 class="svc-title">Video<span class="italic">clip</span></h3>
+    <p class="svc-desc">Videoclip musicali per artisti indipendenti ed etichette. Lavoriamo sul brano prima della scaletta tecnica: che tipo di racconto serve, che cosa il pezzo vuole evocare, dove si gira e con chi. Poi entriamo in produzione.</p>
+    <p class="svc-desc-muted">Esperienza con artisti del panorama italiano contemporaneo, dalla scena rap a quella pop. Conosciamo le tempistiche dei rilasci discografici e le specifiche delle piattaforme.</p>
+    <ul class="svc-list">
+      <li>Trattamento &amp; regia</li>
+      <li>Produzione esecutiva</li>
+      <li>Direzione artistica</li>
+      <li>Post, color grading, master</li>
+    </ul>
+  </div>
+  <div class="svc-media"><span class="marker">♪</span></div>
+</article>
+
+<!-- PROCESSO -->
+<section class="prod-process">
+  <div class="head reveal">
+    <div>
+      <div class="label">— 002 · Metodo</div>
+      <h2>Come lavoriamo.</h2>
+    </div>
+    <p>Una sola squadra dalla prima call alla consegna del master. Niente filiera frammentata, niente subfornitori scollegati: il progetto resta nelle stesse mani dall'inizio alla fine.</p>
+  </div>
+  <div class="steps">
+    <div class="step reveal">
+      <div class="n">— I.</div>
+      <h3>Brief &amp; concept</h3>
+      <p>Capiamo cosa il film deve fare: posizionamento, pubblico, contesto d'uso. Da qui escono trattamento, idea registica, riferimenti visivi.</p>
+    </div>
+    <div class="step reveal">
+      <div class="n">— II.</div>
+      <h3>Pre-produzione</h3>
+      <p>Storyboard, scouting location, casting, scenografia, piano di ripresa. Tutto definito prima di accendere una luce.</p>
+    </div>
+    <div class="step reveal">
+      <div class="n">— III.</div>
+      <h3>Ripresa</h3>
+      <p>Set strutturato con regia, DOP, fonico, scenografia. Attrezzatura cinematografica, droni, optiche professionali.</p>
+    </div>
+    <div class="step reveal">
+      <div class="n">— IV.</div>
+      <h3>Post &amp; consegna</h3>
+      <p>Montaggio, color grading, sound design e composizione originale. Consegna master in tutti i formati richiesti.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STANDARD -->
+<section class="prod-standard reveal">
+  <div class="col-l">
+    <div class="label">— 003 · Standard</div>
+    <h2>Cosa significa<br/><span class="italic">produzione vera.</span></h2>
+  </div>
+  <div class="col-r">
+    <ul>
+      <li>
+        <div class="k">— Regia</div>
+        <div>Una visione che decide ogni inquadratura. Non un operatore che gira "abbastanza materiale".</div>
+      </li>
+      <li>
+        <div class="k">— Cinema</div>
+        <div>Cinepresa, optiche fisse, luci pensate. Non un'unica camera in spalla con preset standard.</div>
+      </li>
+      <li>
+        <div class="k">— Suono</div>
+        <div>Sound design e composizione musicale originale in-house. Niente pacchetti royalty-free.</div>
+      </li>
+      <li>
+        <div class="k">— Crew</div>
+        <div>Troupe completa quando serve, leggera quando basta. Decisione condivisa col brief, non default.</div>
+      </li>
+      <li>
+        <div class="k">— Strategia</div>
+        <div>Lo stesso studio che produce il film disegna come e dove vive. Tagli social inclusi, non aggiunti dopo.</div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="prod-cta">
+  <h3>Un progetto in mente?<br/><span class="italic">Parliamone.</span></h3>
+  <a class="btn" href="index.html#contatti">Scrivici →</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>© 2026 MLP Studio Creativo</div>
+  <div>San Donà di Piave · Venezia</div>
+  <div><a href="mailto:mlpstudiocreativo@gmail.com?subject=MLP%20Production%20%E2%80%94%20Progetto">mlpstudiocreativo@gmail.com</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="carriere.html">Carriere</a></div>
+</footer>
+
+<script>
+  (function(){
+    if('IntersectionObserver' in window){
+      var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:0.12,rootMargin:'0px 0px -50px 0px'});
+      document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+    } else {
+      document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')});
+    }
+  })();
+</script>
+
+</body>
+</html>

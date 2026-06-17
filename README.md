@@ -82,7 +82,7 @@ Carica tutto il contenuto della cartella nella root del tuo hosting (es. `public
 - [x] `robots.txt` pubblicato
 - [x] Meta description in ogni pagina principale
 - [x] Lingua `it` dichiarata
-- [ ] Sostituire il dominio `https://www.mlpstudiocreativo.it/` in `sitemap.xml` e `robots.txt` con quello reale
+- [ ] Sostituire il dominio `https://www.mlpstudiocreativo.com/` in `sitemap.xml` e `robots.txt` con quello reale
 - [ ] Collegare Google Search Console e inviare la sitemap
 - [ ] Aggiungere Open Graph e Twitter Card (consigliato)
 

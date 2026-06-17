@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sostituire con il dominio definitivo quando il sito va online
-Sitemap: https://www.mlpstudiocreativo.it/sitemap.xml
+Sitemap: https://www.mlpstudiocreativo.com/sitemap.xml
