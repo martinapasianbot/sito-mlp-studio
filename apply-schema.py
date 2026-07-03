@@ -13,17 +13,14 @@ from html import unescape
 ROOT = Path(__file__).parent
 SITE_URL = "https://www.mlpstudiocreativo.com"
 
-# Anagrafica MLP
+# Anagrafica MLP — SOLO dati pubblicabili
+# Via Vespucci 21 = residenza fiscale, NON esporre pubblicamente. Idem telefono.
 ORG = {
     "name": "MLP Studio Creativo",
     "email": "mlpstudiocreativo@gmail.com",
-    "street": "Via Vespucci 21",
     "city": "San Donà di Piave",
     "region": "Venezia",
-    "postal": "30027",
     "country": "IT",
-    "lat": "45.6376",   # verificare esatte
-    "lon": "12.5695",   # verificare esatte
     "instagram": "https://www.instagram.com/mlpstudiocreativo/",
     "slogan": "Idee & forma.",
 }
@@ -47,16 +44,9 @@ ORGANIZATION_NODE = f'''{{
       }},
       "address": {{
         "@type": "PostalAddress",
-        "streetAddress": "{ORG['street']}",
         "addressLocality": "{ORG['city']}",
         "addressRegion": "{ORG['region']}",
-        "postalCode": "{ORG['postal']}",
         "addressCountry": "{ORG['country']}"
-      }},
-      "geo": {{
-        "@type": "GeoCoordinates",
-        "latitude": "{ORG['lat']}",
-        "longitude": "{ORG['lon']}"
       }},
       "openingHoursSpecification": [{{
         "@type": "OpeningHoursSpecification",
