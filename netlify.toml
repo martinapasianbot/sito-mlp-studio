@@ -27,10 +27,20 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+[[headers]]
+  for = "/assets/recensioni/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
 # Redirect puliti: rimuove l'estensione .html
 [[redirects]]
   from = "/services"
   to   = "/services.html"
+  status = 200
+
+[[redirects]]
+  from = "/recensioni"
+  to   = "/recensioni.html"
   status = 200
 
 [[redirects]]
