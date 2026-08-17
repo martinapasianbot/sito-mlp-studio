@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Editor — MLP Studio Creativo | Candidature</title>
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,200;1,300&family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0a0a;--ink-soft:#7a7a7a;--paper:#ffffff;--card:#f3f3f3;--line:#e6e6e6;
+    --accent:#0a0a0a;--dark:#0a0a0a;--dark-2:#1a1a1a;--radius:14px;--maxw:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Roboto',Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .mono{font-family:'Roboto Mono',monospace;letter-spacing:.02em}
+  .italic{font-family:'Nunito Sans',serif;font-style:italic;font-weight:200}
+  .eyebrow{font-family:'Roboto Mono',monospace;font-size:.72rem;font-weight:500;text-transform:uppercase;letter-spacing:.24em;color:var(--ink);display:inline-flex;align-items:center;gap:.7em}
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--ink);display:inline-block}
+  h1,h2,h3{font-family:'Nunito Sans','Avenir Light','Avenir Next','Avenir',sans-serif;font-weight:300;line-height:1.05;letter-spacing:-.02em}
+  a{color:inherit}
+  .btn{display:inline-flex;align-items:center;gap:.6em;font-family:'Roboto Mono',monospace;font-weight:500;font-size:.82rem;text-transform:uppercase;letter-spacing:.28em;text-decoration:none;padding:18px 30px;border-radius:0;border:1px solid var(--ink);background:var(--ink);color:#fff;transition:letter-spacing .25s ease, background .25s ease}
+  .btn:hover{letter-spacing:.42em;background:var(--dark-2)}
+  .btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+  .btn--ghost{background:transparent;color:var(--ink)}
+  .btn--ghost:hover{background:var(--ink);color:#fff}
+  .topbar{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+  .brand img{height:32px;width:auto;display:block}
+  .brand-label{font-family:'Nunito Sans',sans-serif;font-weight:400;font-size:.72rem;text-transform:uppercase;letter-spacing:.22em;color:var(--ink-soft)}
+  .topbar .btn{padding:12px 22px;font-size:.68rem;letter-spacing:.22em}
+  .topbar .btn:hover{letter-spacing:.32em}
+  .hero{background:var(--paper);color:var(--ink);position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding-top:96px;padding-bottom:100px}
+  .hero h1{font-size:clamp(2.6rem,5.6vw,4.4rem);font-weight:200;margin:26px 0 24px;letter-spacing:-.03em}
+  .hero h1 em{font-style:italic;font-family:'Nunito Sans',serif;font-weight:200;color:var(--ink-soft)}
+  .hero p.lead{font-size:1.14rem;color:var(--ink-soft);max-width:44ch;font-weight:300}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;align-items:center}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+  .chip{font-family:'Roboto Mono',monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.16em;border:1px solid var(--line);color:var(--ink-soft);padding:8px 14px;border-radius:0;background:var(--card)}
+  .reels{position:relative;height:380px}
+  .reel{position:absolute;width:158px;height:280px;border-radius:4px;background:var(--ink);overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;box-shadow:0 20px 40px rgba(0,0,0,.12)}
+  .reel span{font-family:'Roboto Mono',monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;color:#fff}
+  .reel small{font-size:.62rem;color:#c8c8c8;font-family:'Roboto Mono',monospace;letter-spacing:.1em}
+  .reel::before{content:"";position:absolute;inset:0;opacity:1}
+  .reel.r1{left:4%;top:6%;transform:rotate(-6deg)}
+  .reel.r1::before{background:linear-gradient(160deg,#2a2a2a 0%,#8a8a8a 100%)}
+  .reel.r2{left:32%;top:0;transform:rotate(3deg);z-index:2}
+  .reel.r2::before{background:linear-gradient(160deg,#0a0a0a 0%,#6a6a6a 100%)}
+  .reel.r3{left:58%;top:14%;transform:rotate(9deg)}
+  .reel.r3::before{background:linear-gradient(160deg,#e8e8e8 0%,#3a3a3a 100%)}
+  .reel .tag{position:relative;z-index:2}
+  .reel .play{position:absolute;top:16px;left:16px;z-index:2;width:32px;height:32px;border-radius:50%;border:1px solid #fff;display:flex;align-items:center;justify-content:center}
+  .reel .play::after{content:"";border-left:10px solid #fff;border-top:6px solid transparent;border-bottom:6px solid transparent;margin-left:3px}
+  section{padding:96px 0}
+  .sec-head{max-width:60ch}
+  .sec-head h2{font-size:clamp(1.9rem,3.8vw,2.9rem);font-weight:200;margin:18px 0 14px;letter-spacing:-.02em}
+  .sec-head h2 em{font-style:italic;font-family:'Nunito Sans',serif;font-weight:200;color:var(--ink-soft)}
+  .sec-head p{color:var(--ink-soft);font-size:1.05rem}
+  .about p{font-size:1.18rem;max-width:66ch;color:var(--ink-soft);font-weight:300;line-height:1.65}
+  .about strong{color:var(--ink);font-weight:500}
+  .role{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:40px}
+  .role h3{font-size:1.4rem;margin-bottom:14px;font-weight:300}
+  .role p{color:var(--ink-soft);font-size:1.02rem}
+  .autonomy{margin-top:26px;border-left:2px solid var(--ink);padding:16px 0 16px 22px}
+  .autonomy b{color:var(--ink);font-weight:500}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+  .col{border-radius:var(--radius);padding:34px;border:1px solid var(--line)}
+  .col.no{background:var(--paper)}
+  .col.yes{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .col h3{font-size:1.2rem;margin-bottom:22px;display:flex;align-items:center;gap:10px;font-weight:400}
+  .col ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+  .col li{position:relative;padding-left:30px;font-size:.98rem;line-height:1.55}
+  .col.no li::before{content:"—";position:absolute;left:0;color:var(--ink-soft);font-weight:400}
+  .col.yes li::before{content:"+";position:absolute;left:0;color:#fff;font-weight:400}
+  .col.yes li{color:#e6e6e6}
+  .skillgrid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+  .skillcard{border-radius:var(--radius);padding:34px;border:1px solid var(--line);background:var(--card)}
+  .skillcard .lbl{font-family:'Roboto Mono',monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.22em;color:var(--ink-soft);font-weight:500}
+  .skillcard h3{font-size:1.4rem;margin:8px 0 22px;font-weight:300}
+  .skillcard ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+  .skillcard li{position:relative;padding-left:22px;color:var(--ink-soft);line-height:1.55}
+  .skillcard li::before{content:"→";position:absolute;left:0;color:var(--ink);font-weight:400}
+  .skillcard li b{color:var(--ink);font-weight:500}
+  .req{background:var(--ink);color:#fff}
+  .req .eyebrow{color:#fff}
+  .req .eyebrow::before{background:#fff}
+  .req h2{color:#fff}
+  .req .sec-head p{color:rgba(255,255,255,.75)}
+  .reqgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:38px}
+  .reqcard{background:var(--dark-2);color:#fff;border:1px solid #333;border-radius:12px;padding:26px}
+  .reqcard .k{font-family:'Roboto Mono',monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.18em;color:#999;font-weight:500}
+  .reqcard .v{font-family:'Nunito Sans',sans-serif;font-weight:400;font-size:1.14rem;margin-top:8px;line-height:1.2;color:#fff}
+  .reqcard small{color:#a8a8a8;font-size:.82rem;display:block;margin-top:8px;line-height:1.5}
+  .offergrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:40px}
+  .offer{display:flex;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:26px}
+  .offer .num{font-family:'Roboto Mono',monospace;color:var(--ink);font-weight:500;font-size:.9rem}
+  .offer p{color:var(--ink-soft);line-height:1.55}
+  .offer b{color:var(--ink);font-weight:500}
+  .faq details{border-bottom:1px solid var(--line);padding:6px 0}
+  .faq summary{cursor:pointer;list-style:none;padding:22px 0;font-family:'Nunito Sans',sans-serif;font-weight:400;font-size:1.14rem;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-family:'Roboto Mono',monospace;color:var(--ink);font-size:1.4rem;transition:transform .2s;font-weight:300}
+  .faq details[open] summary::after{transform:rotate(45deg)}
+  .faq details p{color:var(--ink-soft);padding:0 0 22px;max-width:70ch;line-height:1.65}
+  .final{background:var(--ink);color:#fff;text-align:center}
+  .final .eyebrow{color:#fff}
+  .final .eyebrow::before{background:#fff}
+  .final h2{font-size:clamp(2rem,4.6vw,3.4rem);font-weight:200;max-width:20ch;margin:20px auto 18px;letter-spacing:-.02em}
+  .final h2 em{font-style:italic;font-family:'Nunito Sans',serif;font-weight:200;color:#999}
+  .final p{color:#c8c8c8;max-width:48ch;margin:0 auto 36px;font-weight:300}
+  .final .btn{background:#fff;color:var(--ink);border-color:#fff;font-size:.9rem;padding:20px 40px}
+  .final .btn:hover{background:transparent;color:#fff}
+  footer{background:var(--dark-2);color:#999;padding:36px 0;font-family:'Roboto Mono',monospace;font-size:.76rem;letter-spacing:.06em}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:center}
+  footer a{color:#c8c8c8;text-decoration:underline;text-underline-offset:3px}
+  footer a:hover{color:#fff}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (max-width:860px){.hero .wrap{grid-template-columns:1fr;gap:20px}.reels{height:320px;margin-top:24px}.cols,.skillgrid,.offergrid{grid-template-columns:1fr}}
+  @media (max-width:520px){section{padding:64px 0}.reel{width:132px;height:236px}.brand-label{display:none}}
+  @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.btn{transition:none}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a href="/" class="brand" aria-label="MLP Studio Creativo">
+    <img src="/logo.svg" alt="MLP Studio Creativo">
+    <span class="brand-label">Studio Creativo</span>
+  </a>
+  <a href="/carriere.html" class="btn btn--ghost" style="margin-right:10px">← Tutte le posizioni</a>
+  <a href="#candidati" class="btn">Candidati</a>
+</div></div>
+
+<header class="hero"><div class="wrap">
+  <div>
+    <span class="eyebrow">Cerchiamo · Video Editor</span>
+    <h1>Il montaggio è la tua <em>ossessione</em> — e vuoi crescere in uno studio, non montare clip per chiunque.</h1>
+    <p class="lead">Studio creativo giovane e in crescita a San Donà di Piave. Cerchiamo un editor già esperto, con una macchina performante e voglia di costruire con noi.</p>
+    <div class="hero-cta">
+      <a href="#candidati" class="btn">Candidati ora</a>
+      <a href="#ruolo" class="btn btn--ghost">Scopri il ruolo</a>
+    </div>
+    <div class="chips">
+      <span class="chip">Partita IVA</span>
+      <span class="chip">Automunito/a</span>
+      <span class="chip">4 mezze giornate/sett in studio</span>
+      <span class="chip">San Donà di Piave</span>
+      <span class="chip">A progetto</span>
+    </div>
+  </div>
+  <div class="reels" aria-hidden="true">
+    <div class="reel r1"><div class="play"></div><div class="tag"><span>Cut</span><br><small>ritmo</small></div></div>
+    <div class="reel r2"><div class="play"></div><div class="tag"><span>Color</span><br><small>grading</small></div></div>
+    <div class="reel r3"><div class="play"></div><div class="tag"><span>Sub</span><br><small>sottotitoli</small></div></div>
+  </div>
+</div></header>
+
+<section class="about"><div class="wrap reveal">
+  <span class="eyebrow">Chi siamo</span>
+  <div class="sec-head"><h2>Un team giovane <em>che vuole espandersi</em></h2></div>
+  <p>MLP Studio Creativo è uno <strong>studio creativo giovane e in crescita</strong> con base a San Donà di Piave. Siamo un team di circa 5 persone e seguiamo attività del territorio — ristoranti, negozi, hotel, artigiani e PMI del Veneto — su social media, fotografia, video, brand identity e advertising. Contenuti curati e <strong>risultati veri, non numeri gonfiati</strong>.</p>
+</div></section>
+
+<section id="ruolo" style="padding-top:0"><div class="wrap reveal">
+  <div class="role">
+    <span class="eyebrow">Il ruolo</span>
+    <h3>Cosa farai</h3>
+    <p>Monti reel e video social con ritmo e resa alta: color correction, sound design, sottotitoli. Parti dal materiale girato dal team e lo trasformi in contenuti che trattengono l'attenzione.</p>
+    <div class="autonomy"><b>Serve una macchina vera.</b> Il montaggio è pesante: lavori con un computer proprio recente e veloce, non con strumentazione obsoleta.</div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap reveal">
+  <span class="eyebrow">Facciamo chiarezza</span>
+  <div class="sec-head"><h2>Chi cerchiamo <em>(e chi no)</em></h2></div>
+  <div class="cols">
+    <div class="col no"><h3>Non fa per te se…</h3><ul>
+      <li>Sei alle prime armi: cerchiamo chi ha già esperienza reale nel montaggio</li>
+      <li>Cerchi un ruolo solo operativo — ricevi file, monti, consegni — senza voglia di far parte del progetto</li>
+      <li>Sai fare solo tagli base e non hai voglia di spingerti oltre (o di usare l'AI)</li>
+      <li>Consegni sempre in ritardo e pensi sia normale</li>
+    </ul></div>
+    <div class="col yes"><h3>Candidati se…</h3><ul>
+      <li>Hai già esperienza reale nel montaggio e sei operativo/a da subito</li>
+      <li>Monti reel e short con ritmo e resa alta</li>
+      <li>Curi color correction, sound design e sottotitoli</li>
+      <li>Reggi bene più progetti in parallelo rispettando le deadline</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap reveal">
+  <span class="eyebrow">Competenze</span>
+  <div class="sec-head"><h2>Cosa devi <em>saper fare</em></h2></div>
+  <div class="skillgrid">
+    <div class="skillcard"><span class="lbl">Hard skills</span><h3>Le mani sul lavoro</h3><ul>
+      <li>Montaggio video per social (reel, short) con ritmo e resa alta — con esperienza reale</li>
+      <li>Padronanza di CapCut</li>
+      <li>Color correction, sound design, sottotitoli, gestione del ritmo</li>
+      <li>Realizzazione di grafiche/miniature con Canva</li>
+    </ul></div>
+    <div class="skillcard"><span class="lbl">Soft skills</span><h3>La testa giusta</h3><ul>
+      <li><b>Problem solving</b></li>
+      <li>Precisione e cura del dettaglio</li>
+      <li>Gestione di più progetti in parallelo, rispetto delle deadline</li>
+      <li>Voglia di imparare e usare l'<b>intelligenza artificiale</b> nel lavoro</li>
+      <li>Ti adatti ai <b>sistemi e ai processi</b> dello studio</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section class="req"><div class="wrap reveal">
+  <span class="eyebrow">Requisiti non negoziabili</span>
+  <div class="sec-head"><h2>Senza questi, <em>non proseguire</em></h2><p>Sono paletti fissi: leggili prima di candidarti.</p></div>
+  <div class="reqgrid">
+    <div class="reqcard"><div class="k">01</div><div class="v">Esperienza</div><small>Reale nel montaggio, operativo/a da subito</small></div>
+    <div class="reqcard"><div class="k">02</div><div class="v">Partita IVA</div><small>Già aperta o in apertura a brevissimo</small></div>
+    <div class="reqcard"><div class="k">03</div><div class="v">Automunito/a</div><small>Incontri clienti/set in zona (VE)</small></div>
+    <div class="reqcard"><div class="k">04</div><div class="v">Presenza in studio</div><small>4 mezze giornate/settimana — per il team</small></div>
+    <div class="reqcard"><div class="k">05</div><div class="v">Dedizione al progetto</div><small>Non full-time ma quasi — chi ha troppi progetti in parallelo non è in target</small></div>
+    <div class="reqcard"><div class="k">04</div><div class="v">CapCut · iPhone · Canva</div><small>Obbligatori per il ruolo</small></div>
+    <div class="reqcard"><div class="k">05</div><div class="v">Computer veloce</div><small>Recente e performante — il montaggio è pesante</small></div>
+  </div>
+</div></section>
+
+<section><div class="wrap reveal">
+  <span class="eyebrow">Cosa otterrai</span>
+  <div class="sec-head"><h2>Perché <em>lavorare con noi</em></h2></div>
+  <div class="offergrid">
+    <div class="offer"><span class="num">01</span><p><b>Flusso costante di progetti reali</b> su cui affinare la mano.</p></div>
+    <div class="offer"><span class="num">02</span><p>Uno <b>studio giovane in crescita</b> dove prendere spazio e responsabilità.</p></div>
+    <div class="offer"><span class="num">03</span><p><b>Metodo, materiale di qualità, formazione e feedback.</b></p></div>
+    <div class="offer"><span class="num">04</span><p>Un <b>team di circa 5 persone</b> affiatato, non un freelance isolato.</p></div>
+  </div>
+</div></section>
+
+<section class="faq" style="padding-top:0"><div class="wrap reveal">
+  <span class="eyebrow">Domande frequenti</span>
+  <div class="sec-head"><h2>Prima di <em>candidarti</em></h2></div>
+  <div style="margin-top:26px">
+    <details><summary>Si lavora da remoto?</summary><p>No, non del tutto: presenza in studio per il confronto col team e, quando serve, sul set in zona. Serve essere automuniti.</p></details>
+    <details><summary>Serve la Partita IVA?</summary><p>Sì. È una collaborazione a progetto in P.IVA: va bene se ce l'hai già o se sei in procinto di aprirla a brevissimo.</p></details>
+    <details><summary>Che computer serve?</summary><p>Uno recente e veloce: il montaggio è pesante e con macchine obsolete non si lavora. L'attrezzatura è tua.</p></details>
+    <details><summary>Serve esperienza?</summary><p>Sì, cerchiamo editor già esperti e operativi. In più: apertura all'intelligenza artificiale e capacità di adattarti ai nostri processi.</p></details>
+    <details><summary>Come funziona il compenso?</summary><p>È definito in base alla tua esperienza. Ne parliamo con chiarezza in fase di colloquio.</p></details>
+  </div>
+</div></section>
+
+<section class="final"><div class="wrap">
+  <span class="eyebrow">Candidature aperte</span>
+  <h2>Ti riconosci? <em>Candidati.</em></h2>
+  <p>Compila il modulo: pochi minuti, domande dirette. Le candidature via email o DM non vengono valutate.</p>
+  <a href="#candidati" class="btn">Compila il modulo</a>
+</div></section>
+
+<section id="candidati" style="border-top:1px solid var(--line);padding-top:80px"><div class="wrap reveal">
+  <span class="eyebrow">Modulo candidatura</span>
+  <div class="sec-head"><h2>Mandaci il tuo <em>profilo</em></h2><p>Compila con qualche info su di te, allega CV e — se ce l'hai — portfolio o link al tuo lavoro. Rispondiamo entro 15 giorni.</p></div>
+  <form action="https://formsubmit.co/mlpstudiocreativo@gmail.com" method="POST" enctype="multipart/form-data" class="apply-form">
+    <input type="hidden" name="_subject" value="Nuova candidatura — Video Editor · sito MLP">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://www.mlpstudiocreativo.com/carriere.html?ok=1">
+    <input type="hidden" name="ruolo" value="Video Editor">
+    <input type="text" name="_honey" class="hp" tabindex="-1" aria-hidden="true" autocomplete="off">
+
+    <div class="row">
+      <label><span>Nome e cognome *</span><input type="text" name="nome" required autocomplete="name"></label>
+      <label><span>Email *</span><input type="email" name="email" required autocomplete="email"></label>
+    </div>
+    <div class="row">
+      <label><span>Cellulare *</span><input type="tel" name="cellulare" required autocomplete="tel" pattern="[0-9 +\-()]{7,}" placeholder="+39 ..."></label>
+      <label><span>Città di residenza *</span><input type="text" name="citta" required placeholder="Es. San Donà di Piave"></label>
+    </div>
+    <div class="row">
+      <label><span>Anni di esperienza *</span>
+        <select name="esperienza" required>
+          <option value="">Seleziona...</option>
+          <option>0 — 1 anno</option>
+          <option>1 — 3 anni</option>
+          <option>3 — 5 anni</option>
+          <option>Oltre 5 anni</option>
+        </select>
+      </label>
+      <label><span>Partita IVA</span>
+        <select name="piva" required>
+          <option value="">Seleziona...</option>
+          <option>Sì, già aperta</option>
+          <option>In apertura a breve</option>
+          <option>No</option>
+        </select>
+      </label>
+    </div>
+    <label class="row-1"><span>Portfolio o link al lavoro</span><input type="url" name="portfolio" placeholder="https://... (Behance, Dribbble, sito, IG, Drive)" autocomplete="url"></label>
+    <label class="row-1 file"><span>Carica il CV *</span><input type="file" name="cv" required accept=".pdf,.doc,.docx"><small>PDF preferito. Max 10 MB.</small></label>
+    <label class="row-1"><span>Raccontaci perché MLP *</span><textarea name="note" required placeholder="Cosa ti ha colpito dello studio, su quali progetti vorresti lavorare, cosa porti che ancora non abbiamo. Va bene anche corta, ma onesta."></textarea></label>
+
+    <label class="consent"><input type="checkbox" name="privacy" required><span>Ho letto la <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a> e autorizzo MLP Studio Creativo al trattamento dei miei dati personali per finalità di selezione del personale, ai sensi del Reg. UE 2016/679. *</span></label>
+
+    <div class="submit-row">
+      <button type="submit" class="btn">Invia candidatura</button>
+      <span class="smallprint">Conserviamo CV e dati per massimo 24 mesi. Puoi chiederne la cancellazione scrivendo a mlpstudiocreativo@gmail.com.</span>
+    </div>
+  </form>
+</div></section>
+
+<style>
+  .apply-form{display:flex;flex-direction:column;gap:22px;margin-top:40px;max-width:720px}
+  .apply-form .row{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .apply-form label{display:flex;flex-direction:column;gap:8px}
+  .apply-form label > span{font-family:'Roboto Mono',monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.22em;color:var(--ink-soft);font-weight:500}
+  .apply-form input[type=text],.apply-form input[type=email],.apply-form input[type=tel],.apply-form input[type=url],.apply-form select,.apply-form textarea{font-family:inherit;font-size:15px;font-weight:300;color:var(--ink);background:transparent;border:none;border-bottom:1px solid var(--ink);padding:10px 0;outline:none;transition:border-color .2s}
+  .apply-form input:focus,.apply-form select:focus,.apply-form textarea:focus{border-bottom-width:2px}
+  .apply-form textarea{min-height:130px;resize:vertical;line-height:1.6}
+  .apply-form select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);background-position:calc(100% - 14px) calc(50% - 2px),calc(100% - 8px) calc(50% - 2px);background-size:6px 6px,6px 6px;background-repeat:no-repeat;padding-right:28px}
+  .apply-form .file input[type=file]{font-family:inherit;font-size:13px;color:var(--ink-soft);padding:14px 18px;background:var(--card);border:1px dashed var(--ink);cursor:pointer;margin-top:6px}
+  .apply-form .file input[type=file]::file-selector-button{margin-right:16px;padding:8px 14px;background:var(--ink);color:#fff;border:none;font-family:inherit;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;cursor:pointer}
+  .apply-form .file small{font-size:12px;color:var(--ink-soft);margin-top:6px}
+  .apply-form .consent{display:flex;flex-direction:row;gap:14px;align-items:flex-start;font-size:13px;line-height:1.6;color:var(--ink-soft);margin-top:8px}
+  .apply-form .consent input{margin-top:4px;flex-shrink:0;width:16px;height:16px;accent-color:var(--ink)}
+  .apply-form .consent > span{font-family:inherit;text-transform:none;letter-spacing:0;font-size:13px;color:var(--ink-soft);font-weight:300}
+  .apply-form .consent a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+  .apply-form .hp{position:absolute;left:-10000px;width:1px;height:1px;opacity:0}
+  .apply-form .submit-row{margin-top:20px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+  .apply-form button{cursor:pointer}
+  .apply-form .smallprint{font-size:12px;color:var(--ink-soft);max-width:46ch;line-height:1.6}
+  @media (max-width:700px){.apply-form .row{grid-template-columns:1fr}}
+</style>
+<footer><div class="wrap">
+  <span>MLP Studio Creativo — San Donà di Piave (VE)</span>
+  <span>Video Editor · Collaborazione a progetto in P.IVA · <a href="https://www.mlpstudiocreativo.com/privacy.html">Privacy</a></span>
+</div></footer>
+
+<script>
+  const io=new IntersectionObserver((e)=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
