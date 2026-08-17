@@ -296,8 +296,9 @@
         </select>
       </label>
     </div>
-    <label class="row-1"><span>Portfolio o link al lavoro</span><input type="url" name="portfolio" placeholder="https://... (Behance, Dribbble, sito, IG, Drive)" autocomplete="url"></label>
-    <label class="row-1 file"><span>Carica il CV *</span><input type="file" name="cv" required accept=".pdf,.doc,.docx"><small>PDF preferito. Max 10 MB.</small></label>
+    <label class="row-1 file"><span>Carica il CV (solo PDF) *</span><input type="file" name="cv" required accept="application/pdf,.pdf"><small>Solo PDF. Max 10 MB.</small></label>
+    <label class="row-1 file"><span>Carica il portfolio (solo PDF) *</span><input type="file" name="portfolio_file" required accept="application/pdf,.pdf"><small>Solo PDF. Max 10 MB.</small></label>
+    <label class="row-1"><span>Link al portfolio (facoltativo)</span><input type="url" name="portfolio_link" placeholder="https://... (sito, Behance, Drive, IG)" autocomplete="url"></label>
     <label class="row-1"><span>Raccontaci perché MLP *</span><textarea name="note" required placeholder="Cosa ti ha colpito dello studio, su quali progetti vorresti lavorare, cosa porti che ancora non abbiamo. Va bene anche corta, ma onesta."></textarea></label>
 
     <label class="consent"><input type="checkbox" name="privacy" required><span>Ho letto la <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a> e autorizzo MLP Studio Creativo al trattamento dei miei dati personali per finalità di selezione del personale, ai sensi del Reg. UE 2016/679. *</span></label>
