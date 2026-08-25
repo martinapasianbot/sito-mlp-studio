@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /project-works/
 
 Sitemap: https://www.mlpstudiocreativo.com/sitemap.xml
