@@ -19,10 +19,9 @@ sito-mlp-studio/
 ├── vercel.json             # Config deploy Vercel
 ├── .gitignore              # File ignorati da git
 ├── README.md               # Questo file
-└── projects/               # 27 case study
-    ├── alfabeto-nord.html
-    ├── amaro-selvatico.html
-    ├── ... (altri 25 progetti)
+└── projects/               # 13 case study
+    ├── biys.html
+    ├── ... (altri 12 progetti)
     └── img/                # Immagini dei progetti
         ├── biys/
         ├── de-piccoli/
