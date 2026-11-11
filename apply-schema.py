@@ -14,7 +14,7 @@ ROOT = Path(__file__).parent
 SITE_URL = "https://www.mlpstudiocreativo.com"
 
 # Anagrafica MLP — SOLO dati pubblicabili
-# Via Vespucci 21 = residenza fiscale, NON esporre pubblicamente. Idem telefono.
+# Solo indirizzo pubblico: San Donà di Piave (Venezia). Niente telefono.
 ORG = {
     "name": "MLP Studio Creativo",
     "email": "mlpstudiocreativo@gmail.com",

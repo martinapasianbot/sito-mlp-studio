@@ -47,3 +47,7 @@ sito-mlp-studio.zip
 .dev.vars*
 !.dev.vars.example
 !.env.example
+
+# Lavori in corso, non pubblicare
+redesign-2027/
+LOCAL-SEO-KIT.md
