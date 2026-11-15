@@ -133,3 +133,12 @@
   .mlp-chat-fab,.mlp-chat{transition:opacity .2s ease !important}
   .mlp-chat-fab .mlp-chat-pulse::after{animation:none}
 }
+
+/* consenso prima di scrivere (assistente.js) */
+.mlp-chat-consent{padding:14px 16px 16px;border-top:1px solid #eee;background:#fff;flex-shrink:0;display:flex;flex-direction:column;gap:10px}
+.mlp-chat-consent p{margin:0;font-size:12px;line-height:1.5;color:#555}
+.mlp-chat-consent a{color:#0a0a0a;text-decoration:underline;text-underline-offset:2px}
+.mlp-chat-accept{align-self:flex-start;background:#0a0a0a;color:#fff;border:none;border-radius:10px;padding:10px 16px;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+.mlp-chat-accept:hover{background:#1a1a1a}
+.mlp-chat-accept:focus-visible,.mlp-chat-input textarea:focus-visible,.mlp-chat-input button:focus-visible{outline:2px solid #0a0a0a;outline-offset:2px}
+.mlp-chat [hidden]{display:none !important}
