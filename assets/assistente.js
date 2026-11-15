@@ -43,7 +43,7 @@
         '</div>'+
         '<div class="mlp-chat-body" aria-live="polite"></div>'+
         '<div class="mlp-chat-consent">'+
-          '<p>Le risposte sono scritte da un assistente con intelligenza artificiale. I dati che inserisci (nome, azienda, email e informazioni sul progetto) servono solo a ricontattarti e a organizzare la call. <a href="/privacy.html#assistente" target="_blank" rel="noopener">Informativa privacy</a></p>'+
+          '<p>Le risposte sono scritte da un assistente con intelligenza artificiale. I dati che inserisci (nome, azienda, email e informazioni sul progetto) servono solo a ricontattarti e a organizzare la call. La conversazione viene archiviata per 24 mesi. <a href="/privacy.html#assistente" target="_blank" rel="noopener">Informativa privacy</a></p>'+
           '<button type="button" class="mlp-chat-accept">Ho letto, iniziamo</button>'+
         '</div>'+
         '<div class="mlp-chat-input" hidden>'+
@@ -117,7 +117,7 @@
     fetch(API_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ messages: history.slice(-30), cid: cid, consenso: true })
+      body: JSON.stringify({ messages: history.slice(-30), cid: cid, consenso: true, pagina: location.pathname })
     }).then(function(r){ return r.json(); }).then(function(data){
       typing.remove();
       if(data && data.reply){
