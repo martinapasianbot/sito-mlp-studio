@@ -3,7 +3,7 @@
 
   // Chat del sito MLP Studio Creativo. Server: Cloudflare Worker "mlp-assistente" (~/Developer/mlp-assistente).
   // Si attiva sulle pagine che caricano questo file. Stile in assets/chat.css (+ regole consenso in fondo a quel file).
-  var API_URL = 'https://mlp-assistente.martinapasianbot.workers.dev/chat';
+  var API_URL = 'https://mlp-assistente.mlpstudiocreativo.workers.dev/chat';
 
   var GREETING = "Ciao, sono l’assistente di MLP Studio Creativo. Posso raccontarti cosa facciamo e, se hai un progetto, fissarti una call gratuita di 30 minuti con Martina. Di cosa ti occupi?";
   var FAB_DELAY_MS = 6000;
