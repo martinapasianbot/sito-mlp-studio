@@ -4,8 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-<title>Forte 48 — MLP Studio Creativo</title>
-<meta name="description" content="Caso studio: Forte 48 — Comunicazione social, foto e video per l'Hotel Ristorante Forte del 48 di San Donà di Piave: piatti, vini e serate a tema." />
+<title>Hotel Ristorante Forte del 48, social — MLP Studio Creativo</title>
+<meta name="description" content="Caso studio Hotel Ristorante Forte del 48, San Donà di Piave: il piatto e la stagione al centro, shooting, eventi e campagne per le nuove camere." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,800;0,900;1,300;1,400&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
@@ -55,7 +55,7 @@
   .project-hero .lead{font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;font-weight:300;font-size:clamp(20px,2.4vw,32px);line-height:1.35;letter-spacing:-0.015em;max-width:62ch;margin-top:30px;color:var(--ink)}
 
   /* COVER */
-  .cover{height:72vh;min-height:520px;border-bottom:1px solid var(--line);background:#0a0a0a url('img/forte48/forte48-hero.jpg') center 22%/cover;display:flex;align-items:flex-end;padding:32px;color:var(--paper);position:relative;overflow:hidden}
+  .cover{height:72vh;min-height:520px;border-bottom:1px solid var(--line);background:#0a0a0a;display:flex;align-items:flex-end;padding:32px;color:var(--paper);position:relative;overflow:hidden}
   .cover::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.1) 60%,rgba(0,0,0,0.75) 100%)}
   .cover .cover-cap{position:relative;z-index:2;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;opacity:0.9;color:#fff}
 
@@ -336,15 +336,67 @@
     .next{grid-template-columns:1fr;text-align:left;gap:14px;padding:50px 20px}
     .next .arr{font-size:28px}
   }
+
+  /* MaDe — estensioni pagina */
+  .gallery .gi.color{filter:none}
+  .gallery .gi.color:hover{filter:none}
+  .gallery .gi.tall{aspect-ratio:auto}
+  .gallery .contain{background-size:auto 84%;background-position:center 30%;background-repeat:no-repeat;background-color:#e9e7e3}
+  .gallery .cap{position:absolute;left:0;bottom:0;padding:14px 18px;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:#fff;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.55));width:100%;z-index:2}
+  .gallery .cap.dk{color:#0a0a0a;background:none}
+  .chapter{padding:70px 32px 40px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:start}
+  .chapter .num{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted)}
+  .chapter h2{font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;font-weight:300;font-size:clamp(30px,3.8vw,48px);letter-spacing:-0.03em;line-height:1.08;margin-bottom:20px}
+  .chapter h2 .italic{font-family:'Nunito Sans',serif;font-weight:200;color:var(--muted)}
+  .chapter p{font-size:16px;line-height:1.75;margin-bottom:14px;max-width:62ch}
+  .mk-stat.brand{background:#7a1f4a;color:#fff}
+  .mk-stat.brand .lbl{color:rgba(255,255,255,0.75)}
+  .mk-stat.brand .big em{color:rgba(255,255,255,0.7)}
+  .mk-quote.brand{background:#7a1f4a}
+  .mk-quote.brand .tag{color:rgba(255,255,255,0.7)}
+  .mk-quote.brand .body em{color:#f2c9dc}
+  .browser{background:#e9e7e3;padding:28px;display:flex;align-items:center;justify-content:center}
+  .browser .win{width:100%;background:#fff;box-shadow:0 24px 60px rgba(0,0,0,0.18);border:1px solid #d6d3ce}
+  .browser .bar{height:26px;display:flex;align-items:center;gap:6px;padding:0 10px;border-bottom:1px solid #e3e0db;background:#f6f5f3}
+  .browser .bar i{width:8px;height:8px;border-radius:50%;background:#cfcac3;display:block}
+  .browser .bar span{margin-left:10px;font-size:9px;letter-spacing:0.12em;color:var(--muted)}
+  .browser img{width:100%;height:auto}
+  @media (max-width:900px){
+    .chapter{grid-template-columns:1fr;gap:16px;padding:50px 20px 30px}
+    .browser{padding:14px}
+    .gallery .gi.tall{aspect-ratio:3/4}
+  }
+
+  /* Casi studio — estensioni */
+  .cover .cover-bg{position:absolute;inset:-60px;background-size:cover;background-position:center;filter:blur(38px) brightness(.55);z-index:0}
+  .cover .cover-fg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .cover.portrait .cover-fg{left:50%;width:auto;max-width:100%;transform:translateX(-50%);object-fit:contain}
+  .cover::before{z-index:1}
+  .gallery .gi img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+  .gallery .ar-4-5{aspect-ratio:4/5}
+  .gallery .mk-stat.sm .big{font-size:clamp(38px,5vw,84px)}
+  .chapter h3,.grid-2 h3{font-family:'Roboto',sans-serif;font-weight:500;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);margin:26px 0 10px}
+  .chapter ul,.grid-2 ul{margin:0 0 16px 18px;max-width:62ch;font-size:16px;line-height:1.7}
+  .chapter li,.grid-2 li{margin-bottom:6px}
+  .chapter p strong,.grid-2 p strong{font-weight:500}
+  .results .grid.gx .cell{border-right:1px solid var(--paper-2);border-bottom:1px solid var(--paper-2)}
+  .results .grid.gx .cell.lc{border-right:none}
+  .results .grid.gx .cell.lr{border-bottom:none}
+  .results .cell .big.sm{font-size:clamp(32px,3.6vw,56px)}
+  @media (max-width:900px){
+    .results{padding:60px 20px}
+    .results .grid.gx{grid-template-columns:repeat(2,1fr)}
+    .results .grid.gx .cell,.results .grid.gx .cell.lc,.results .grid.gx .cell.lr{border-right:1px solid var(--paper-2);border-bottom:1px solid var(--paper-2)}
+    .cover{height:60vh;min-height:380px}
+  }
 </style>
+
 <link rel="stylesheet" href="../assets/overlays.css" />
 <script src="../assets/overlays.js" defer></script>
 <link rel="stylesheet" href="../assets/chat.css" />
 <script src="../assets/assistente.js" defer></script>
 
-
-
-<!-- SEO: JSON-LD + OG (claude-seo) -->
+<!-- SEO: JSON-LD + OG -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -353,33 +405,63 @@
       "@type": "WebPage",
       "@id": "https://www.mlpstudiocreativo.com/projects/forte48.html#webpage",
       "url": "https://www.mlpstudiocreativo.com/projects/forte48.html",
-      "name": "Forte 48 — MLP Studio Creativo",
-      "description": "Caso studio: Forte 48 — Comunicazione social, foto e video per l'Hotel Ristorante Forte del 48 di San Donà di Piave: piatti, vini e serate a tema.",
-      "isPartOf": {"@id": "https://www.mlpstudiocreativo.com/#website"},
+      "name": "Hotel Ristorante Forte del 48, social — MLP Studio Creativo",
+      "description": "Caso studio Hotel Ristorante Forte del 48, San Donà di Piave: il piatto e la stagione al centro, shooting, eventi e campagne per le nuove camere.",
+      "isPartOf": {
+        "@id": "https://www.mlpstudiocreativo.com/#website"
+      },
       "inLanguage": "it-IT",
-      "breadcrumb": {"@id": "https://www.mlpstudiocreativo.com/projects/forte48.html#breadcrumb"}
+      "breadcrumb": {
+        "@id": "https://www.mlpstudiocreativo.com/projects/forte48.html#breadcrumb"
+      }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.mlpstudiocreativo.com/projects/forte48.html#breadcrumb",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.mlpstudiocreativo.com/"},
-        {"@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://www.mlpstudiocreativo.com/#portfolio"},
-        {"@type": "ListItem", "position": 3, "name": "Forte 48", "item": "https://www.mlpstudiocreativo.com/projects/forte48.html"}
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.mlpstudiocreativo.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Portfolio",
+          "item": "https://www.mlpstudiocreativo.com/#portfolio"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Hotel Ristorante Forte del 48",
+          "item": "https://www.mlpstudiocreativo.com/projects/forte48.html"
+        }
       ]
     },
     {
       "@type": "CreativeWork",
       "@id": "https://www.mlpstudiocreativo.com/projects/forte48.html#creativework",
-      "name": "Forte 48 — MLP Studio Creativo",
-      "headline": "Forte 48 — MLP Studio Creativo",
-      "description": "Caso studio: Forte 48 — Comunicazione social, foto e video per l'Hotel Ristorante Forte del 48 di San Donà di Piave: piatti, vini e serate a tema.",
+      "name": "Hotel Ristorante Forte del 48",
+      "headline": "Hotel Ristorante Forte del 48, social",
+      "description": "Caso studio Hotel Ristorante Forte del 48, San Donà di Piave: il piatto e la stagione al centro, shooting, eventi e campagne per le nuove camere.",
       "url": "https://www.mlpstudiocreativo.com/projects/forte48.html",
+      "image": "https://www.mlpstudiocreativo.com/projects/img/hotel-forte-48/hotel-forte-48-caso-og.jpg",
       "inLanguage": "it-IT",
-      "creator": {"@id": "https://www.mlpstudiocreativo.com/#organization"},
-      "author": {"@id": "https://www.mlpstudiocreativo.com/#organization"},
-      "publisher": {"@id": "https://www.mlpstudiocreativo.com/#organization"},
-      "about": {"@type": "Organization", "name": "Forte 48"}
+      "dateCreated": "2026",
+      "creator": {
+        "@id": "https://www.mlpstudiocreativo.com/#organization"
+      },
+      "author": {
+        "@id": "https://www.mlpstudiocreativo.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://www.mlpstudiocreativo.com/#organization"
+      },
+      "about": {
+        "@type": "Organization",
+        "name": "Hotel Ristorante Forte del 48"
+      }
     }
   ]
 }
@@ -387,24 +469,23 @@
 <link rel="canonical" href="https://www.mlpstudiocreativo.com/projects/forte48.html" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mlpstudiocreativo.com/projects/forte48.html" />
-<meta property="og:title" content="Forte 48 — MLP Studio Creativo" />
-<meta property="og:description" content="Caso studio: Forte 48 — Comunicazione social, foto e video per l'Hotel Ristorante Forte del 48 di San Donà di Piave: piatti, vini e serate a tema." />
-<meta property="og:image" content="https://www.mlpstudiocreativo.com/logo.svg" />
+<meta property="og:title" content="Hotel Ristorante Forte del 48, social — MLP Studio Creativo" />
+<meta property="og:description" content="Caso studio Hotel Ristorante Forte del 48, San Donà di Piave: il piatto e la stagione al centro, shooting, eventi e campagne per le nuove camere." />
+<meta property="og:image" content="https://www.mlpstudiocreativo.com/projects/img/hotel-forte-48/hotel-forte-48-caso-og.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:locale" content="it_IT" />
 <meta property="og:site_name" content="MLP Studio Creativo" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Forte 48 — MLP Studio Creativo" />
-<meta name="twitter:description" content="Caso studio: Forte 48 — Comunicazione social, foto e video per l'Hotel Ristorante Forte del 48 di San Donà di Piave: piatti, vini e serate a tema." />
-<meta name="twitter:image" content="https://www.mlpstudiocreativo.com/logo.svg" />
+<meta name="twitter:title" content="Hotel Ristorante Forte del 48, social — MLP Studio Creativo" />
+<meta name="twitter:description" content="Caso studio Hotel Ristorante Forte del 48, San Donà di Piave: il piatto e la stagione al centro, shooting, eventi e campagne per le nuove camere." />
+<meta name="twitter:image" content="https://www.mlpstudiocreativo.com/projects/img/hotel-forte-48/hotel-forte-48-caso-og.jpg" />
 <!-- /SEO -->
 </head>
 <body>
 
   <div class="cursor" id="cursor"></div>
 
-  <!-- TOPBAR -->
   <header class="topbar">
     <a href="../index.html" class="brand">
       <img src="../logo.svg" alt="MLP Studio Creativo" />
@@ -416,103 +497,114 @@
       <a href="../index.html#about">Studio</a>
       <a href="../index.html#contatti">Contatti</a>
     </nav>
-    <div class="meta">Case · 05/10</div>
+    <div class="meta">Case · Social · Hospitality</div>
   </header>
 
-  <!-- BACK -->
   <div class="back-bar">
     <a href="../index.html#portfolio">← Torna al portfolio</a>
-    <span>Caso studio · 05/10</span>
+    <span>Caso studio · Hospitality</span>
   </div>
 
-  <!-- HERO -->
   <section class="project-hero">
     <div class="meta-row">
-      <div>Cliente<strong>Forte 48 · Hotel Ristorante</strong></div>
-      <div>Categoria<strong>Content · Social · Eventi</strong></div>
-      <div>Servizi<strong>Content · Regia · Eventi · Menu design</strong></div>
-      <div>Settore<strong>Ristorazione · Hotel</strong></div>
+      <div>Cliente<strong>Hotel Ristorante Forte del 48</strong></div>
+      <div>Settore<strong>Hospitality · Hotel e ristorante</strong></div>
+      <div>Servizi<strong>Strategia social · Shooting foto e video · Reel · Grafica eventi e menù · Sponsorizzate</strong></div>
+      <div>Dal<strong>gennaio 2026</strong></div>
+      <div>Zona<strong>San Donà di Piave (Venezia)</strong></div>
     </div>
-    <h1 class="display">Forte <span class="italic">48.</span></h1>
-    <p class="lead">Comunicazione integrata per un hotel ristorante di San Donà di Piave: foto e video di prodotto, grafiche per menù ed eventi, un calendario editoriale che alterna piatti, calici e serate a tema, e il format "Calici e Sapori".</p>
+    <h1 class="display">Forte <span class="italic">del 48.</span></h1>
+    <p class="lead">Hotel Ristorante Forte del 48. Un hotel ristorante storico di San Donà di Piave, con una cucina del territorio e camere appena rinnovate. Abbiamo costruito una comunicazione che mette al centro il piatto e la stagione, poi abbiamo portato le nuove camere fuori dalla zona.</p>
   </section>
 
-  <!-- COVER -->
-  <div class="cover">
-    <div class="cover-cap">— Cover progetto · Forte 48 · Hotel Ristorante · 2026</div>
+  <div class="cover portrait">
+    <div class="cover-bg" style="background-image:url('img/hotel-forte-48/hotel-forte-48-caso-cover.jpg')"></div>
+    <img class="cover-fg" src="img/hotel-forte-48/hotel-forte-48-caso-cover.jpg" alt="Lo chef con un piatto in mano nella sala del Forte del 48" width="1280" height="1600" fetchpriority="high" />
+    <div class="cover-cap">— Hotel Ristorante Forte del 48 · San Donà di Piave (Venezia)</div>
   </div>
 
-  <!-- CHALLENGE / SOLUTION -->
   <section class="grid-2">
     <div class="reveal">
-      <div class="num">— 001 · La sfida</div>
-      <h2 class="display">Non essere "un altro locale che fa aperitivo".</h2>
-      <p>Il rischio, per qualsiasi ristorante di territorio, è scivolare nella categoria indistinta di "posto carino dove bere un calice". Forte 48 voleva un'identità visual-editoriale che mettesse sullo stesso piano la cucina e la carta dei vini, e che desse al locale una cadenza — eventi ricorrenti, serate firmate, format riconoscibili.</p>
+      <div class="num">— 001 · Da dove siamo partiti</div>
+      <h2 class="display">Due anime nello stesso edificio.</h2>
+      <p>Il Forte del 48 è hotel e ristorante insieme. Da una parte la cucina: piatti di mare e di terra, prodotti del Piave, vini di cantine del territorio. Dall'altra la ricettività, per chi lavora nelle aziende della zona e per chi va verso Venezia e il mare.</p>
+      <p>Il rischio era raccontarle come due attività separate, e parlare del ristorante come di uno dei tanti. A gennaio 2026 siamo partiti dal primo shooting in cucina e in sala.</p>
     </div>
     <div class="reveal">
       <div class="num">— 002 · Cosa abbiamo fatto</div>
-      <h2 class="display">Un format che diventa appuntamento.</h2>
-      <p>"Calici e Sapori": una serata a tema, costruita come un piccolo evento editoriale — dal teaser al recap. Intorno, un piano editoriale a tre binari: il piatto del mese, il vino consigliato, i volti in cucina e in sala. Grafiche serali ricorrenti (orari, prenotazioni) con sistema visivo coerente.</p>
+      <h2 class="display">Il piatto come paesaggio del Piave.</h2>
+      <p>La linea della strategia è semplice: il protagonista è l'ingrediente, non lo chef né il locale. Ogni piatto racconta una stagione e un territorio: il radicchio di Treviso, il pesce dell'Adriatico, la polenta, gli asparagi, il vino di una cantina con il suo nome. Il tono è sobrio, senza superlativi.</p>
+      <p>Ogni shooting parte da una moodboard condivisa con il cliente. Le foto e i video si fanno in sala e in cucina, con luce naturale e ritmo lento: il piatto in primo piano, il gesto di chi lo prepara, il calice che si versa.</p>
+      <p>Nei primi cinque mesi il feed Instagram ha pubblicato 68 contenuti tra reel, foto e caroselli. Intorno ai piatti, il calendario dell'anno: San Valentino, Pasqua, il menù di primavera e quello d'autunno, le aperture festive. Per la serata di degustazione Calici &amp; Sapori del 27 febbraio abbiamo seguito tutto il racconto, dall'annuncio al resoconto del giorno dopo.</p>
     </div>
   </section>
 
-  <!-- GALLERY -->
   <section class="gallery">
-    <div class="span-7 ar-16-10 mk-grid">
-      <div class="ig-head">
-        <div class="av"></div>
-        <div class="nm">@forte48<span class="h">Forte 48 · Hotel Ristorante</span></div>
-      </div>
-      <div class="grid9">
-        <div class="gpost has-img" style="background-image:url('img/forte48/forte48-01.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/forte48/forte48-02.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/forte48/forte48-04.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/forte48/forte48-05.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/forte48/forte48-06.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/forte48/forte48-08.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/forte48/forte48-09.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/forte48/forte48-10.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/forte48/forte48-12.jpg')"></div>
-      </div>
-    </div>
-    <div class="span-5 ar-1-1 mk-quote">
-      <div class="tag">— Format</div>
-      <div class="body">Un format che diventa appuntamento: <em>una grafica propria, un copy proprio</em>, dal teaser al recap.</div>
-    </div>
-    <div class="span-6 ar-1-1 mk-phone">
-      <div class="frame">
-        <div class="notch"></div>
-        <div class="screen">
-          <div class="ig-bar"><div class="av"></div><div class="nm">forte48</div><div class="dot">···</div></div>
-          <div class="reel-img" style="background-image:url('img/forte48/forte48-reel.jpg')"></div>
-          <div class="ig-stats">
-            <div class="row"><div class="ic"></div><div class="ic"></div><div class="ic sq"></div></div>
-            <div class="cap"><b>forte48</b> Calici e Sapori · 27 febbraio.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="span-6 ar-1-1 mk-swatch dk">FORTE<br/><em>48</em></div>
+    <div class="span-4 ar-4-5 gi color"><img src="img/hotel-forte-48/hotel-forte-48-caso-01.jpg" alt="Un cameriere porta un piatto di crudo di mare" width="1280" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+    <div class="span-4 ar-4-5 mk-stat"><div class="big">68</div><div class="lbl">contenuti nel feed Instagram tra gennaio e giugno 2026</div></div>
+    <div class="span-4 ar-4-5 gi color"><img src="img/hotel-forte-48/hotel-forte-48-caso-02.jpg" alt="Una ciotola di gamberi tenuta in mano" width="1280" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
   </section>
-  <!-- CREDITS -->
+
+  <section class="chapter reveal">
+    <div class="num">— 003 · Le nuove camere</div>
+    <div>
+      <h2 class="display">Dal cantiere alla campagna.</h2>
+      <p>A giugno 2026 l'hotel ha rinnovato le camere. Le abbiamo fotografate e le abbiamo presentate un passo alla volta: prima i dettagli, poi le camere intere a luglio.</p>
+      <p>A novembre le abbiamo portate fuori dalla zona con due campagne. Una locale, nei 30 km intorno a San Donà, per ricordare a privati e aziende che l'hotel si rinnova. Una lungo l'autostrada A4, da Venezia a Torino passando per Padova, Verona, Brescia e Milano, per farlo conoscere a chi viaggia per lavoro. Lo stesso carosello per entrambe, con le foto delle camere senza nulla sopra e i testi del cliente.</p>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="span-4 ar-4-5 gi color"><img src="img/hotel-forte-48/hotel-forte-48-caso-03.jpg" alt="La sala del ristorante apparecchiata, con travi e quadri" width="1280" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+    <div class="span-4 ar-4-5 gi color"><img src="img/hotel-forte-48/hotel-forte-48-caso-04.jpg" alt="Tagliatelle con guanciale e scaglie su piatto blu" width="1280" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+    <div class="span-4 ar-4-5 gi color"><img src="img/hotel-forte-48/hotel-forte-48-caso-05.jpg" alt="Lo chef in giacca blu al banco della cucina" width="1280" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+  </section>
+
+  <section class="chapter reveal">
+    <div class="num">— 004 · Dove siamo ora</div>
+    <div>
+      <h2 class="display">Il ristorante che si fa trovare.</h2>
+      <p>Nelle quattro settimane tra metà ottobre e metà novembre i contenuti Instagram hanno raggiunto 32.335 account, il 62% in più del periodo precedente, quasi tutti persone che non seguivano ancora il profilo.</p>
+      <p>A novembre il profilo ha raccontato la cena con Cantina Tommasi, la presenza nella Falstaff Restaurant Guide 2027, il fuori menù di San Martino e il menù del pranzo di Natale. La cena con Cantina Tommasi è stato il contenuto più visto del mese su Facebook, con oltre 8.000 visualizzazioni.</p>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="span-6 ar-1-1 gi color"><img src="img/hotel-forte-48/hotel-forte-48-caso-06.jpg" alt="I cuochi ai fornelli" width="1280" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+    <div class="span-6 ar-1-1 gi color"><img src="img/hotel-forte-48/hotel-forte-48-caso-07.jpg" alt="Impiattamento in serie dei piatti in cucina" width="1280" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+  </section>
+
+  <section class="results reveal">
+    <div class="head">— 005 · Il progetto in numeri</div>
+    <div class="grid gx" style="grid-template-columns:repeat(2,1fr)">
+      <div class="cell lr">
+        <div class="big display">68</div>
+        <div class="lbl">contenuti nel feed Instagram tra gennaio e giugno 2026</div>
+      </div>
+      <div class="cell lc lr">
+        <div class="big display">32.335</div>
+        <div class="lbl">account raggiunti su Instagram in quattro settimane, +62%</div>
+      </div>
+    </div>
+  </section>
+
   <section class="credits reveal">
-    <div class="label">— 003 · Crediti & dettagli</div>
+    <div class="label">— 006 · Crediti &amp; dettagli</div>
     <dl>
       <div><dt>Anno</dt><dd>2026</dd></div>
-      <div><dt>Discipline</dt><dd>Content Strategy, Regia, Eventi, Menu design, Grafica</dd></div>
-      <div><dt>Direzione creativa</dt><dd>MLP Studio Creativo</dd></div>
-      <div><dt>Sede cliente</dt><dd>San Donà di Piave (VE)</dd></div>
+      <div><dt>Discipline</dt><dd>Strategia social, Direzione creativa, Shooting foto e video, Montaggio reel, Grafica eventi e menù, Sponsorizzate</dd></div>
+      <div><dt>Strategia e coordinamento</dt><dd>MLP Studio Creativo</dd></div>
+      <div><dt>Team MLP</dt><dd>strategia e sponsorizzate, riprese, montaggio e moodboard, piano editoriale e grafiche, gestione del cliente</dd></div>
+      <div><dt>Sede cliente</dt><dd>San Donà di Piave (Venezia), Veneto</dd></div>
     </dl>
   </section>
 
-  <!-- NEXT -->
   <a href="biys.html" class="next">
     <span class="lab">— Prossimo progetto</span>
-    <span class="title display">Biys</span>
+    <span class="title display">BIYS Garden Innovation</span>
     <span class="arr">→</span>
   </a>
 
-  <!-- FOOTER -->
   <footer>
     <div>© 2026 MLP Studio Creativo</div>
     <div>San Donà di Piave <span class="dot"></span> Venezia</div>

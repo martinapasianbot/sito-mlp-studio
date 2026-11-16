@@ -4,8 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-<title>Origo — MLP Studio Creativo</title>
-<meta name="description" content="Caso studio: Origo — Contenuti video e social per una pizzeria di Mareno di Piave (TV): il titolare come volto, tra ironia di pizzeria e racconto del prodotto." />
+<title>Origo, pizzeria: reel e sponsorizzate — MLP Studio Creativo</title>
+<meta name="description" content="Caso studio Origo, pizzeria di Mareno di Piave: il titolare come volto, una pizzeria seria che si prende in giro e oltre 57.000 visite al profilo." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,800;0,900;1,300;1,400&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
@@ -55,7 +55,7 @@
   .project-hero .lead{font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;font-weight:300;font-size:clamp(20px,2.4vw,32px);line-height:1.35;letter-spacing:-0.015em;max-width:62ch;margin-top:30px;color:var(--ink)}
 
   /* COVER */
-  .cover{height:72vh;min-height:520px;border-bottom:1px solid var(--line);background:#0a0a0a url('img/origo/origo-hero.jpg') center 22%/cover;display:flex;align-items:flex-end;padding:32px;color:var(--paper);position:relative;overflow:hidden}
+  .cover{height:72vh;min-height:520px;border-bottom:1px solid var(--line);background:#0a0a0a;display:flex;align-items:flex-end;padding:32px;color:var(--paper);position:relative;overflow:hidden}
   .cover::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.1) 60%,rgba(0,0,0,0.75) 100%)}
   .cover .cover-cap{position:relative;z-index:2;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;opacity:0.9;color:#fff}
 
@@ -336,15 +336,67 @@
     .next{grid-template-columns:1fr;text-align:left;gap:14px;padding:50px 20px}
     .next .arr{font-size:28px}
   }
+
+  /* MaDe — estensioni pagina */
+  .gallery .gi.color{filter:none}
+  .gallery .gi.color:hover{filter:none}
+  .gallery .gi.tall{aspect-ratio:auto}
+  .gallery .contain{background-size:auto 84%;background-position:center 30%;background-repeat:no-repeat;background-color:#e9e7e3}
+  .gallery .cap{position:absolute;left:0;bottom:0;padding:14px 18px;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:#fff;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.55));width:100%;z-index:2}
+  .gallery .cap.dk{color:#0a0a0a;background:none}
+  .chapter{padding:70px 32px 40px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:start}
+  .chapter .num{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted)}
+  .chapter h2{font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;font-weight:300;font-size:clamp(30px,3.8vw,48px);letter-spacing:-0.03em;line-height:1.08;margin-bottom:20px}
+  .chapter h2 .italic{font-family:'Nunito Sans',serif;font-weight:200;color:var(--muted)}
+  .chapter p{font-size:16px;line-height:1.75;margin-bottom:14px;max-width:62ch}
+  .mk-stat.brand{background:#7a1f4a;color:#fff}
+  .mk-stat.brand .lbl{color:rgba(255,255,255,0.75)}
+  .mk-stat.brand .big em{color:rgba(255,255,255,0.7)}
+  .mk-quote.brand{background:#7a1f4a}
+  .mk-quote.brand .tag{color:rgba(255,255,255,0.7)}
+  .mk-quote.brand .body em{color:#f2c9dc}
+  .browser{background:#e9e7e3;padding:28px;display:flex;align-items:center;justify-content:center}
+  .browser .win{width:100%;background:#fff;box-shadow:0 24px 60px rgba(0,0,0,0.18);border:1px solid #d6d3ce}
+  .browser .bar{height:26px;display:flex;align-items:center;gap:6px;padding:0 10px;border-bottom:1px solid #e3e0db;background:#f6f5f3}
+  .browser .bar i{width:8px;height:8px;border-radius:50%;background:#cfcac3;display:block}
+  .browser .bar span{margin-left:10px;font-size:9px;letter-spacing:0.12em;color:var(--muted)}
+  .browser img{width:100%;height:auto}
+  @media (max-width:900px){
+    .chapter{grid-template-columns:1fr;gap:16px;padding:50px 20px 30px}
+    .browser{padding:14px}
+    .gallery .gi.tall{aspect-ratio:3/4}
+  }
+
+  /* Casi studio — estensioni */
+  .cover .cover-bg{position:absolute;inset:-60px;background-size:cover;background-position:center;filter:blur(38px) brightness(.55);z-index:0}
+  .cover .cover-fg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .cover.portrait .cover-fg{left:50%;width:auto;max-width:100%;transform:translateX(-50%);object-fit:contain}
+  .cover::before{z-index:1}
+  .gallery .gi img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+  .gallery .ar-4-5{aspect-ratio:4/5}
+  .gallery .mk-stat.sm .big{font-size:clamp(38px,5vw,84px)}
+  .chapter h3,.grid-2 h3{font-family:'Roboto',sans-serif;font-weight:500;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);margin:26px 0 10px}
+  .chapter ul,.grid-2 ul{margin:0 0 16px 18px;max-width:62ch;font-size:16px;line-height:1.7}
+  .chapter li,.grid-2 li{margin-bottom:6px}
+  .chapter p strong,.grid-2 p strong{font-weight:500}
+  .results .grid.gx .cell{border-right:1px solid var(--paper-2);border-bottom:1px solid var(--paper-2)}
+  .results .grid.gx .cell.lc{border-right:none}
+  .results .grid.gx .cell.lr{border-bottom:none}
+  .results .cell .big.sm{font-size:clamp(32px,3.6vw,56px)}
+  @media (max-width:900px){
+    .results{padding:60px 20px}
+    .results .grid.gx{grid-template-columns:repeat(2,1fr)}
+    .results .grid.gx .cell,.results .grid.gx .cell.lc,.results .grid.gx .cell.lr{border-right:1px solid var(--paper-2);border-bottom:1px solid var(--paper-2)}
+    .cover{height:60vh;min-height:380px}
+  }
 </style>
+
 <link rel="stylesheet" href="../assets/overlays.css" />
 <script src="../assets/overlays.js" defer></script>
 <link rel="stylesheet" href="../assets/chat.css" />
 <script src="../assets/assistente.js" defer></script>
 
-
-
-<!-- SEO: JSON-LD + OG (claude-seo) -->
+<!-- SEO: JSON-LD + OG -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -353,33 +405,63 @@
       "@type": "WebPage",
       "@id": "https://www.mlpstudiocreativo.com/projects/origo.html#webpage",
       "url": "https://www.mlpstudiocreativo.com/projects/origo.html",
-      "name": "Origo — MLP Studio Creativo",
-      "description": "Caso studio: Origo — Contenuti video e social per una pizzeria di Mareno di Piave (TV): il titolare come volto, tra ironia di pizzeria e racconto del prodotto.",
-      "isPartOf": {"@id": "https://www.mlpstudiocreativo.com/#website"},
+      "name": "Origo, pizzeria: reel e sponsorizzate — MLP Studio Creativo",
+      "description": "Caso studio Origo, pizzeria di Mareno di Piave: il titolare come volto, una pizzeria seria che si prende in giro e oltre 57.000 visite al profilo.",
+      "isPartOf": {
+        "@id": "https://www.mlpstudiocreativo.com/#website"
+      },
       "inLanguage": "it-IT",
-      "breadcrumb": {"@id": "https://www.mlpstudiocreativo.com/projects/origo.html#breadcrumb"}
+      "breadcrumb": {
+        "@id": "https://www.mlpstudiocreativo.com/projects/origo.html#breadcrumb"
+      }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.mlpstudiocreativo.com/projects/origo.html#breadcrumb",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.mlpstudiocreativo.com/"},
-        {"@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://www.mlpstudiocreativo.com/#portfolio"},
-        {"@type": "ListItem", "position": 3, "name": "Origo", "item": "https://www.mlpstudiocreativo.com/projects/origo.html"}
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.mlpstudiocreativo.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Portfolio",
+          "item": "https://www.mlpstudiocreativo.com/#portfolio"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Origo",
+          "item": "https://www.mlpstudiocreativo.com/projects/origo.html"
+        }
       ]
     },
     {
       "@type": "CreativeWork",
       "@id": "https://www.mlpstudiocreativo.com/projects/origo.html#creativework",
-      "name": "Origo — MLP Studio Creativo",
-      "headline": "Origo — MLP Studio Creativo",
-      "description": "Caso studio: Origo — Contenuti video e social per una pizzeria di Mareno di Piave (TV): il titolare come volto, tra ironia di pizzeria e racconto del prodotto.",
+      "name": "Origo",
+      "headline": "Origo, pizzeria: reel e sponsorizzate",
+      "description": "Caso studio Origo, pizzeria di Mareno di Piave: il titolare come volto, una pizzeria seria che si prende in giro e oltre 57.000 visite al profilo.",
       "url": "https://www.mlpstudiocreativo.com/projects/origo.html",
+      "image": "https://www.mlpstudiocreativo.com/projects/img/origo/origo-caso-og.jpg",
       "inLanguage": "it-IT",
-      "creator": {"@id": "https://www.mlpstudiocreativo.com/#organization"},
-      "author": {"@id": "https://www.mlpstudiocreativo.com/#organization"},
-      "publisher": {"@id": "https://www.mlpstudiocreativo.com/#organization"},
-      "about": {"@type": "Organization", "name": "Origo"}
+      "dateCreated": "2025",
+      "creator": {
+        "@id": "https://www.mlpstudiocreativo.com/#organization"
+      },
+      "author": {
+        "@id": "https://www.mlpstudiocreativo.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://www.mlpstudiocreativo.com/#organization"
+      },
+      "about": {
+        "@type": "Organization",
+        "name": "Origo"
+      }
     }
   ]
 }
@@ -387,24 +469,23 @@
 <link rel="canonical" href="https://www.mlpstudiocreativo.com/projects/origo.html" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mlpstudiocreativo.com/projects/origo.html" />
-<meta property="og:title" content="Origo — MLP Studio Creativo" />
-<meta property="og:description" content="Caso studio: Origo — Contenuti video e social per una pizzeria di Mareno di Piave (TV): il titolare come volto, tra ironia di pizzeria e racconto del prodotto." />
-<meta property="og:image" content="https://www.mlpstudiocreativo.com/logo.svg" />
+<meta property="og:title" content="Origo, pizzeria: reel e sponsorizzate — MLP Studio Creativo" />
+<meta property="og:description" content="Caso studio Origo, pizzeria di Mareno di Piave: il titolare come volto, una pizzeria seria che si prende in giro e oltre 57.000 visite al profilo." />
+<meta property="og:image" content="https://www.mlpstudiocreativo.com/projects/img/origo/origo-caso-og.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:locale" content="it_IT" />
 <meta property="og:site_name" content="MLP Studio Creativo" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Origo — MLP Studio Creativo" />
-<meta name="twitter:description" content="Caso studio: Origo — Contenuti video e social per una pizzeria di Mareno di Piave (TV): il titolare come volto, tra ironia di pizzeria e racconto del prodotto." />
-<meta name="twitter:image" content="https://www.mlpstudiocreativo.com/logo.svg" />
+<meta name="twitter:title" content="Origo, pizzeria: reel e sponsorizzate — MLP Studio Creativo" />
+<meta name="twitter:description" content="Caso studio Origo, pizzeria di Mareno di Piave: il titolare come volto, una pizzeria seria che si prende in giro e oltre 57.000 visite al profilo." />
+<meta name="twitter:image" content="https://www.mlpstudiocreativo.com/projects/img/origo/origo-caso-og.jpg" />
 <!-- /SEO -->
 </head>
 <body>
 
   <div class="cursor" id="cursor"></div>
 
-  <!-- TOPBAR -->
   <header class="topbar">
     <a href="../index.html" class="brand">
       <img src="../logo.svg" alt="MLP Studio Creativo" />
@@ -416,103 +497,134 @@
       <a href="../index.html#about">Studio</a>
       <a href="../index.html#contatti">Contatti</a>
     </nav>
-    <div class="meta">Case · 07/10</div>
+    <div class="meta">Case · Social · Sponsorizzate</div>
   </header>
 
-  <!-- BACK -->
   <div class="back-bar">
     <a href="../index.html#portfolio">← Torna al portfolio</a>
-    <span>Caso studio · 07/10</span>
+    <span>Caso studio · Ristorazione</span>
   </div>
 
-  <!-- HERO -->
   <section class="project-hero">
     <div class="meta-row">
-      <div>Cliente<strong>Origo</strong></div>
-      <div>Categoria<strong>Personal Brand · Social</strong></div>
-      <div>Servizi<strong>Content · Copywriting · Video</strong></div>
+      <div>Cliente<strong>Origo · Pizzeria Secondo Natura</strong></div>
       <div>Settore<strong>Ristorazione · Pizzeria</strong></div>
+      <div>Servizi<strong>Strategia social · Personal brand · Shooting · Reel · Sponsorizzate</strong></div>
+      <div>Dal<strong>maggio 2025</strong></div>
+      <div>Zona<strong>Mareno di Piave (Treviso)</strong></div>
     </div>
-    <h1 class="display">Origo.</h1>
-    <p class="lead">Contenuti video e social per una pizzeria: il titolare come volto, un registro ironico per la vita di pizzeria e uno più asciutto per il prodotto.</p>
+    <h1 class="display">Origo<span class="italic">.</span></h1>
+    <p class="lead">Una pizzeria a Mareno di Piave che sceglie gli ingredienti uno per uno e lo dice senza prendersi troppo sul serio. Abbiamo costruito il profilo sulla vita reale della pizzeria e sul volto di chi la manda avanti, e lo abbiamo sostenuto con sponsorizzate costanti: oltre 57.000 visite al profilo tra gennaio e inizio ottobre 2026.</p>
   </section>
 
-  <!-- COVER -->
-  <div class="cover">
-    <div class="cover-cap">— Cover progetto · Origo · Pizzeria Secondo Natura · 2025–2026</div>
+  <div class="cover portrait">
+    <div class="cover-bg" style="background-image:url('img/origo/origo-caso-cover.jpg')"></div>
+    <img class="cover-fg" src="img/origo/origo-caso-cover.jpg" alt="Nicola, titolare di Origo, al bancone della pizzeria" width="1200" height="1600" fetchpriority="high" />
+    <div class="cover-cap">— Origo · Mareno di Piave (Treviso)</div>
   </div>
 
-  <!-- CHALLENGE / SOLUTION -->
   <section class="grid-2">
     <div class="reveal">
-      <div class="num">— 001 · La sfida</div>
-      <h2 class="display">Raccontare una pizzeria seria senza prendersi troppo sul serio.</h2>
-      <p>Origo è una pizzeria che lavora l'impasto e sceglie piccoli produttori. Serviva un racconto che tenesse insieme il prodotto, con tono asciutto, e la vita di pizzeria, con ironia.</p>
+      <div class="num">— 001 · Da dove siamo partiti</div>
+      <h2 class="display">Una pizza seria, <span class="italic">in un paese piccolo.</span></h2>
+      <p>Origo è una pizzeria con una proposta sopra la media della zona: impasto curato, ingredienti di piccoli produttori con nome e cognome, carni da allevamento brado, alternative vegane e senza lattosio.</p>
+      <p>Il locale è a Mareno di Piave, fuori dai centri più grandi. Per riempire la sala serve che le persone del Trevigiano decidano di spostarsi apposta. Il punto era farsi conoscere da chi non era mai passato, senza parlare come una pizzeria gourmet qualsiasi.</p>
     </div>
     <div class="reveal">
       <div class="num">— 002 · Cosa abbiamo fatto</div>
-      <h2 class="display">Due registri, una sola voce.</h2>
-      <p>Un angolo editoriale da pizzeria seria che si prende in giro: ironia per la vita di sala e di forno, tono asciutto per il prodotto. Il titolare è il volto dei video, tra reel e storie pensati per il feed.</p>
+      <h2 class="display">Una pizzeria seria che si prende in giro.</h2>
+      <p>La strategia ha due voci che convivono. Quella ironica per la vita di pizzeria: i clienti particolari, il tavolo che litiga, le domande di tutti i giorni, la squadra al lavoro. Quella asciutta per il prodotto: la pizza, gli ingredienti, i produttori.</p>
+      <p>Il volto dei video è Nicola, il titolare. Gli shooting si fanno in pizzeria: in una sola giornata di luglio ne sono usciti dodici contenuti.</p>
+      <p>Il formato è il reel verticale. Da gennaio a inizio novembre 2026 sul profilo Instagram ne sono usciti 127, con un ritmo costante di 14-17 contenuti al mese.</p>
+      <p>Accanto all'organico, le sponsorizzate. Cinque campagne tra gennaio e inizio ottobre 2026, ognuna costruita su un reel: il menù nuovo, la pizza più buona della zona, i prodotti di stagione. In autunno un calendario concordato con il titolare, che segue le aperture e le ferie del locale.</p>
     </div>
   </section>
 
-  <!-- GALLERY -->
   <section class="gallery">
-    <div class="span-7 ar-16-10 mk-grid">
-      <div class="ig-head">
-        <div class="av"></div>
-        <div class="nm">@origo<span class="h">Origo · Pizzeria Secondo Natura</span></div>
-      </div>
-      <div class="grid9">
-        <div class="gpost has-img" style="background-image:url('img/origo/origo-01.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/origo/origo-02.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/origo/origo-04.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/origo/origo-05.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/origo/origo-06.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/origo/origo-08.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/origo/origo-09.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/origo/origo-10.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/origo/origo-12.jpg')"></div>
-      </div>
-    </div>
-    <div class="span-5 ar-1-1 mk-quote">
-      <div class="tag">— Tono</div>
-      <div class="body">Una pizzeria seria che si prende in giro. <em>Due registri</em>, una sola voce.</div>
-    </div>
-    <div class="span-6 ar-1-1 mk-phone">
-      <div class="frame">
-        <div class="notch"></div>
-        <div class="screen">
-          <div class="ig-bar"><div class="av"></div><div class="nm">origo</div><div class="dot">···</div></div>
-          <div class="reel-img" style="background-image:url('img/origo/origo-reel.jpg')"></div>
-          <div class="ig-stats">
-            <div class="row"><div class="ic"></div><div class="ic"></div><div class="ic sq"></div></div>
-            <div class="cap"><b>origo</b> Pizzeria Secondo Natura.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="span-6 ar-1-1 mk-swatch dk">ORIGO</div>
+    <div class="span-4 ar-4-5 gi color"><img src="img/origo/origo-caso-01.jpg" alt="Nicola in sala con il menù sottobraccio" width="1200" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+    <div class="span-4 ar-4-5 mk-stat"><div class="big">127</div><div class="lbl">reel su Instagram da gennaio a novembre 2026</div></div>
+    <div class="span-4 ar-4-5 gi color"><img src="img/origo/origo-caso-02.jpg" alt="Nicola a braccia conserte accanto alla parete decorata" width="1200" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+    <div class="span-6 ar-1-1 gi color"><img src="img/origo/origo-caso-03.jpg" alt="Nicola di spalle al lavoro in cucina" width="1200" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+    <div class="span-6 ar-1-1 gi color"><img src="img/origo/origo-caso-04.jpg" alt="Una collaboratrice tra le piante della veranda" width="1200" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
   </section>
-  <!-- CREDITS -->
+
+  <section class="chapter reveal">
+    <div class="num">— 003 · Le sponsorizzate</div>
+    <div>
+      <h2 class="display">Persone che vanno a vedere il profilo.</h2>
+      <p>Le campagne sono pensate per portare persone della zona sul profilo della pizzeria, dove trovano menù, video e contatti. Da gennaio all'8 ottobre 2026 hanno portato 57.298 visite al profilo.</p>
+      <p>Il dato che conta di più è la percentuale di clic: da aprile in poi le campagne di Origo sono rimaste tra il 4,4% e il 5,4%, cioè più di quattro persone su cento che vedono la sponsorizzata ci cliccano sopra. Il video del menù autunnale ha toccato il 5,38%.</p>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="span-4 ar-4-5 gi color"><img src="img/origo/origo-caso-05.jpg" alt="Nicola al tavolo in legno, con il pollice alzato" width="1200" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+    <div class="span-4 ar-4-5 mk-stat invert sm"><div class="big">57.298</div><div class="lbl">visite al profilo dalle sponsorizzate, gennaio-ottobre 2026</div></div>
+    <div class="span-4 ar-4-5 gi color"><img src="img/origo/origo-caso-06.jpg" alt="La sala apparecchiata, con vetrate e piante" width="1200" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+  </section>
+
+  <section class="chapter reveal">
+    <div class="num">— 004 · Dove siamo ora</div>
+    <div>
+      <h2 class="display">Un profilo che parla come il locale.</h2>
+      <p>Il profilo pubblica con regolarità e ha una voce riconoscibile: chi lo segue sa che troverà Nicola, la squadra, i clienti e le pizze del mese. Il reel più visto del 2026, “POV: stai lavorando, ma il tavolo 7 sta litigando”, ha superato le 31.000 visualizzazioni.</p>
+      <p>Le sponsorizzate seguono il calendario della pizzeria: menù autunnale fino alla chiusura per ferie di novembre, ripartenza per la riapertura con pause nel fine settimana.</p>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="span-4 ar-4-5 gi color"><img src="img/origo/origo-caso-07.jpg" alt="Nicola al tavolo con una pianta in vaso" width="1200" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+    <div class="span-4 ar-4-5 gi color"><img src="img/origo/origo-caso-08.jpg" alt="Nicola mostra un sacchetto di funghi secchi" width="1200" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+    <div class="span-4 ar-4-5 gi color"><img src="img/origo/origo-caso-09.jpg" alt="Dettaglio delle mani nel sacchetto di funghi secchi" width="1200" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+  </section>
+
+  <section class="results reveal">
+    <div class="head">— 005 · Il progetto in numeri</div>
+    <div class="grid gx" style="grid-template-columns:repeat(3,1fr)">
+      <div class="cell">
+        <div class="big display">127</div>
+        <div class="lbl">reel pubblicati su Instagram da gennaio a novembre 2026</div>
+      </div>
+      <div class="cell">
+        <div class="big display sm">525.566</div>
+        <div class="lbl">visualizzazioni dei contenuti Instagram nello stesso periodo</div>
+      </div>
+      <div class="cell lc">
+        <div class="big display">31.207</div>
+        <div class="lbl">visualizzazioni del reel più visto</div>
+      </div>
+      <div class="cell lr">
+        <div class="big display">57.298</div>
+        <div class="lbl">visite al profilo dalle sponsorizzate, da gennaio a inizio ottobre 2026</div>
+      </div>
+      <div class="cell lr">
+        <div class="big display">5,38%</div>
+        <div class="lbl">percentuale di clic della sponsorizzata sul menù autunnale</div>
+      </div>
+      <div class="cell lc lr">
+        <div class="big display">12</div>
+        <div class="lbl">contenuti girati in una sola giornata di shooting</div>
+      </div>
+    </div>
+  </section>
+
   <section class="credits reveal">
-    <div class="label">— 003 · Crediti & dettagli</div>
+    <div class="label">— 006 · Crediti &amp; dettagli</div>
     <dl>
       <div><dt>Anno</dt><dd>2025–2026</dd></div>
-      <div><dt>Discipline</dt><dd>Personal Brand, Content Strategy, Copywriting, Video</dd></div>
-      <div><dt>Direzione creativa</dt><dd>MLP Studio Creativo</dd></div>
-      <div><dt>Sede cliente</dt><dd>Veneto, Italia</dd></div>
+      <div><dt>Discipline</dt><dd>Strategia social, Personal brand, Regia, Shooting video, Montaggio reel, Sponsorizzate</dd></div>
+      <div><dt>Strategia e coordinamento</dt><dd>MLP Studio Creativo</dd></div>
+      <div><dt>Team MLP</dt><dd>strategia e sponsorizzate, riprese e montaggio, piano editoriale, gestione del cliente</dd></div>
+      <div><dt>Sede cliente</dt><dd>Mareno di Piave (Treviso), Veneto</dd></div>
     </dl>
   </section>
 
-  <!-- NEXT -->
-  <a href="retro-specialisti-carne.html" class="next">
+  <a href="galesso.html" class="next">
     <span class="lab">— Prossimo progetto</span>
-    <span class="title display">Retrò · Specialisti della carne</span>
+    <span class="title display">Galesso &amp; Partners</span>
     <span class="arr">→</span>
   </a>
 
-  <!-- FOOTER -->
   <footer>
     <div>© 2026 MLP Studio Creativo</div>
     <div>San Donà di Piave <span class="dot"></span> Venezia</div>
