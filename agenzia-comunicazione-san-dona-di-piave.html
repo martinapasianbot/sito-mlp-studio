@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<title>Agenzia di comunicazione a San Donà di Piave — MLP Studio</title>
+<meta name="description" content="MLP Studio Creativo è l&#x27;agenzia di comunicazione di San Donà di Piave: social, reel, siti, video ed eventi per aziende del Veneto Orientale." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,800;0,900;1,300;1,400&family=Roboto:ital,wght@0,300;0,400;0,500;0,700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0a0a0a;--paper:#ffffff;--paper-2:#f3f3f3;--muted:#7a7a7a;--line:#0a0a0a}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Nunito Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+    font-weight:300;font-size:16px;line-height:1.6;color:var(--ink);background:var(--paper);
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  a{color:inherit;text-decoration:none}
+  .display{font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;font-weight:300}
+  .italic{font-family:'Nunito Sans',serif;font-weight:200;font-style:normal;color:var(--muted)}
+
+  /* ============== TOPBAR ============== */
+  .topbar{
+    position:sticky;top:0;z-index:50;background:var(--paper);
+    border-bottom:1px solid var(--line);
+    display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+    padding:18px 32px;gap:30px;
+  }
+  .topbar .brand{display:flex;align-items:center;gap:14px}
+  .topbar .brand img{height:22px;width:auto}
+  .topbar .brand-tag{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;line-height:1.3}
+  .topbar .brand-tag strong{color:var(--ink);font-weight:400}
+  .topbar nav{display:flex;gap:28px;justify-content:center}
+  .topbar nav a{
+    font-size:11px;letter-spacing:0.25em;text-transform:uppercase;
+    position:relative;padding:4px 0;
+  }
+  .topbar nav a::after{
+    content:"";position:absolute;left:0;bottom:0;width:100%;
+    height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;
+    transition:transform .4s ease;
+  }
+  .topbar nav a:hover::after{transform:scaleX(1);transform-origin:left}
+  .topbar nav a.current::after{transform:scaleX(1)}
+  .topbar .meta{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);text-align:right}
+  @media (max-width:900px){
+    .topbar{grid-template-columns:1fr auto;gap:12px;padding:14px 20px}
+    .topbar nav{display:none}
+    .topbar .meta{display:none}
+  }
+
+  /* ============== INTRO ============== */
+  .svc-intro{
+    padding:110px 32px 70px;border-bottom:1px solid var(--line);
+    display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;
+  }
+  .svc-intro .kicker{font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);margin-bottom:28px}
+  .svc-intro h1{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
+    font-weight:300;font-size:clamp(48px,7vw,112px);
+    letter-spacing:-0.04em;line-height:0.95;
+  }
+  .svc-intro .lead{font-size:18px;line-height:1.7;color:var(--muted);max-width:48ch}
+  @media (max-width:900px){
+    .svc-intro{grid-template-columns:1fr;gap:32px;padding:64px 20px 48px}
+  }
+
+  /* ============== SERVIZI EDITORIALE ============== */
+  .svc-ed{
+    display:grid;grid-template-columns:80px 1fr 1fr;gap:64px;
+    padding:90px 32px;border-bottom:1px solid var(--paper-2);
+    align-items:center;
+  }
+  .svc-ed:last-of-type{border-bottom:none}
+  .svc-ed .svc-num{
+    font-size:11px;letter-spacing:0.28em;color:var(--muted);
+    align-self:start;padding-top:8px;
+    font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:300;
+  }
+  .svc-ed .svc-media{
+    aspect-ratio:4/5;background-color:#1a1a1a;
+    background-size:cover;background-position:center;
+    filter:grayscale(100%) contrast(1.02);
+    transition:filter .7s ease;
+  }
+  .svc-ed:hover .svc-media{filter:grayscale(0%) contrast(1)}
+  .svc-ed:nth-of-type(even) .svc-media{order:1}
+  .svc-ed:nth-of-type(even) .svc-body{order:2}
+  .svc-ed .svc-body{max-width:52ch}
+  .svc-ed .svc-kicker{
+    font-size:10px;letter-spacing:0.28em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:18px;
+  }
+  .svc-ed .svc-title{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
+    font-weight:300;font-size:clamp(36px,4.4vw,62px);
+    letter-spacing:-0.03em;line-height:1;margin:0 0 28px;
+  }
+  .svc-ed .svc-title .italic{font-family:'Nunito Sans',serif;font-weight:200;color:var(--muted)}
+  .svc-ed .svc-desc{font-size:16px;line-height:1.75;color:var(--ink);margin:0 0 22px}
+  .svc-ed .svc-desc-muted{font-size:15px;line-height:1.75;color:var(--muted);margin:0 0 30px}
+  .svc-ed .svc-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--paper-2)}
+  .svc-ed .svc-list li{
+    font-size:11px;letter-spacing:0.18em;text-transform:uppercase;
+    padding:14px 0;border-bottom:1px solid var(--paper-2);
+    display:flex;align-items:center;gap:14px;color:var(--ink);
+    font-family:'Avenir Light','Nunito Sans',sans-serif;font-weight:400;
+  }
+  .svc-ed .svc-list li::before{content:"→";color:var(--muted);font-weight:300}
+  @media (max-width:900px){
+    .svc-ed{grid-template-columns:1fr;gap:28px;padding:56px 20px}
+    .svc-ed:nth-of-type(even) .svc-media{order:initial}
+    .svc-ed:nth-of-type(even) .svc-body{order:initial}
+    .svc-ed .svc-num{padding-top:0}
+    .svc-ed .svc-title{font-size:34px}
+  }
+
+  /* ============== CTA ============== */
+  .svc-cta{
+    padding:100px 32px;border-top:1px solid var(--line);
+    display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;
+    background:var(--ink);color:var(--paper);
+  }
+  .svc-cta h3{
+    font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
+    font-weight:300;font-size:clamp(36px,4.4vw,62px);
+    letter-spacing:-0.03em;line-height:1;
+  }
+  .svc-cta .italic{color:rgba(255,255,255,0.55)}
+  .svc-cta .btn{
+    font-size:11px;letter-spacing:0.28em;text-transform:uppercase;
+    border:1px solid var(--paper);padding:18px 28px;transition:background .3s,color .3s;
+  }
+  .svc-cta .btn:hover{background:var(--paper);color:var(--ink)}
+  @media (max-width:900px){
+    .svc-cta{grid-template-columns:1fr;padding:64px 20px;gap:24px}
+  }
+
+  /* ============== FOOTER ============== */
+  footer{
+    padding:44px 32px;background:var(--paper-2);
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;
+    font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);
+  }
+  @media (max-width:900px){
+    footer{padding:28px 20px;flex-direction:column;align-items:flex-start}
+  }
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .9s ease,transform .9s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+  .h1-seo{display:block;font-family:Roboto,Arial,sans-serif;font-weight:400;font-style:normal;font-size:11px;line-height:1.5;letter-spacing:.25em;text-transform:uppercase;color:var(--muted,#7a7a7a);margin:0 0 22px;white-space:normal}
+
+  .loc-sez{padding:72px 48px;border-top:1px solid var(--line,#e8e8e8)}
+  .loc-sez h2{font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;font-weight:300;font-size:clamp(30px,4vw,48px);line-height:1;letter-spacing:-.02em;margin:0 0 36px}
+  .loc-sez h2 .italic{font-family:'Nunito Sans',serif;font-style:italic;font-weight:200}
+  .loc-casi{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line,#e8e8e8);border:1px solid var(--line,#e8e8e8)}
+  .loc-caso{display:flex;flex-direction:column;background:var(--paper,#fff);color:inherit;text-decoration:none;transition:background .3s}
+  .loc-caso:hover{background:var(--paper-2,#f3f3f3)}
+  .loc-caso .img{aspect-ratio:4/3;background-size:cover;background-position:center;filter:grayscale(1);transition:filter .4s}
+  .loc-caso:hover .img{filter:none}
+  .loc-caso .txt{padding:20px 22px 24px}
+  .loc-caso .zona{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted,#7a7a7a)}
+  .loc-caso .nome{font-family:'Avenir Light','Avenir Next','Avenir',sans-serif;font-size:20px;margin:6px 0 6px}
+  .loc-caso .cosa{font-size:14px;color:var(--muted,#7a7a7a);line-height:1.5}
+  .loc-voce{max-width:820px}
+  .loc-voce .quote{font-family:'Avenir Light','Avenir Next','Avenir',sans-serif;font-size:clamp(22px,2.6vw,32px);line-height:1.3;margin:0 0 14px}
+  .loc-voce .chi{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted,#7a7a7a)}
+  .loc-faq{max-width:860px}
+  .loc-faq details{border-bottom:1px solid var(--line,#e8e8e8);padding:18px 0}
+  .loc-faq summary{cursor:pointer;font-size:17px;list-style:none}
+  .loc-faq summary::after{content:'+';float:right;color:var(--muted,#7a7a7a)}
+  .loc-faq details[open] summary::after{content:'–'}
+  .loc-faq p{color:var(--muted,#7a7a7a);line-height:1.6;margin:12px 0 0}
+  .loc-zone{font-size:14px;line-height:1.8;color:var(--muted,#7a7a7a);max-width:820px}
+  @media (max-width:900px){.loc-sez{padding:56px 20px}.loc-casi{grid-template-columns:1fr}}
+  .footer-zone{flex-basis:100%;width:100%;font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-top:10px}
+  .footer-zone a{color:inherit;text-decoration:none}
+</style>
+<link rel="stylesheet" href="assets/overlays.css" />
+<script src="assets/overlays.js" defer></script>
+<link rel="stylesheet" href="assets/chat.css" />
+<script src="assets/assistente.js" defer></script>
+
+
+
+<!-- SEO: JSON-LD + OG (claude-seo) -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://www.mlpstudiocreativo.com/agenzia-comunicazione-san-dona-di-piave.html#pagina",
+   "url": "https://www.mlpstudiocreativo.com/agenzia-comunicazione-san-dona-di-piave.html",
+   "name": "Agenzia di comunicazione a San Donà di Piave — MLP Studio",
+   "description": "MLP Studio Creativo è l'agenzia di comunicazione di San Donà di Piave: social, reel, siti, video ed eventi per aziende del Veneto Orientale.",
+   "isPartOf": {
+    "@id": "https://www.mlpstudiocreativo.com/#website"
+   },
+   "about": {
+    "@id": "https://www.mlpstudiocreativo.com/#organization"
+   },
+   "inLanguage": "it-IT"
+  },
+  {
+   "@type": "Service",
+   "name": "Agenzia di comunicazione a San Donà di Piave",
+   "provider": {
+    "@id": "https://www.mlpstudiocreativo.com/#organization"
+   },
+   "areaServed": [
+    {
+     "@type": "City",
+     "name": "San Donà di Piave"
+    },
+    {
+     "@type": "City",
+     "name": "Musile di Piave"
+    },
+    {
+     "@type": "City",
+     "name": "Noventa di Piave"
+    },
+    {
+     "@type": "City",
+     "name": "Ceggia"
+    },
+    {
+     "@type": "City",
+     "name": "Eraclea"
+    },
+    {
+     "@type": "City",
+     "name": "Jesolo"
+    },
+    {
+     "@type": "City",
+     "name": "Portogruaro"
+    }
+   ],
+   "url": "https://www.mlpstudiocreativo.com/agenzia-comunicazione-san-dona-di-piave.html"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.mlpstudiocreativo.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "San Donà di Piave",
+     "item": "https://www.mlpstudiocreativo.com/agenzia-comunicazione-san-dona-di-piave.html"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<link rel="canonical" href="https://www.mlpstudiocreativo.com/agenzia-comunicazione-san-dona-di-piave.html" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.mlpstudiocreativo.com/agenzia-comunicazione-san-dona-di-piave.html" />
+<meta property="og:title" content="Agenzia di comunicazione a San Donà di Piave — MLP Studio" />
+<meta property="og:description" content="MLP Studio Creativo è l&#x27;agenzia di comunicazione di San Donà di Piave: social, reel, siti, video ed eventi per aziende del Veneto Orientale." />
+<meta property="og:image" content="https://www.mlpstudiocreativo.com/og-mlp.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="it_IT" />
+<meta property="og:site_name" content="MLP Studio Creativo" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Agenzia di comunicazione a San Donà di Piave — MLP Studio" />
+<meta name="twitter:description" content="MLP Studio Creativo è l&#x27;agenzia di comunicazione di San Donà di Piave: social, reel, siti, video ed eventi per aziende del Veneto Orientale." />
+<meta name="twitter:image" content="https://www.mlpstudiocreativo.com/og-mlp.jpg" />
+<!-- /SEO -->
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <a href="index.html" class="brand">
+    <img src="logo.svg" alt="MLP Studio Creativo" />
+    <span class="brand-tag"><strong>Studio Creativo</strong>San Donà / Venezia</span>
+  </a>
+  <nav>
+    <a href="services.html" class="current">Servizi</a>
+    <a href="production.html">Production</a>
+    <a href="eventi.html">Eventi</a>
+    <a href="wedding.html">Wedding</a>
+    <a href="index.html#portfolio">Portfolio</a>
+    <a href="carriere.html">Carriere</a>
+    <a href="index.html#contatti">Contatti</a>
+  </nav>
+  <div class="meta">San Donà di Piave</div>
+</header>
+
+<!-- INTRO -->
+<section class="svc-intro">
+  <div>
+    <div class="kicker">— San Donà di Piave · Veneto Orientale</div>
+    <h1><span class="h1-seo">Agenzia di comunicazione a San Donà di Piave</span>Comunicazione, <span class="italic">da qui.</span></h1>
+  </div>
+  <p class="lead">MLP Studio Creativo nasce a San Donà di Piave e qui ha la sua squadra. Seguiamo aziende del Veneto Orientale che vogliono farsi riconoscere: social e reel girati nella loro sede, siti web, video, eventi e fiere. Prima la strategia, poi i contenuti: ogni post ha un motivo per esistere.</p>
+</section>
+
+<article class="svc-ed reveal">
+  <div class="svc-num">01</div>
+  <div class="svc-body">
+    <div class="svc-kicker">— Social</div>
+    <h2 class="svc-title">Social media <span class="italic">e reel</span></h2>
+    <p class="svc-desc">Strategia, piano editoriale, shooting mensile nella sede del cliente, reel e pubblicazione. Lavoriamo sui pilastri del brand, non sul post del giorno.</p>
+    <p class="svc-desc-muted">A San Donà seguiamo così un hotel ristorante, una pizzeria al pezzo, uno studio di fisioterapia e un'agenzia assicurativa: settori diversi, stesso metodo.</p>
+    <ul class="svc-list"><li>Strategia e pilastri</li><li>Shooting in sede</li><li>Reel e caroselli</li><li>Sponsorizzate Meta</li></ul>
+  </div>
+  <div class="svc-media" style="background-image:url('projects/img/tortuga/tortuga-caso-01.jpg')"></div>
+</article>
+
+<article class="svc-ed reveal">
+  <div class="svc-num">02</div>
+  <div class="svc-body">
+    <div class="svc-kicker">— Siti</div>
+    <h2 class="svc-title">Siti web <span class="italic">e SEO locale</span></h2>
+    <p class="svc-desc">Siti chiari, veloci e scritti per farsi trovare da chi cerca nella tua zona: struttura, testi, foto e messa online.</p>
+    <p class="svc-desc-muted">Per Optimove e Galesso & Partners il sito lavora insieme ai social: stessi volti, stesso tono, un solo racconto.</p>
+    <ul class="svc-list"><li>Sito vetrina</li><li>Testi e foto</li><li>SEO locale</li><li>Google Business</li></ul>
+  </div>
+  <div class="svc-media" style="background-image:url('projects/img/optimove/optimove-caso-01.jpg')"></div>
+</article>
+
+<article class="svc-ed reveal">
+  <div class="svc-num">03</div>
+  <div class="svc-body">
+    <div class="svc-kicker">— Video</div>
+    <h2 class="svc-title">Video <span class="italic">e produzione</span></h2>
+    <p class="svc-desc">Spot, brand video e contenuti per aziende, dalla scaletta al montaggio. Con MLP Production giriamo anche fuori provincia.</p>
+    <p class="svc-desc-muted">Il lavoro di produzione è raccontato nella pagina <a href="production.html" style="color:inherit">MLP Production</a>.</p>
+    <ul class="svc-list"><li>Brand video</li><li>Corporate</li><li>Reel per aziende</li><li>Riprese con drone</li></ul>
+  </div>
+  <div class="svc-media" style="background-image:url('projects/img/de-piccoli/de-piccoli-caso-01.jpg')"></div>
+</article>
+
+<article class="svc-ed reveal">
+  <div class="svc-num">04</div>
+  <div class="svc-body">
+    <div class="svc-kicker">— Eventi</div>
+    <h2 class="svc-title">Eventi <span class="italic">e fiere</span></h2>
+    <p class="svc-desc">Inaugurazioni, lanci, serate e stand in fiera: regia, immagine coordinata, video e contenuti da usare anche dopo.</p>
+    <p class="svc-desc-muted">Un esempio: <a href="projects/made-solutions-glasstec.html" style="color:inherit">MaDe Solutions a Glasstec 2026</a>, cinque aziende in un unico stand.</p>
+    <ul class="svc-list"><li>Regia eventi</li><li>Stand e fiere</li><li>Immagine coordinata</li><li>Video dell'evento</li></ul>
+  </div>
+  <div class="svc-media" style="background-image:url('projects/img/forte48/forte48-01.jpg')"></div>
+</article>
+
+<section class="loc-sez reveal">
+  <h2>Casi studio <span class="italic">a San Donà</span> e dintorni</h2>
+  <div class="loc-casi">
+    <a class="loc-caso" href="projects/forte48.html"><div class="img" style="background-image:url('projects/img/forte48/forte48-02.jpg')"></div><div class="txt"><div class="zona">San Donà di Piave</div><div class="nome">Hotel Ristorante Forte del 48</div><div class="cosa">Social, shooting, grafica di eventi e menù</div></div></a>
+    <a class="loc-caso" href="projects/optimove.html"><div class="img" style="background-image:url('projects/img/optimove/optimove-caso-02.jpg')"></div><div class="txt"><div class="zona">San Donà di Piave</div><div class="nome">Optimove Fisioterapia</div><div class="cosa">Reel, sito e sponsorizzate</div></div></a>
+    <a class="loc-caso" href="projects/galesso.html"><div class="img" style="background-image:url('projects/img/galesso/galesso-caso-02.jpg')"></div><div class="txt"><div class="zona">San Donà di Piave</div><div class="nome">Galesso & Partners</div><div class="cosa">Social, caroselli, sito e identità visiva</div></div></a>
+    <a class="loc-caso" href="projects/tortuga.html"><div class="img" style="background-image:url('projects/img/tortuga/tortuga-caso-02.jpg')"></div><div class="txt"><div class="zona">San Donà di Piave</div><div class="nome">Tortuga · Pizza al Pezzo</div><div class="cosa">Shooting mensile e reel di tendenza</div></div></a>
+    <a class="loc-caso" href="projects/de-piccoli.html"><div class="img" style="background-image:url('projects/img/de-piccoli/de-piccoli-caso-02.jpg')"></div><div class="txt"><div class="zona">San Donà di Piave e Ceggia</div><div class="nome">Immobiliare De Piccoli</div><div class="cosa">Personal brand, video e drone</div></div></a>
+    <a class="loc-caso" href="projects/ottica-borin.html"><div class="img" style="background-image:url('projects/img/ottica-borin/ottica-borin-caso-02.jpg')"></div><div class="txt"><div class="zona">Jesolo, San Donà, Mestre</div><div class="nome">Ottica Borin</div><div class="cosa">Tre insegne, una regia</div></div></a>
+  </div>
+</section>
+
+<section class="loc-sez reveal">
+  <div class="loc-voce">
+    <p class="quote">“Sono riusciti a cogliere l'essenza della nostra attività e sono entrati molto in sintonia con noi. Lo consiglierei veramente a chiunque.”</p>
+    <div class="chi">Prisca, Hotel Forte del 48 · <a href="recensioni.html" style="color:inherit">video recensioni</a></div>
+  </div>
+</section>
+
+<section class="loc-sez reveal">
+  <h2>Dove <span class="italic">lavoriamo</span></h2>
+  <p class="loc-zone">Lo studio è a San Donà di Piave (Venezia). Lavoriamo in tutto il Veneto Orientale: Musile di Piave, Noventa di Piave, Ceggia, Eraclea, Jesolo, Caorle, Portogruaro, Mestre e Venezia, fino a Treviso e al Friuli. Per shooting e riprese veniamo noi nella tua sede.</p>
+</section>
+
+<section class="loc-sez reveal">
+  <h2>Domande <span class="italic">frequenti</span></h2>
+  <div class="loc-faq">
+    <details><summary>Lavorate solo con aziende di San Donà di Piave?</summary><p>No. Lo studio è a San Donà, ma seguiamo clienti in tutto il Veneto e in Friuli. Per chi è in zona è più semplice organizzare shooting frequenti e incontri di persona.</p></details>
+    <details><summary>Venite voi a fare foto e video?</summary><p>Sì. Gli shooting si fanno nella sede del cliente: il ristorante, il negozio, l'ufficio, il cantiere. È lì che si vede il lavoro vero.</p></details>
+    <details><summary>Quanto costa?</summary><p>Ogni progetto è diverso, quindi lo valutiamo insieme in una call conoscitiva gratuita. Dopo la call ricevi una proposta scritta.</p></details>
+    <details><summary>Fate anche siti web?</summary><p>Sì: siti vetrina e siti per attività locali, pensati per farsi trovare su Google nella tua zona e per lavorare insieme ai social.</p></details>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="svc-cta">
+  <h3>Raccontami il tuo progetto,<br/><span class="italic">parliamone.</span></h3>
+  <a class="btn" href="call-strategica/">Prenota una call →</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>© 2026 MLP Studio Creativo</div>
+  <div>San Donà di Piave · Venezia</div>
+  <div><a href="mailto:mlpstudiocreativo@gmail.com?subject=Parliamone%20davanti%20a%20un%20caff%C3%A8">mlpstudiocreativo@gmail.com</a> &middot; <a href="privacy.html">Privacy</a> · <a href="#" data-cookie-settings>Cookie</a> &middot; <a href="carriere.html">Carriere</a></div>
+  <div class="footer-zone"><a href="agenzia-comunicazione-san-dona-di-piave.html">Agenzia di comunicazione a San Donà di Piave</a> · <a href="social-media-marketing-jesolo.html">Social media marketing a Jesolo</a></div>
+</footer>
+
+<script>
+  (function(){
+    if('IntersectionObserver' in window){
+      var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:0.12,rootMargin:'0px 0px -50px 0px'});
+      document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+    } else {
+      document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')});
+    }
+  })();
+</script>
+
+<script src="/assets/consenso.js" defer></script>
+</body>
+</html>
