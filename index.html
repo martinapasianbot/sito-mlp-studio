@@ -423,7 +423,8 @@
     display:flex;flex-direction:column;justify-content:space-between;gap:32px;
     min-height:320px;transition:background .3s;
   }
-  .tm:last-child{border-right:none}
+  .tm:last-child,.tm:nth-child(3n){border-right:none}
+  .tm:nth-child(n+4){border-top:1px solid var(--paper-2)}
   .tm:hover{background:var(--paper-2)}
   .tm .quote{
     font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;
@@ -434,6 +435,8 @@
     font-family:'Nunito Sans',serif;font-weight:300;
   }
   .tm .author{display:flex;align-items:center;gap:14px}
+  .tm-video{padding:28px 0 8px;text-align:center;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+  .tm-video a{color:inherit;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:3px}
   .tm .avatar{
     width:46px;height:46px;border-radius:50%;border:1px solid var(--ink);
     display:flex;align-items:center;justify-content:center;
@@ -1077,31 +1080,53 @@
     <div class="section-head reveal">
       <div class="n">— 004</div>
       <h2 class="display">Loro <span class="italic">dicono</span></h2>
-      <div class="m">Parola ai clienti</div>
+      <div class="m">Parola ai clienti, dalle loro video recensioni</div>
     </div>
     <div class="tm-grid">
       <div class="tm reveal">
-        <p class="quote">Hanno trasformato un brief confuso in un'identità che ancora oggi, dopo due anni, ci fa invidia da sola.</p>
+        <p class="quote">Sono riusciti a cogliere l'essenza della nostra attività e sono entrati molto in sintonia con noi. Lo consiglierei veramente a chiunque.</p>
         <div class="author">
-          <div class="avatar">LM</div>
-          <div class="who"><strong>Laura M.</strong><span>Founder, Fornara Caffè</span></div>
+          <div class="avatar">F48</div>
+          <div class="who"><strong>Prisca</strong><span>Hotel Forte 48</span></div>
         </div>
       </div>
       <div class="tm reveal">
-        <p class="quote">Rigorosi sul progetto, divertenti nel processo. Una combinazione rarissima nel nostro settore.</p>
+        <p class="quote">Una gestione social controllata, metodica e costante: senza, non avremmo raggiunto i risultati che stiamo ottenendo adesso.</p>
         <div class="author">
-          <div class="avatar">GR</div>
-          <div class="who"><strong>Giorgio R.</strong><span>Direttore, Rivista Oblique</span></div>
+          <div class="avatar">OR</div>
+          <div class="who"><strong>Nicola</strong><span>Titolare, Pizzeria Origo</span></div>
         </div>
       </div>
       <div class="tm reveal">
-        <p class="quote">Ci hanno ascoltato davvero. Il sito non sembra fatto per noi: sembra scritto con le nostre parole.</p>
+        <p class="quote">Professionali, seri, persone con cui si può avere un'idea, cambiarla, svilupparla, trasformarla. MLP è nella fascia della qualità.</p>
         <div class="author">
-          <div class="avatar">SV</div>
-          <div class="who"><strong>Sara V.</strong><span>Marketing, Casa Verde Hotel</span></div>
+          <div class="avatar">BL</div>
+          <div class="who"><strong>Bar Light</strong><span>Marcon</span></div>
+        </div>
+      </div>
+      <div class="tm reveal">
+        <p class="quote">Collaboriamo da quasi due anni e in questi due anni ho visto dei risultati notevoli. Consiglio a tutti MLP.</p>
+        <div class="author">
+          <div class="avatar">PP</div>
+          <div class="who"><strong>Piave Pesca</strong><span>Pescheria</span></div>
+        </div>
+      </div>
+      <div class="tm reveal">
+        <p class="quote">Diversi video sono andati virali. Il giorno dello shooting guardiamo i contenuti assieme e mi fanno dire le cose a parole mie.</p>
+        <div class="author">
+          <div class="avatar">VE</div>
+          <div class="who"><strong>Venus</strong><span>Costruzione piscine</span></div>
+        </div>
+      </div>
+      <div class="tm reveal">
+        <p class="quote">Sono pazienti con me: non sono tanto brava a fare questo tipo di cose, ma mi danno la sicurezza che posso farlo.</p>
+        <div class="author">
+          <div class="avatar">KE</div>
+          <div class="who"><strong>Kelinda</strong><span>Ristorante pizzeria</span></div>
         </div>
       </div>
     </div>
+    <div class="tm-video reveal"><a href="/recensioni">Guarda le video recensioni dei clienti &rarr;</a></div>
   </section>
 
   <!-- ============ ABOUT ============ -->
