@@ -14,8 +14,12 @@
   var PRIVACY_HREF = inProjects ? '../privacy.html' : 'privacy.html';
 
   // ====== COOKIE BANNER ======
+  // Banner cookie ora gestito da assets/consenso.js (consenso + Meta Pixel). Qui resta solo la newsletter.
+  function consensoGestito(){
+    try { return !!(window.mlpConsenso && window.mlpConsenso.stato()); } catch(e){ return false; }
+  }
   function buildCookieBanner(){
-    if(localStorage.getItem(STORAGE_COOKIE) === '1') return null;
+    return null;
     var el = document.createElement('div');
     el.className = 'mlp-cookie';
     el.setAttribute('role','dialog');
@@ -144,7 +148,7 @@
 
   function maybeShowNewsletter(){
     if(!shouldShowNewsletter()) return;
-    if(localStorage.getItem(STORAGE_COOKIE) !== '1') return; // aspetta che l'utente gestisca i cookie prima
+    if(!consensoGestito()) return; // aspetta che l'utente gestisca i cookie prima
     buildNewsletterModal();
   }
 
@@ -161,6 +165,8 @@
       }
     }, { passive:true });
   }
+
+  document.addEventListener('mlp:consenso', function(){ setTimeout(maybeShowNewsletter, 600); });
 
   function init(){
     // Se la pagina ha l'intro cinematografica (solo index.html), aspetta che finisca
