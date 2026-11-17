@@ -10,7 +10,9 @@
   'use strict';
 
   var PIXEL_ID = '1804647940250522';
-  var GA4_ID = ''; // es. 'G-XXXXXXXXXX' — vuoto = GA4 non caricato
+  var GA4_ID = 'G-12XYJJG2BB'; // GA4 proprietà "Sito mlpstudiocreativo.com" (account martinapasianbot)
+  var CAPI_URL = 'https://mlp-capi.mlpstudiocreativo.workers.dev/'; // Conversions API (worker-capi/)
+  var LEAD_KEY = 'mlp_lead_ud';
   var KEY = 'mlp_consenso_v1';
   var DURATA_MS = 1000 * 60 * 60 * 24 * 182;
 
@@ -46,7 +48,6 @@
       s.parentNode.insertBefore(t, s);
     }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
     window.fbq('init', PIXEL_ID);
-    window.fbq('track', 'PageView');
   }
   function caricaGA4() {
     if (!GA4_ID) return;
@@ -67,9 +68,46 @@
     document.body.appendChild(f);
   }
 
+  function cookie(n) {
+    var m = document.cookie.match(new RegExp('(?:^|; )' + n + '=([^;]*)'));
+    return m ? decodeURIComponent(m[1]) : '';
+  }
+  function fbcDaUrl() {
+    var c = cookie('_fbc');
+    if (c) return c;
+    var m = location.search.match(/[?&]fbclid=([^&]+)/);
+    return m ? 'fb.1.' + Date.now() + '.' + m[1] : '';
+  }
+  function datiLead() {
+    try {
+      var v = JSON.parse(sessionStorage.getItem(LEAD_KEY) || 'null');
+      sessionStorage.removeItem(LEAD_KEY);
+      return v || {};
+    } catch (e) { return {}; }
+  }
+  function capi(nome, dati, id) {
+    if (!CAPI_URL) return;
+    var u = nome === 'Lead' ? datiLead() : {};
+    // attende un attimo che fbevents.js scriva il cookie _fbp
+    setTimeout(function () {
+      var body = JSON.stringify({
+        event_name: nome, event_id: id, url: location.href,
+        fbp: cookie('_fbp'), fbc: fbcDaUrl(),
+        email: u.email || '', phone: u.phone || '',
+        content_name: (dati && dati.content_name) || '',
+        content_category: (dati && dati.content_category) || ''
+      });
+      try {
+        fetch(CAPI_URL, { method: 'POST', body: body, keepalive: true,
+          headers: { 'Content-Type': 'application/json' } }).catch(function () {});
+      } catch (e) {}
+    }, nome === 'PageView' ? 1200 : 0);
+  }
+
   function invia(nome, dati) {
     var id = uid();
     if (window.fbq) window.fbq('track', nome, dati || {}, { eventID: id });
+    capi(nome, dati, id);
     if (window.gtag) {
       var ga = { Lead: 'generate_lead', Contact: 'contact' }[nome] || nome;
       window.gtag('event', ga, dati || {});
@@ -87,9 +125,26 @@
     caricaPixel();
     caricaGA4();
     caricaOverloop();
+    invia('PageView');
     if (eventoPagina) invia(eventoPagina, { content_name: location.pathname });
     while (coda.length) { var c = coda.shift(); invia(c[0], c[1]); }
   }
+
+  /* email e telefono dei form, tenuti solo in questa scheda per abbinare il Lead (hash lato worker) */
+  document.addEventListener('submit', function (e) {
+    var f = e.target;
+    if (!f || !f.querySelector) return;
+    var nomeForm = f.getAttribute('name');
+    if (nomeForm !== 'contact' && nomeForm !== 'call-strategica') return; // solo i form di contatto
+    var em = f.querySelector('input[type="email"]');
+    var tel = f.querySelector('input[type="tel"], input[name="cellulare"], input[name="telefono"]');
+    if (!em && !tel) return;
+    try {
+      sessionStorage.setItem(LEAD_KEY, JSON.stringify({
+        email: em ? em.value : '', phone: tel ? tel.value : ''
+      }));
+    } catch (er) {}
+  }, true);
 
   /* click su mail = Contact (registrato anche prima del consenso, inviato solo se accetta) */
   document.addEventListener('click', function (e) {
