@@ -4,8 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-<title>Retrò Specialisti della Carne — MLP Studio Creativo</title>
-<meta name="description" content="Caso studio: Retrò — Ristorante di carne a Marcon (VE): personal brand del titolare, format video ricorrenti e identità visiva coerente." />
+<title>Retrò, social, sito e campagne — MLP Studio Creativo</title>
+<meta name="description" content="Caso studio Retrò, ristorante di carne a Marcon (Venezia): oltre un milione di visualizzazioni su Instagram, sito nuovo e campagne con una sola regia." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,800;0,900;1,300;1,400&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
@@ -55,9 +55,8 @@
   .project-hero .lead{font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;font-weight:300;font-size:clamp(20px,2.4vw,32px);line-height:1.35;letter-spacing:-0.015em;max-width:62ch;margin-top:30px;color:var(--ink)}
 
   /* COVER */
-  .cover{height:72vh;min-height:520px;border-bottom:1px solid var(--line);background:#0a0a0a center 22%/cover no-repeat;display:flex;align-items:flex-end;padding:32px;color:var(--paper);position:relative;overflow:hidden}
-  .cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.1) 60%,rgba(0,0,0,0.75) 100%)}
-  .cover::before{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 60%)}
+  .cover{height:72vh;min-height:520px;border-bottom:1px solid var(--line);background:#0a0a0a;display:flex;align-items:flex-end;padding:32px;color:var(--paper);position:relative;overflow:hidden}
+  .cover::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.1) 60%,rgba(0,0,0,0.75) 100%)}
   .cover .cover-cap{position:relative;z-index:2;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;opacity:0.9;color:#fff}
 
   /* CHALLENGE / SOLUTION */
@@ -115,6 +114,7 @@
   .mk-grid .grid9{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--paper-2);flex:1}
   .mk-grid .gpost{aspect-ratio:4/5;background:#1a1a1a;background-size:cover;background-position:center top;display:flex;align-items:flex-end;padding:10px;color:#fff;font-size:9px;letter-spacing:0.05em;line-height:1.3;position:relative;overflow:hidden}
   .mk-grid .gpost.has-img::before{display:none}
+  .mk-grid .gpost::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,0.7) 100%)}
   .mk-grid .gpost span{position:relative;z-index:1;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;font-size:8.5px}
   .mk-grid .gp-1{background:linear-gradient(135deg,#1a1a1a,#5a5a5a)}
   .mk-grid .gp-2{background:linear-gradient(160deg,#2a2a2a,#0a0a0a)}
@@ -336,15 +336,67 @@
     .next{grid-template-columns:1fr;text-align:left;gap:14px;padding:50px 20px}
     .next .arr{font-size:28px}
   }
+
+  /* MaDe — estensioni pagina */
+  .gallery .gi.color{filter:none}
+  .gallery .gi.color:hover{filter:none}
+  .gallery .gi.tall{aspect-ratio:auto}
+  .gallery .contain{background-size:auto 84%;background-position:center 30%;background-repeat:no-repeat;background-color:#e9e7e3}
+  .gallery .cap{position:absolute;left:0;bottom:0;padding:14px 18px;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:#fff;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.55));width:100%;z-index:2}
+  .gallery .cap.dk{color:#0a0a0a;background:none}
+  .chapter{padding:70px 32px 40px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:start}
+  .chapter .num{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted)}
+  .chapter h2{font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;font-weight:300;font-size:clamp(30px,3.8vw,48px);letter-spacing:-0.03em;line-height:1.08;margin-bottom:20px}
+  .chapter h2 .italic{font-family:'Nunito Sans',serif;font-weight:200;color:var(--muted)}
+  .chapter p{font-size:16px;line-height:1.75;margin-bottom:14px;max-width:62ch}
+  .mk-stat.brand{background:#7a1f4a;color:#fff}
+  .mk-stat.brand .lbl{color:rgba(255,255,255,0.75)}
+  .mk-stat.brand .big em{color:rgba(255,255,255,0.7)}
+  .mk-quote.brand{background:#7a1f4a}
+  .mk-quote.brand .tag{color:rgba(255,255,255,0.7)}
+  .mk-quote.brand .body em{color:#f2c9dc}
+  .browser{background:#e9e7e3;padding:28px;display:flex;align-items:center;justify-content:center}
+  .browser .win{width:100%;background:#fff;box-shadow:0 24px 60px rgba(0,0,0,0.18);border:1px solid #d6d3ce}
+  .browser .bar{height:26px;display:flex;align-items:center;gap:6px;padding:0 10px;border-bottom:1px solid #e3e0db;background:#f6f5f3}
+  .browser .bar i{width:8px;height:8px;border-radius:50%;background:#cfcac3;display:block}
+  .browser .bar span{margin-left:10px;font-size:9px;letter-spacing:0.12em;color:var(--muted)}
+  .browser img{width:100%;height:auto}
+  @media (max-width:900px){
+    .chapter{grid-template-columns:1fr;gap:16px;padding:50px 20px 30px}
+    .browser{padding:14px}
+    .gallery .gi.tall{aspect-ratio:3/4}
+  }
+
+  /* Casi studio — estensioni */
+  .cover .cover-bg{position:absolute;inset:-60px;background-size:cover;background-position:center;filter:blur(38px) brightness(.55);z-index:0}
+  .cover .cover-fg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .cover.portrait .cover-fg{left:50%;width:auto;max-width:100%;transform:translateX(-50%);object-fit:contain}
+  .cover::before{z-index:1}
+  .gallery .gi img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+  .gallery .ar-4-5{aspect-ratio:4/5}
+  .gallery .mk-stat.sm .big{font-size:clamp(38px,5vw,84px)}
+  .chapter h3,.grid-2 h3{font-family:'Roboto',sans-serif;font-weight:500;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);margin:26px 0 10px}
+  .chapter ul,.grid-2 ul{margin:0 0 16px 18px;max-width:62ch;font-size:16px;line-height:1.7}
+  .chapter li,.grid-2 li{margin-bottom:6px}
+  .chapter p strong,.grid-2 p strong{font-weight:500}
+  .results .grid.gx .cell{border-right:1px solid var(--paper-2);border-bottom:1px solid var(--paper-2)}
+  .results .grid.gx .cell.lc{border-right:none}
+  .results .grid.gx .cell.lr{border-bottom:none}
+  .results .cell .big.sm{font-size:clamp(32px,3.6vw,56px)}
+  @media (max-width:900px){
+    .results{padding:60px 20px}
+    .results .grid.gx{grid-template-columns:repeat(2,1fr)}
+    .results .grid.gx .cell,.results .grid.gx .cell.lc,.results .grid.gx .cell.lr{border-right:1px solid var(--paper-2);border-bottom:1px solid var(--paper-2)}
+    .cover{height:60vh;min-height:380px}
+  }
 </style>
+
 <link rel="stylesheet" href="../assets/overlays.css" />
 <script src="../assets/overlays.js" defer></script>
 <link rel="stylesheet" href="../assets/chat.css" />
 <script src="../assets/assistente.js" defer></script>
 
-
-
-<!-- SEO: JSON-LD + OG (claude-seo) -->
+<!-- SEO: JSON-LD + OG -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -353,33 +405,63 @@
       "@type": "WebPage",
       "@id": "https://www.mlpstudiocreativo.com/projects/retro-specialisti-carne.html#webpage",
       "url": "https://www.mlpstudiocreativo.com/projects/retro-specialisti-carne.html",
-      "name": "Retrò Specialisti della Carne — MLP Studio Creativo",
-      "description": "Caso studio: Retrò — Ristorante di carne a Marcon (VE): personal brand del titolare, format video ricorrenti e identità visiva coerente.",
-      "isPartOf": {"@id": "https://www.mlpstudiocreativo.com/#website"},
+      "name": "Retrò, social, sito e campagne — MLP Studio Creativo",
+      "description": "Caso studio Retrò, ristorante di carne a Marcon (Venezia): oltre un milione di visualizzazioni su Instagram, sito nuovo e campagne con una sola regia.",
+      "isPartOf": {
+        "@id": "https://www.mlpstudiocreativo.com/#website"
+      },
       "inLanguage": "it-IT",
-      "breadcrumb": {"@id": "https://www.mlpstudiocreativo.com/projects/retro-specialisti-carne.html#breadcrumb"}
+      "breadcrumb": {
+        "@id": "https://www.mlpstudiocreativo.com/projects/retro-specialisti-carne.html#breadcrumb"
+      }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.mlpstudiocreativo.com/projects/retro-specialisti-carne.html#breadcrumb",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.mlpstudiocreativo.com/"},
-        {"@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://www.mlpstudiocreativo.com/#portfolio"},
-        {"@type": "ListItem", "position": 3, "name": "Retrò Specialisti della Carne", "item": "https://www.mlpstudiocreativo.com/projects/retro-specialisti-carne.html"}
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.mlpstudiocreativo.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Portfolio",
+          "item": "https://www.mlpstudiocreativo.com/#portfolio"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Retrò",
+          "item": "https://www.mlpstudiocreativo.com/projects/retro-specialisti-carne.html"
+        }
       ]
     },
     {
       "@type": "CreativeWork",
       "@id": "https://www.mlpstudiocreativo.com/projects/retro-specialisti-carne.html#creativework",
-      "name": "Retrò Specialisti della Carne — MLP Studio Creativo",
-      "headline": "Retrò Specialisti della Carne — MLP Studio Creativo",
-      "description": "Caso studio: Retrò — Ristorante di carne a Marcon (VE): personal brand del titolare, format video ricorrenti e identità visiva coerente.",
+      "name": "Retrò",
+      "headline": "Retrò, social, sito e campagne",
+      "description": "Caso studio Retrò, ristorante di carne a Marcon (Venezia): oltre un milione di visualizzazioni su Instagram, sito nuovo e campagne con una sola regia.",
       "url": "https://www.mlpstudiocreativo.com/projects/retro-specialisti-carne.html",
+      "image": "https://www.mlpstudiocreativo.com/projects/img/retro/retro-caso-og.jpg",
       "inLanguage": "it-IT",
-      "creator": {"@id": "https://www.mlpstudiocreativo.com/#organization"},
-      "author": {"@id": "https://www.mlpstudiocreativo.com/#organization"},
-      "publisher": {"@id": "https://www.mlpstudiocreativo.com/#organization"},
-      "about": {"@type": "Organization", "name": "Retrò Specialisti della Carne"}
+      "dateCreated": "2024",
+      "creator": {
+        "@id": "https://www.mlpstudiocreativo.com/#organization"
+      },
+      "author": {
+        "@id": "https://www.mlpstudiocreativo.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://www.mlpstudiocreativo.com/#organization"
+      },
+      "about": {
+        "@type": "Organization",
+        "name": "Retrò"
+      }
     }
   ]
 }
@@ -387,24 +469,23 @@
 <link rel="canonical" href="https://www.mlpstudiocreativo.com/projects/retro-specialisti-carne.html" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mlpstudiocreativo.com/projects/retro-specialisti-carne.html" />
-<meta property="og:title" content="Retrò Specialisti della Carne — MLP Studio Creativo" />
-<meta property="og:description" content="Caso studio: Retrò — Ristorante di carne a Marcon (VE): personal brand del titolare, format video ricorrenti e identità visiva coerente." />
-<meta property="og:image" content="https://www.mlpstudiocreativo.com/logo.svg" />
+<meta property="og:title" content="Retrò, social, sito e campagne — MLP Studio Creativo" />
+<meta property="og:description" content="Caso studio Retrò, ristorante di carne a Marcon (Venezia): oltre un milione di visualizzazioni su Instagram, sito nuovo e campagne con una sola regia." />
+<meta property="og:image" content="https://www.mlpstudiocreativo.com/projects/img/retro/retro-caso-og.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:locale" content="it_IT" />
 <meta property="og:site_name" content="MLP Studio Creativo" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Retrò Specialisti della Carne — MLP Studio Creativo" />
-<meta name="twitter:description" content="Caso studio: Retrò — Ristorante di carne a Marcon (VE): personal brand del titolare, format video ricorrenti e identità visiva coerente." />
-<meta name="twitter:image" content="https://www.mlpstudiocreativo.com/logo.svg" />
+<meta name="twitter:title" content="Retrò, social, sito e campagne — MLP Studio Creativo" />
+<meta name="twitter:description" content="Caso studio Retrò, ristorante di carne a Marcon (Venezia): oltre un milione di visualizzazioni su Instagram, sito nuovo e campagne con una sola regia." />
+<meta name="twitter:image" content="https://www.mlpstudiocreativo.com/projects/img/retro/retro-caso-og.jpg" />
 <!-- /SEO -->
 </head>
 <body>
 
   <div class="cursor" id="cursor"></div>
 
-  <!-- TOPBAR -->
   <header class="topbar">
     <a href="../index.html" class="brand">
       <img src="../logo.svg" alt="MLP Studio Creativo" />
@@ -416,103 +497,121 @@
       <a href="../index.html#about">Studio</a>
       <a href="../index.html#contatti">Contatti</a>
     </nav>
-    <div class="meta">Case · 01/10</div>
+    <div class="meta">Case · Social · Sito</div>
   </header>
 
-  <!-- BACK -->
   <div class="back-bar">
     <a href="../index.html#portfolio">← Torna al portfolio</a>
-    <span>Caso studio · 01/10</span>
+    <span>Caso studio · Ristorazione</span>
   </div>
 
-  <!-- HERO -->
   <section class="project-hero">
     <div class="meta-row">
-      <div>Cliente<strong>RETRÒ · Specialisti della Carne</strong></div>
-      <div>Sede<strong>Piazza IV Novembre 9 · Marcon (VE)</strong></div>
-      <div>Categoria<strong>Personal Brand · Social</strong></div>
-      <div>Servizi<strong>Strategia · Regia · Content · Editing</strong></div>
+      <div>Cliente<strong>Retrò · Specialisti della Carne</strong></div>
+      <div>Settore<strong>Ristorazione · ristorante di carne</strong></div>
+      <div>Servizi<strong>Strategia social · Shooting mensile · Reel · Sito web · SEO · Campagne sponsorizzate · Eventi</strong></div>
+      <div>Dal<strong>agosto 2024</strong></div>
+      <div>Zona<strong>Marcon (Venezia)</strong></div>
     </div>
-    <h1 class="display">RETRÒ <span class="italic">Specialisti della Carne.</span></h1>
-    <p class="lead">Un ristorante di carne a Marcon: ricostruzione del personal brand del titolare e riposizionamento del locale come destinazione (non come "ristorante di paese"), attraverso format video ricorrenti.</p>
+    <h1 class="display">Retr<span class="italic">ò.</span></h1>
+    <p class="lead">Social, sito e campagne con una sola regia. Un ristorante di carne a Marcon. Ne raccontiamo il lavoro in cucina e in sala con reel girati ogni mese, abbiamo rifatto il sito da zero e gestiamo le campagne che portano le prenotazioni. Chi vede un video e poi cerca Retrò su Google trova lo stesso locale, con la stessa voce.</p>
   </section>
 
-  <!-- COVER -->
-  <div class="cover" style="background-image:url('img/retro/retro-hero.jpg')">
-    <div class="cover-cap">— RETRÒ · Piazza IV Novembre, Marcon (VE) · 2025–2026</div>
+  <div class="cover">
+    <img class="cover-fg" src="img/retro/retro-caso-cover.jpg" alt="Il bancone in legno e la sala con travi a vista del ristorante Retrò" width="1600" height="1067" fetchpriority="high" style="object-position:50% 50%" />
+    <div class="cover-cap">— Retrò · Marcon (Venezia)</div>
   </div>
 
-  <!-- CHALLENGE / SOLUTION -->
   <section class="grid-2">
     <div class="reveal">
-      <div class="num">— 001 · La sfida</div>
-      <h2 class="display">Far parlare di carne in un mercato saturo, senza diventare un meme.</h2>
-      <p>Quando ci hanno chiamato, RETRÒ era già un ristorante di altissimo livello ma comunicava come tutti gli altri: piatti in close-up, hashtag generici, voce piatta. Il rischio era restare uno dei tanti steakhouse "belli ma indistinguibili" della provincia veneziana. Volevano un'identità che mettesse al centro la materia prima — il <em>Bue di Rubia Gallega</em>, lo spiedo del martedì, il menù che cambia a stagione — e il titolare con il suo mestiere, senza scivolare nel personaggio macchiettistico.</p>
+      <div class="num">— 001 · Da dove siamo partiti</div>
+      <h2 class="display">Un mestiere che si vede poco.</h2>
+      <p>Retrò lavora la carne a mano: tagli scelti, bistecche pesate al momento, piatti di carne che non si trovano altrove, il martedì dello spiedo, cerimonie ed eventi privati. È un mestiere fatto di gesti precisi, che dal piatto finito non si vede.</p>
+      <p>Online, il sito precedente era costruito su una vecchia piattaforma, con articoli e menù del 2018-2020. Con il tempo molti di quegli indirizzi avevano smesso di funzionare e risultavano esclusi dai risultati di ricerca.</p>
     </div>
     <div class="reveal">
       <div class="num">— 002 · Cosa abbiamo fatto</div>
-      <h2 class="display">Un format che mostra il mestiere, non lo show.</h2>
-      <p>Abbiamo costruito un sistema editoriale a format ricorrenti — <em>"Spiedo di Manzo"</em> (martedì sera), <em>"Tagliamo un Bue"</em>, <em>"Pesiamo il Gallego"</em>, <em>"Menù di stagione"</em> — con una grammatica visiva costante: dominante nera, oro caldo del logo, copy in maiuscolo a tutta carrellata sul reel. Reels girati in cucina e in sala in batch mensili, copy diretto e operativo. Highlights riorganizzati per intent — <em>Alla carta · Pezzi forte · Dicono di noi · Locale · Menù carni</em> — per trasformare il profilo in un menù navigabile.</p>
+      <h2 class="display">Il mestiere in primo piano, <span class="italic">ogni settimana.</span></h2>
+      <p><strong>Social.</strong> Shooting mensile in cucina e in sala, tre reel a settimana. Abbiamo costruito format che si ripetono e che il pubblico riconosce: la sfida della bilancia, in cui si prova a tagliare a mano una bistecca del peso esatto chiesto dal cliente; “quanto si spende al Retrò”, con il conto vero di un tavolo; il dietro le quinte del servizio serale; i piatti nuovi di ogni menù stagionale.</p>
+      <p><strong>Sito.</strong> Abbiamo progettato e messo online osteriaretro.it: tre lingue (italiano, inglese, tedesco), menù sempre aggiornabili, prenotazione diretta su WhatsApp, una pagina eventi con veranda estiva, spiedo del martedì, degustazioni e cerimonie, una pagina dedicata alle carni con otto selezioni e domande frequenti. Poi il lavoro tecnico: dati strutturati del ristorante, orari uguali ovunque, foto alleggerite, vecchi indirizzi reindirizzati alle pagine giuste.</p>
+      <p><strong>Campagne.</strong> Sponsorizziamo i reel che funzionano già in organico, con un piano per obiettivo: prenotazioni via messaggio, cene di gruppo e aziendali, notorietà nella zona tra Marcon, Mestre, Quarto d'Altino e Treviso sud. Per le cene aziendali di dicembre 2026 abbiamo preparato le campagne, sui social e sulla ricerca Google.</p>
+      <p><strong>Eventi.</strong> A maggio 2026 Retrò e Bar Light hanno organizzato The Big Grill, due giorni di grigliata. Lo abbiamo comunicato in parallelo sui due profili, con piano di comunicazione e storie dedicate per ciascun locale.</p>
     </div>
   </section>
 
-  <!-- GALLERY -->
   <section class="gallery">
-    <div class="span-7 ar-16-10 mk-grid">
-      <div class="ig-head">
-        <div class="av"></div>
-        <div class="nm">@retro_specialistidellacarne<span class="h">RETRÒ | ristorante di carne · Marcon (VE)</span></div>
-      </div>
-      <div class="grid9">
-        <div class="gpost has-img" style="background-image:url('img/retro/retro-01.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/retro/retro-02.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/retro/retro-04.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/retro/retro-05.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/retro/retro-06.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/retro/retro-08.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/retro/retro-09.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/retro/retro-10.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/retro/retro-12.jpg')"></div>
-      </div>
-    </div>
-    <div class="span-5 ar-1-1 mk-quote">
-      <div class="tag">— Tono di voce</div>
-      <div class="body">Carne, fuoco, sala. Tre parole, <em>nessuna in più</em>: il copy in caps sul reel. Niente storytelling che non finisca in una prenotazione.</div>
-    </div>
-    <div class="span-6 ar-1-1 mk-phone">
-      <div class="frame">
-        <div class="notch"></div>
-        <div class="screen">
-          <div class="ig-bar"><div class="av"></div><div class="nm">retro_specialistidellacarne</div><div class="dot">···</div></div>
-          <div class="reel-img" style="background-image:url('img/retro/retro-reel.jpg')"></div>
-          <div class="ig-stats">
-            <div class="row"><div class="ic"></div><div class="ic"></div><div class="ic sq"></div></div>
-            <div class="cap"><b>retro_specialistidellacarne</b> SPIEDO DI MANZO · ogni martedì sera. Spiedo in spada con tagli ricavati dalle nostre cosce e l'inimitabile salsiccia di manzo. <em>Tutto cotto in brace.</em></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="span-6 ar-1-1 mk-swatch dk">RETRÒ</div>
+    <div class="span-12 ar-16-10 gi color"><img src="img/retro/retro-caso-01.jpg" alt="Tavolata lunga apparecchiata nella veranda di Retrò" width="1600" height="1067" loading="lazy" style="object-position:50% 50%" /></div>
+    <div class="span-4 ar-4-5 gi color"><img src="img/retro/retro-caso-02.jpg" alt="Il titolare mostra una coscia di manzo davanti alla cella di frollatura" width="1200" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+    <div class="span-4 ar-4-5 gi color"><img src="img/retro/retro-caso-03.jpg" alt="Il titolare al tavolo con taglieri e grigliata" width="1200" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+    <div class="span-4 ar-4-5 gi color"><img src="img/retro/retro-caso-04.jpg" alt="Il titolare porta un piatto di antipasti in sala" width="1200" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+    <div class="span-6 ar-1-1 gi color"><img src="img/retro/retro-caso-05.jpg" alt="Antipasti di carne visti dall&#x27;alto" width="1200" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+    <div class="span-6 ar-1-1 gi color"><img src="img/retro/retro-caso-06.jpg" alt="Il titolare con una ciotola di carne cruda per la tartare" width="1200" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
   </section>
-  <!-- CREDITS -->
+
+  <section class="chapter reveal">
+    <div class="num">— 003 · Dove siamo ora</div>
+    <div>
+      <h2 class="display">Un milione di visualizzazioni e un sito che si fa trovare.</h2>
+      <p>Da gennaio a inizio novembre 2026 i reel di Retrò su Instagram hanno superato il milione di visualizzazioni. Ventitré reel hanno passato da soli le 10.000 visualizzazioni. Il più visto, una delle sfide della bilancia, si è avvicinato alle 100.000. Il profilo Instagram ha superato i 20.000 follower.</p>
+      <p>Il nuovo sito era già online a maggio. Da lì il lavoro SEO lo ha reso più veloce e più chiaro per i motori di ricerca: oggi ha un punteggio SEO tecnico di 100 su 100 da telefono e da computer. Da desktop la pagina si carica completa in 0,7 secondi; da telefono il contenuto principale arriva in 3,2 secondi invece di 5,1, il 37% più veloce rispetto a maggio. Sitemap, dati strutturati del ristorante e anteprime per la condivisione sono attivi su tutte le pagine.</p>
+      <p>Prossimi passi già in calendario: il nuovo video invernale, i contenuti sulle cene aziendali, la partenza delle campagne di dicembre già preparate e il monitoraggio mensile del sito.</p>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="span-4 ar-4-5 gi color"><img src="img/retro/retro-caso-07.jpg" alt="Lo chef con due piatti di carne davanti alla griglia" width="1200" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+    <div class="span-4 ar-4-5 gi color"><img src="img/retro/retro-caso-08.jpg" alt="Il titolare a braccia conserte in cucina" width="1200" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+    <div class="span-4 ar-4-5 gi color"><img src="img/retro/retro-caso-09.jpg" alt="Tagliere di salumi e formaggi su piano in legno" width="1200" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+  </section>
+
+  <section class="results reveal">
+    <div class="head">— 004 · Il progetto in numeri</div>
+    <div class="grid gx" style="grid-template-columns:repeat(3,1fr)">
+      <div class="cell">
+        <div class="big display sm">1.047.740</div>
+        <div class="lbl">visualizzazioni dei reel su Instagram, gennaio – novembre 2026</div>
+      </div>
+      <div class="cell">
+        <div class="big display">130</div>
+        <div class="lbl">reel pubblicati su Instagram nello stesso periodo</div>
+      </div>
+      <div class="cell lc">
+        <div class="big display">23</div>
+        <div class="lbl">reel oltre le 10.000 visualizzazioni</div>
+      </div>
+      <div class="cell lr">
+        <div class="big display sm">20.000+</div>
+        <div class="lbl">follower su Instagram</div>
+      </div>
+      <div class="cell lr">
+        <div class="big display sm">100/100</div>
+        <div class="lbl">punteggio SEO tecnico del sito, da telefono e da computer</div>
+      </div>
+      <div class="cell lc lr">
+        <div class="big display">+37%</div>
+        <div class="lbl">velocità del sito da telefono dopo il lavoro SEO, rispetto a maggio</div>
+      </div>
+    </div>
+  </section>
+
   <section class="credits reveal">
-    <div class="label">— 003 · Crediti & dettagli</div>
+    <div class="label">— 005 · Crediti &amp; dettagli</div>
     <dl>
-      <div><dt>Anno</dt><dd>2025–2026</dd></div>
-      <div><dt>Discipline</dt><dd>Content Strategy, Regia, Editing, Copywriting, Community</dd></div>
-      <div><dt>Direzione creativa</dt><dd>MLP Studio Creativo</dd></div>
-      <div><dt>Sede cliente</dt><dd>Piazza IV Novembre 9, Marcon (VE)</dd></div>
+      <div><dt>Anno</dt><dd>2024 – 2026</dd></div>
+      <div><dt>Discipline</dt><dd>Strategia social, Shooting, Reel, Web design, SEO, Advertising, Comunicazione eventi</dd></div>
+      <div><dt>Strategia, sito, SEO e campagne</dt><dd>Martina, MLP Studio Creativo</dd></div>
+      <div><dt>Riprese e montaggio</dt><dd>Alice, con il team video MLP</dd></div>
+      <div><dt>Piano editoriale, testi, grafiche menù e pubblicazione</dt><dd>Matteo</dd></div>
+      <div><dt>Sede cliente</dt><dd>Marcon (Venezia)</dd></div>
     </dl>
   </section>
 
-  <!-- NEXT -->
   <a href="light-bistrot.html" class="next">
     <span class="lab">— Prossimo progetto</span>
-    <span class="title display">Light Bistrot</span>
+    <span class="title display">Bar Bistrot Light</span>
     <span class="arr">→</span>
   </a>
 
-  <!-- FOOTER -->
   <footer>
     <div>© 2026 MLP Studio Creativo</div>
     <div>San Donà di Piave <span class="dot"></span> Venezia</div>

@@ -4,8 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-<title>De Piccoli Immobiliare — MLP Studio Creativo</title>
-<meta name="description" content="Caso studio: De Piccoli — Comunicazione social e content per un'agenzia immobiliare: case, Open House, uffici e persone dell'agenzia." />
+<title>Immobiliare De Piccoli, reel e agenti — MLP Studio Creativo</title>
+<meta name="description" content="Caso studio Immobiliare De Piccoli, San Donà di Piave e Ceggia: gli agenti davanti alla camera, 127 reel nel 2026 e oltre un milione di visualizzazioni." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,800;0,900;1,300;1,400&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
@@ -55,7 +55,7 @@
   .project-hero .lead{font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;font-weight:300;font-size:clamp(20px,2.4vw,32px);line-height:1.35;letter-spacing:-0.015em;max-width:62ch;margin-top:30px;color:var(--ink)}
 
   /* COVER */
-  .cover{height:72vh;min-height:520px;border-bottom:1px solid var(--line);background:#0a0a0a url('img/de-piccoli/depiccoli-hero.jpg') center 22%/cover;display:flex;align-items:flex-end;padding:32px;color:var(--paper);position:relative;overflow:hidden}
+  .cover{height:72vh;min-height:520px;border-bottom:1px solid var(--line);background:#0a0a0a;display:flex;align-items:flex-end;padding:32px;color:var(--paper);position:relative;overflow:hidden}
   .cover::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.1) 60%,rgba(0,0,0,0.75) 100%)}
   .cover .cover-cap{position:relative;z-index:2;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;opacity:0.9;color:#fff}
 
@@ -336,15 +336,67 @@
     .next{grid-template-columns:1fr;text-align:left;gap:14px;padding:50px 20px}
     .next .arr{font-size:28px}
   }
+
+  /* MaDe — estensioni pagina */
+  .gallery .gi.color{filter:none}
+  .gallery .gi.color:hover{filter:none}
+  .gallery .gi.tall{aspect-ratio:auto}
+  .gallery .contain{background-size:auto 84%;background-position:center 30%;background-repeat:no-repeat;background-color:#e9e7e3}
+  .gallery .cap{position:absolute;left:0;bottom:0;padding:14px 18px;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:#fff;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.55));width:100%;z-index:2}
+  .gallery .cap.dk{color:#0a0a0a;background:none}
+  .chapter{padding:70px 32px 40px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:start}
+  .chapter .num{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted)}
+  .chapter h2{font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;font-weight:300;font-size:clamp(30px,3.8vw,48px);letter-spacing:-0.03em;line-height:1.08;margin-bottom:20px}
+  .chapter h2 .italic{font-family:'Nunito Sans',serif;font-weight:200;color:var(--muted)}
+  .chapter p{font-size:16px;line-height:1.75;margin-bottom:14px;max-width:62ch}
+  .mk-stat.brand{background:#7a1f4a;color:#fff}
+  .mk-stat.brand .lbl{color:rgba(255,255,255,0.75)}
+  .mk-stat.brand .big em{color:rgba(255,255,255,0.7)}
+  .mk-quote.brand{background:#7a1f4a}
+  .mk-quote.brand .tag{color:rgba(255,255,255,0.7)}
+  .mk-quote.brand .body em{color:#f2c9dc}
+  .browser{background:#e9e7e3;padding:28px;display:flex;align-items:center;justify-content:center}
+  .browser .win{width:100%;background:#fff;box-shadow:0 24px 60px rgba(0,0,0,0.18);border:1px solid #d6d3ce}
+  .browser .bar{height:26px;display:flex;align-items:center;gap:6px;padding:0 10px;border-bottom:1px solid #e3e0db;background:#f6f5f3}
+  .browser .bar i{width:8px;height:8px;border-radius:50%;background:#cfcac3;display:block}
+  .browser .bar span{margin-left:10px;font-size:9px;letter-spacing:0.12em;color:var(--muted)}
+  .browser img{width:100%;height:auto}
+  @media (max-width:900px){
+    .chapter{grid-template-columns:1fr;gap:16px;padding:50px 20px 30px}
+    .browser{padding:14px}
+    .gallery .gi.tall{aspect-ratio:3/4}
+  }
+
+  /* Casi studio — estensioni */
+  .cover .cover-bg{position:absolute;inset:-60px;background-size:cover;background-position:center;filter:blur(38px) brightness(.55);z-index:0}
+  .cover .cover-fg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .cover.portrait .cover-fg{left:50%;width:auto;max-width:100%;transform:translateX(-50%);object-fit:contain}
+  .cover::before{z-index:1}
+  .gallery .gi img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+  .gallery .ar-4-5{aspect-ratio:4/5}
+  .gallery .mk-stat.sm .big{font-size:clamp(38px,5vw,84px)}
+  .chapter h3,.grid-2 h3{font-family:'Roboto',sans-serif;font-weight:500;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);margin:26px 0 10px}
+  .chapter ul,.grid-2 ul{margin:0 0 16px 18px;max-width:62ch;font-size:16px;line-height:1.7}
+  .chapter li,.grid-2 li{margin-bottom:6px}
+  .chapter p strong,.grid-2 p strong{font-weight:500}
+  .results .grid.gx .cell{border-right:1px solid var(--paper-2);border-bottom:1px solid var(--paper-2)}
+  .results .grid.gx .cell.lc{border-right:none}
+  .results .grid.gx .cell.lr{border-bottom:none}
+  .results .cell .big.sm{font-size:clamp(32px,3.6vw,56px)}
+  @media (max-width:900px){
+    .results{padding:60px 20px}
+    .results .grid.gx{grid-template-columns:repeat(2,1fr)}
+    .results .grid.gx .cell,.results .grid.gx .cell.lc,.results .grid.gx .cell.lr{border-right:1px solid var(--paper-2);border-bottom:1px solid var(--paper-2)}
+    .cover{height:60vh;min-height:380px}
+  }
 </style>
+
 <link rel="stylesheet" href="../assets/overlays.css" />
 <script src="../assets/overlays.js" defer></script>
 <link rel="stylesheet" href="../assets/chat.css" />
 <script src="../assets/assistente.js" defer></script>
 
-
-
-<!-- SEO: JSON-LD + OG (claude-seo) -->
+<!-- SEO: JSON-LD + OG -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -353,33 +405,63 @@
       "@type": "WebPage",
       "@id": "https://www.mlpstudiocreativo.com/projects/de-piccoli.html#webpage",
       "url": "https://www.mlpstudiocreativo.com/projects/de-piccoli.html",
-      "name": "De Piccoli Immobiliare — MLP Studio Creativo",
-      "description": "Caso studio: De Piccoli — Comunicazione social e content per un'agenzia immobiliare: case, Open House, uffici e persone dell'agenzia.",
-      "isPartOf": {"@id": "https://www.mlpstudiocreativo.com/#website"},
+      "name": "Immobiliare De Piccoli, reel e agenti — MLP Studio Creativo",
+      "description": "Caso studio Immobiliare De Piccoli, San Donà di Piave e Ceggia: gli agenti davanti alla camera, 127 reel nel 2026 e oltre un milione di visualizzazioni.",
+      "isPartOf": {
+        "@id": "https://www.mlpstudiocreativo.com/#website"
+      },
       "inLanguage": "it-IT",
-      "breadcrumb": {"@id": "https://www.mlpstudiocreativo.com/projects/de-piccoli.html#breadcrumb"}
+      "breadcrumb": {
+        "@id": "https://www.mlpstudiocreativo.com/projects/de-piccoli.html#breadcrumb"
+      }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.mlpstudiocreativo.com/projects/de-piccoli.html#breadcrumb",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.mlpstudiocreativo.com/"},
-        {"@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://www.mlpstudiocreativo.com/#portfolio"},
-        {"@type": "ListItem", "position": 3, "name": "De Piccoli Immobiliare", "item": "https://www.mlpstudiocreativo.com/projects/de-piccoli.html"}
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.mlpstudiocreativo.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Portfolio",
+          "item": "https://www.mlpstudiocreativo.com/#portfolio"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Immobiliare De Piccoli",
+          "item": "https://www.mlpstudiocreativo.com/projects/de-piccoli.html"
+        }
       ]
     },
     {
       "@type": "CreativeWork",
       "@id": "https://www.mlpstudiocreativo.com/projects/de-piccoli.html#creativework",
-      "name": "De Piccoli Immobiliare — MLP Studio Creativo",
-      "headline": "De Piccoli Immobiliare — MLP Studio Creativo",
-      "description": "Caso studio: De Piccoli — Comunicazione social e content per un'agenzia immobiliare: case, Open House, uffici e persone dell'agenzia.",
+      "name": "Immobiliare De Piccoli",
+      "headline": "Immobiliare De Piccoli, reel e agenti",
+      "description": "Caso studio Immobiliare De Piccoli, San Donà di Piave e Ceggia: gli agenti davanti alla camera, 127 reel nel 2026 e oltre un milione di visualizzazioni.",
       "url": "https://www.mlpstudiocreativo.com/projects/de-piccoli.html",
+      "image": "https://www.mlpstudiocreativo.com/projects/img/de-piccoli/de-piccoli-caso-og.jpg",
       "inLanguage": "it-IT",
-      "creator": {"@id": "https://www.mlpstudiocreativo.com/#organization"},
-      "author": {"@id": "https://www.mlpstudiocreativo.com/#organization"},
-      "publisher": {"@id": "https://www.mlpstudiocreativo.com/#organization"},
-      "about": {"@type": "Organization", "name": "De Piccoli Immobiliare"}
+      "dateCreated": "2024",
+      "creator": {
+        "@id": "https://www.mlpstudiocreativo.com/#organization"
+      },
+      "author": {
+        "@id": "https://www.mlpstudiocreativo.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://www.mlpstudiocreativo.com/#organization"
+      },
+      "about": {
+        "@type": "Organization",
+        "name": "Immobiliare De Piccoli"
+      }
     }
   ]
 }
@@ -387,24 +469,23 @@
 <link rel="canonical" href="https://www.mlpstudiocreativo.com/projects/de-piccoli.html" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mlpstudiocreativo.com/projects/de-piccoli.html" />
-<meta property="og:title" content="De Piccoli Immobiliare — MLP Studio Creativo" />
-<meta property="og:description" content="Caso studio: De Piccoli — Comunicazione social e content per un'agenzia immobiliare: case, Open House, uffici e persone dell'agenzia." />
-<meta property="og:image" content="https://www.mlpstudiocreativo.com/logo.svg" />
+<meta property="og:title" content="Immobiliare De Piccoli, reel e agenti — MLP Studio Creativo" />
+<meta property="og:description" content="Caso studio Immobiliare De Piccoli, San Donà di Piave e Ceggia: gli agenti davanti alla camera, 127 reel nel 2026 e oltre un milione di visualizzazioni." />
+<meta property="og:image" content="https://www.mlpstudiocreativo.com/projects/img/de-piccoli/de-piccoli-caso-og.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:locale" content="it_IT" />
 <meta property="og:site_name" content="MLP Studio Creativo" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="De Piccoli Immobiliare — MLP Studio Creativo" />
-<meta name="twitter:description" content="Caso studio: De Piccoli — Comunicazione social e content per un'agenzia immobiliare: case, Open House, uffici e persone dell'agenzia." />
-<meta name="twitter:image" content="https://www.mlpstudiocreativo.com/logo.svg" />
+<meta name="twitter:title" content="Immobiliare De Piccoli, reel e agenti — MLP Studio Creativo" />
+<meta name="twitter:description" content="Caso studio Immobiliare De Piccoli, San Donà di Piave e Ceggia: gli agenti davanti alla camera, 127 reel nel 2026 e oltre un milione di visualizzazioni." />
+<meta name="twitter:image" content="https://www.mlpstudiocreativo.com/projects/img/de-piccoli/de-piccoli-caso-og.jpg" />
 <!-- /SEO -->
 </head>
 <body>
 
   <div class="cursor" id="cursor"></div>
 
-  <!-- TOPBAR -->
   <header class="topbar">
     <a href="../index.html" class="brand">
       <img src="../logo.svg" alt="MLP Studio Creativo" />
@@ -416,103 +497,133 @@
       <a href="../index.html#about">Studio</a>
       <a href="../index.html#contatti">Contatti</a>
     </nav>
-    <div class="meta">Case · 04/10</div>
+    <div class="meta">Case · Social · Immobiliare</div>
   </header>
 
-  <!-- BACK -->
   <div class="back-bar">
     <a href="../index.html#portfolio">← Torna al portfolio</a>
-    <span>Caso studio · 04/10</span>
+    <span>Caso studio · Immobiliare</span>
   </div>
 
-  <!-- HERO -->
   <section class="project-hero">
     <div class="meta-row">
-      <div>Cliente<strong>De Piccoli · Agenzia Immobiliare</strong></div>
-      <div>Categoria<strong>Content · Social · Eventi</strong></div>
-      <div>Servizi<strong>Content · Regia · Open House · Storytelling</strong></div>
-      <div>Settore<strong>Immobiliare · Real Estate</strong></div>
+      <div>Cliente<strong>Immobiliare De Piccoli</strong></div>
+      <div>Settore<strong>Immobiliare · Agenzia</strong></div>
+      <div>Servizi<strong>Strategia social · Personal brand · Shooting video e drone · Reel · Grafica · Sponsorizzate</strong></div>
+      <div>Dal<strong>ottobre 2024</strong></div>
+      <div>Zona<strong>San Donà di Piave e Ceggia (Venezia), Veneto orientale</strong></div>
     </div>
     <h1 class="display">De <span class="italic">Piccoli.</span></h1>
-    <p class="lead">Comunicazione social per un'agenzia immobiliare sul territorio veneto: dalla scheda casa raccontata bene agli Open House come evento.</p>
+    <p class="lead">Immobiliare De Piccoli. Un'agenzia immobiliare del Veneto orientale, con sedi a San Donà di Piave e Ceggia. Abbiamo spostato il racconto dalle schede degli immobili alle persone che li vendono: reel girati in casa, con gli agenti davanti alla camera. Nel 2026 i reel hanno superato il milione di visualizzazioni su Instagram.</p>
   </section>
 
-  <!-- COVER -->
-  <div class="cover">
-    <div class="cover-cap">— Cover progetto · De Piccoli · Agenzia Immobiliare · 2025–2026</div>
+  <div class="cover portrait">
+    <div class="cover-bg" style="background-image:url('img/de-piccoli/de-piccoli-caso-cover.jpg')"></div>
+    <img class="cover-fg" src="img/de-piccoli/de-piccoli-caso-cover.jpg" alt="La sede di Immobiliare De Piccoli a San Donà di Piave, di sera" width="1067" height="1600" fetchpriority="high" />
+    <div class="cover-cap">— Immobiliare De Piccoli · San Donà di Piave e Ceggia (Venezia), Veneto orientale</div>
   </div>
 
-  <!-- CHALLENGE / SOLUTION -->
   <section class="grid-2">
     <div class="reveal">
-      <div class="num">— 001 · La sfida</div>
-      <h2 class="display">Rendere emozionale un settore famoso per i cartelli "vendesi".</h2>
-      <p>Il mercato immobiliare ha una comunicazione piatta: foto con grandangolo, planimetrie, caratteristiche tecniche. De Piccoli voleva distinguersi raccontando non la casa ma chi la abiterà, non l'agenzia ma gli agenti — trasformando un settore freddo in qualcosa che valesse la pena seguire anche senza essere in cerca casa.</p>
+      <div class="num">— 001 · Da dove siamo partiti</div>
+      <h2 class="display">Tante case, <span class="italic">una vetrina uguale alle altre.</span></h2>
+      <p>De Piccoli lavora tra San Donà di Piave, Ceggia e i comuni intorno, fino al litorale. Ogni settimana ha immobili nuovi da presentare, open house da riempire, nuove costruzioni da lanciare.</p>
+      <p>Nel settore la comunicazione si somiglia: foto grandangolari, planimetrie, elenco delle caratteristiche. Il nostro compito era far riconoscere l'agenzia per le persone che ci lavorano, e usare quella fiducia per far entrare il pubblico nelle case.</p>
     </div>
     <div class="reveal">
       <div class="num">— 002 · Cosa abbiamo fatto</div>
-      <h2 class="display">Due binari editoriali: le case e le persone.</h2>
-      <p>Da un lato, una serie costante dedicata alle proprietà — foto curate, una narrazione tipo cortometraggio per ogni immobile. Dall'altro, un racconto dell'agenzia dall'interno: gli uffici, gli Open House come eventi sociali (non visite). Così il profilo diventa appuntamento prima ancora che catalogo.</p>
+      <h2 class="display">Gli agenti davanti alla camera.</h2>
+      <p>La linea è il personal brand dell'agenzia. Il titolare e gli agenti accompagnano chi guarda dentro gli immobili, spiegano la zona, danno consigli pratici a chi compra e a chi vende: la classe energetica che pesa sul mutuo, gli errori che rovinano una vendita, il valore di un open house.</p>
+      <p>Il formato principale è il reel verticale. Da gennaio a inizio novembre 2026 sul profilo Instagram ne sono usciti 127, con un ritmo costante di 12-17 contenuti al mese.</p>
+      <p>Gli open house sono diventati un appuntamento fisso: un post per annunciarli, con la casa, il comune, la data e l'orario, e una grafica riconoscibile. Per le nuove costruzioni abbiamo girato con il drone e montato video a partire da render e foto dei cantieri.</p>
+      <p>Accanto all'organico, le sponsorizzate: campagne contatti sulle nuove costruzioni, campagne dedicate agli open house nei comuni dell'immobile, e un piano mensile che tiene separati i video per chi compra da quelli per chi vende.</p>
     </div>
   </section>
 
-  <!-- GALLERY -->
   <section class="gallery">
-    <div class="span-7 ar-16-10 mk-grid">
-      <div class="ig-head">
-        <div class="av"></div>
-        <div class="nm">@depiccoli<span class="h">De Piccoli · Immobiliare</span></div>
-      </div>
-      <div class="grid9">
-        <div class="gpost has-img" style="background-image:url('img/de-piccoli/depiccoli-01.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/de-piccoli/depiccoli-02.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/de-piccoli/depiccoli-04.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/de-piccoli/depiccoli-05.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/de-piccoli/depiccoli-06.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/de-piccoli/depiccoli-08.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/de-piccoli/depiccoli-09.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/de-piccoli/depiccoli-10.jpg')"></div>
-        <div class="gpost has-img" style="background-image:url('img/de-piccoli/depiccoli-12.jpg')"></div>
-      </div>
-    </div>
-    <div class="span-5 ar-1-1 mk-quote">
-      <div class="tag">— Posizionamento</div>
-      <div class="body">Non vendiamo case. Raccontiamo <em>chi ci entrerà</em>. Il post di un immobile è il primo contatto — più che una vetrina, è un'emozione.</div>
-    </div>
-    <div class="span-6 ar-1-1 mk-phone">
-      <div class="frame">
-        <div class="notch"></div>
-        <div class="screen">
-          <div class="ig-bar"><div class="av"></div><div class="nm">depiccoli</div><div class="dot">···</div></div>
-          <div class="reel-img" style="background-image:url('img/de-piccoli/depiccoli-reel.jpg')"></div>
-          <div class="ig-stats">
-            <div class="row"><div class="ic"></div><div class="ic"></div><div class="ic sq"></div></div>
-            <div class="cap"><b>depiccoli</b> Open House. <em>Benvenuti dentro casa, anche solo a curiosare.</em></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="span-6 ar-1-1 mk-swatch dk">DE PICCOLI<br/><em>Immobiliare</em></div>
+    <div class="span-6 ar-1-1 gi color"><img src="img/de-piccoli/de-piccoli-caso-01.jpg" alt="La vetrina dell&#x27;ufficio di Ceggia con gli annunci" width="1067" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+    <div class="span-6 ar-1-1 mk-stat"><div class="big">127</div><div class="lbl">reel su Instagram da gennaio a novembre 2026</div></div>
+    <div class="span-6 ar-1-1 gi color"><img src="img/de-piccoli/de-piccoli-caso-02.jpg" alt="Tre agenti davanti al gazebo De Piccoli al mercato" width="1280" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+    <div class="span-6 ar-1-1 gi color"><img src="img/de-piccoli/de-piccoli-caso-03.jpg" alt="Un agente davanti al gazebo in piazza" width="1280" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
   </section>
-  <!-- CREDITS -->
+
+  <section class="chapter reveal">
+    <div class="num">— 003 · Il contenuto più visto</div>
+    <div>
+      <h2 class="display">Una casa al mare, <span class="italic">260.000 volte.</span></h2>
+      <p>Il reel di luglio 2026 su una casa al mare pronta da vivere ha superato le 260.000 visualizzazioni e raggiunto oltre 210.000 account, con più di 2.000 condivisioni. È la prova che un immobile raccontato bene viene girato da chi lo guarda a chi potrebbe comprarlo.</p>
+      <p>Non è un caso isolato: nel 2026 diciassette reel dell'agenzia hanno superato le 10.000 visualizzazioni.</p>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="span-4 ar-4-5 gi color"><img src="img/de-piccoli/de-piccoli-caso-04.jpg" alt="Due agenti al gazebo, con i volantini sul tavolo" width="1280" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+    <div class="span-4 ar-4-5 mk-stat invert sm"><div class="big">260.087</div><div class="lbl">visualizzazioni per un solo reel</div></div>
+    <div class="span-4 ar-4-5 gi color"><img src="img/de-piccoli/de-piccoli-caso-05.jpg" alt="Un agente spiega sotto il gazebo" width="1280" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+  </section>
+
+  <section class="chapter reveal">
+    <div class="num">— 004 · Dove siamo ora</div>
+    <div>
+      <h2 class="display">Dalla casa da comprare alla casa da vendere.</h2>
+      <p>Il profilo pubblica con regolarità, e a novembre 2026 il lavoro si è allargato in due direzioni. Il primo è un nuovo formato di interviste ai collaboratori dell'agenzia, partito con lo shooting dell'11 novembre: nove video in una sola giornata. Il secondo è la comunicazione rivolta a chi vuole vendere casa, oltre che a chi la cerca.</p>
+      <p>In parallelo sono in calendario le sponsorizzate di novembre: due open house a San Donà e Portogruaro e due nuovi complessi residenziali presentati con video costruiti sui render.</p>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="span-4 ar-4-5 gi color"><img src="img/de-piccoli/de-piccoli-caso-06.jpg" alt="La reception dell&#x27;agenzia con il logo De Piccoli e l&#x27;albero di Natale" width="1067" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+    <div class="span-4 ar-4-5 gi color"><img src="img/de-piccoli/de-piccoli-caso-07.jpg" alt="Un agente parla con una cliente all&#x27;evento di Natale in agenzia" width="1280" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+    <div class="span-4 ar-4-5 gi color"><img src="img/de-piccoli/de-piccoli-caso-08.jpg" alt="Due agenti davanti all&#x27;albero di Natale" width="1280" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
+  </section>
+
+  <section class="results reveal">
+    <div class="head">— 005 · Il progetto in numeri</div>
+    <div class="grid gx" style="grid-template-columns:repeat(3,1fr)">
+      <div class="cell">
+        <div class="big display">127</div>
+        <div class="lbl">reel pubblicati su Instagram da gennaio a novembre 2026</div>
+      </div>
+      <div class="cell">
+        <div class="big display sm">1.035.630</div>
+        <div class="lbl">visualizzazioni dei contenuti Instagram nello stesso periodo</div>
+      </div>
+      <div class="cell lc">
+        <div class="big display sm">260.087</div>
+        <div class="lbl">visualizzazioni del reel più visto</div>
+      </div>
+      <div class="cell lr">
+        <div class="big display">17</div>
+        <div class="lbl">reel sopra le 10.000 visualizzazioni</div>
+      </div>
+      <div class="cell lr">
+        <div class="big display">38</div>
+        <div class="lbl">open house organizzati dall'agenzia nel 2026 e comunicati sui social (dato dell'agenzia)</div>
+      </div>
+      <div class="cell lc lr">
+        <div class="big display">9</div>
+        <div class="lbl">video girati in un solo shooting, novembre 2026</div>
+      </div>
+    </div>
+  </section>
+
   <section class="credits reveal">
-    <div class="label">— 003 · Crediti & dettagli</div>
+    <div class="label">— 006 · Crediti &amp; dettagli</div>
     <dl>
-      <div><dt>Anno</dt><dd>2025–2026</dd></div>
-      <div><dt>Discipline</dt><dd>Content Strategy, Regia, Copywriting, Eventi, Grafica</dd></div>
-      <div><dt>Direzione creativa</dt><dd>MLP Studio Creativo</dd></div>
-      <div><dt>Sede cliente</dt><dd>Ceggia (VE), Veneto</dd></div>
+      <div><dt>Anno</dt><dd>2024–2026</dd></div>
+      <div><dt>Discipline</dt><dd>Strategia social, Personal brand, Regia, Shooting video e drone, Montaggio reel, Grafica, Sponsorizzate</dd></div>
+      <div><dt>Strategia e coordinamento</dt><dd>MLP Studio Creativo</dd></div>
+      <div><dt>Team MLP</dt><dd>strategia e sponsorizzate, riprese e montaggio, piano editoriale e grafiche, gestione del cliente</dd></div>
+      <div><dt>Sede cliente</dt><dd>San Donà di Piave (Venezia), Veneto</dd></div>
     </dl>
   </section>
 
-  <!-- NEXT -->
   <a href="forte48.html" class="next">
     <span class="lab">— Prossimo progetto</span>
-    <span class="title display">Forte 48</span>
+    <span class="title display">Hotel Ristorante Forte del 48</span>
     <span class="arr">→</span>
   </a>
 
-  <!-- FOOTER -->
   <footer>
     <div>© 2026 MLP Studio Creativo</div>
     <div>San Donà di Piave <span class="dot"></span> Venezia</div>
