@@ -389,6 +389,37 @@
     .results .grid.gx .cell,.results .grid.gx .cell.lc,.results .grid.gx .cell.lr{border-right:1px solid var(--paper-2);border-bottom:1px solid var(--paper-2)}
     .cover{height:60vh;min-height:380px}
   }
+  /* risultati Meta */
+  .mchart{margin:34px 0 10px;max-width:760px}
+  .mchart .bars{display:grid;grid-template-columns:repeat(14,1fr);gap:8px;align-items:end;height:260px;border-bottom:1px solid var(--line)}
+  .mchart .bar{position:relative;background:var(--ink);min-height:2px}
+  .mchart .bar.soft{background:#cfcfcf}
+  .mchart .bar .v{position:absolute;left:50%;bottom:calc(100% + 6px);transform:translateX(-50%);font-size:10px;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .mchart .bar.soft .v{color:var(--muted)}
+  .mchart .labels{display:grid;grid-template-columns:repeat(14,1fr);gap:8px;margin-top:8px}
+  .mchart .labels span{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:center}
+  .mchart .cap{display:flex;flex-wrap:wrap;gap:22px;margin-top:20px;font-size:13px;color:var(--muted)}
+  .mchart .cap i{display:inline-block;width:10px;height:10px;margin-right:8px;vertical-align:-1px}
+  .mreels{margin:30px 0 10px;max-width:760px;border-top:1px solid var(--line)}
+  .mreels .r{display:grid;grid-template-columns:36px 1fr 120px 110px;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--paper-2)}
+  .mreels .r .i{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+  .mreels .r .t{font-family:'Avenir Light','Avenir Next','Avenir','Nunito Sans',sans-serif;font-size:17px}
+  .mreels .r .t small,.mreels .r .c small{display:block;font-family:'Roboto',sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+  .mreels .r .c{text-align:right;font-size:16px;font-variant-numeric:tabular-nums}
+  .mreels .r.h *{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .mnote{font-size:12px!important;color:var(--muted)}
+  @media (max-width:900px){
+    .mchart .bars{gap:3px;height:200px}.mchart .labels{gap:3px}
+    .mchart .bar .v{display:none}.mchart .bar.peak .v{display:block}
+    .mchart .labels span{font-size:7px;letter-spacing:0}
+    .mreels .r{grid-template-columns:28px 1fr 90px;row-gap:4px}
+    .mreels .r .c.hide{display:none}
+    .results{padding:60px 20px}
+    .results .grid.gx{grid-template-columns:1fr 1fr!important}
+    .results .grid.gx .cell{padding:28px 14px;border-bottom:1px solid var(--paper-2)!important}
+    .results .grid.gx .cell:nth-child(2n){border-right:none}
+    .results .cell .big{font-size:36px}
+  }
 </style>
 
 <link rel="stylesheet" href="../assets/overlays.css" />
@@ -540,7 +571,7 @@
       <ul><li>Stile del giorno: un look completo, con i consigli per abbinarlo.</li><li>Dettaglio chic: un particolare di un capo, cuciture, tessuti, finiture.</li><li>Consigli di stile: la responsabile parla di tendenze e abbinamenti.</li><li>Il tocco della consulente: un outfit scelto per un cliente, e il perché della scelta.</li></ul>
       <h3>Piano editoriale e produzione</h3>
       <p>Tre uscite a settimana tra post e reel, storie ogni giorno con i prodotti e il negozio. Shooting fotografici e video in negozio, con la responsabile davanti alla camera per il personal brand.</p>
-      <p>Fino a dicembre 2024 abbiamo gestito anche le campagne sponsorizzate del negozio.</p>
+      <p>Le sponsorizzate le abbiamo usate solo in pochi momenti mirati: la crescita del profilo è arrivata quasi tutta dai contenuti organici.</p>
       <p>Nel tempo il lavoro si è allargato ai reel parlati e ai momenti importanti del negozio. Abbiamo realizzato anche il sito e-commerce, e a settembre 2025 ne abbiamo accompagnato il lancio sui social.</p>
     </div>
   </section>
@@ -559,6 +590,7 @@
     <div>
       <h2 class="display">Dove eravamo arrivati</h2>
       <p>Ad agosto 2025, dopo poco più di un anno di lavoro insieme, il profilo aveva superato i 16.000 follower: oltre sei volte quelli di partenza. Lo ha raccontato il negozio stesso, in un video registrato con noi in studio.</p>
+      <p>Oggi il profilo conta 18.215 follower, più di sette volte quelli di partenza.</p>
       <p>A inizio 2026 seguivamo ancora le storie e i contenuti del negozio, compresa la comunicazione della chiusura invernale e della riapertura con le nuove collezioni.</p>
     </div>
   </section>
@@ -569,8 +601,34 @@
     <div class="span-4 ar-4-5 gi color"><img src="img/internoventi/internoventi-caso-09.jpg" alt="Giacca con dettagli gioiello su uno stender, nella luce della vetrina" width="1200" height="1600" loading="lazy" style="object-position:50% 30%" /></div>
   </section>
 
+  <section class="chapter reveal">
+    <div class="num">— 004 · I risultati su Meta</div>
+    <div>
+      <h2 class="display">Un salto, poi un livello <span class="italic">nuovo.</span></h2>
+      <p>Tra novembre 2024 e gennaio 2026 i contenuti hanno raggiunto 553.107 persone su Instagram e portato 122.855 visite al profilo. A marzo 2025 una serie di reel girati in negozio ha fatto il salto: dopo il picco di aprile le visite al profilo non sono tornate dov'erano, ma si sono assestate su un livello più che triplo rispetto all'inverno precedente.</p>
+      <div class="mchart" aria-label="Visite mensili al profilo Instagram, dicembre 2024 – gennaio 2026">
+        <div class="bars" id="mbars"></div>
+        <div class="labels" id="mlabels"></div>
+        <div class="cap"><span><i style="background:#cfcfcf"></i>Inverno 2024-25, media 1.966 visite al mese</span><span><i style="background:#0a0a0a"></i>Da marzo 2025, oltre 7.100 al mese anche dopo il picco</span></div>
+      </div>
+      <h3>I reel che hanno fatto la differenza</h3>
+      <p>Un capo o un abbinamento spiegato bene, girato in negozio, con l'invito a passare e una domanda per chi guarda.</p>
+      <div class="mreels">
+        <div class="r h"><span>#</span><span>Reel</span><span class="c hide">Persone raggiunte</span><span class="c">Nuovi follower</span></div>
+        <div class="r"><span class="i">01</span><span class="t">Tre completi per le giornate di sole<small>Marzo 2025</small></span><span class="c hide">262.934</span><span class="c">4.944</span></div>
+        <div class="r"><span class="i">02</span><span class="t">L'outfit per l'aperitivo in spiaggia<small>Marzo 2025</small></span><span class="c hide">190.060</span><span class="c">3.284</span></div>
+        <div class="r"><span class="i">03</span><span class="t">Le Mary Jane in camoscio, tre colori<small>Marzo 2025</small></span><span class="c hide">72.100</span><span class="c">811</span></div>
+        <div class="r"><span class="i">04</span><span class="t">Outfit primaverile con giacca doppiopetto<small>Marzo 2025</small></span><span class="c hide">80.309</span><span class="c">602</span></div>
+        <div class="r"><span class="i">05</span><span class="t">L'abito in denim<small>Aprile 2025</small></span><span class="c hide">54.221</span><span class="c">404</span></div>
+      </div>
+      <p>I dieci reel migliori del periodo hanno portato 10.963 nuovi follower. I primi due, pubblicati a dieci giorni di distanza, da soli ne valgono 8.228.</p>
+      <p>Con il sito online il profilo è diventato anche una porta verso il negozio virtuale: tra novembre 2025 e gennaio 2026 i clic sul link del profilo sono stati oltre 6.300.</p>
+      <p class="mnote">Dati da Meta Business Suite. Il numero di follower di agosto 2025 è quello comunicato dal negozio.</p>
+    </div>
+  </section>
+
   <section class="results reveal">
-    <div class="head">— 004 · Il progetto in numeri</div>
+    <div class="head">— 005 · Il progetto in numeri</div>
     <div class="grid gx" style="grid-template-columns:repeat(4,1fr)">
       <div class="cell lr">
         <div class="big display">2.555</div>
@@ -581,18 +639,18 @@
         <div class="lbl">follower ad agosto 2025, dato comunicato dal negozio</div>
       </div>
       <div class="cell lr">
-        <div class="big display">4</div>
-        <div class="lbl">rubriche editoriali costruite attorno al negozio e alla responsabile</div>
+        <div class="big display sm">553.107</div>
+        <div class="lbl">persone raggiunte su Instagram, nov 2024 – gen 2026</div>
       </div>
       <div class="cell lc lr">
-        <div class="big display">3</div>
-        <div class="lbl">uscite a settimana nel feed, più storie ogni giorno</div>
+        <div class="big display sm">10.963</div>
+        <div class="lbl">nuovi follower dai dieci reel migliori</div>
       </div>
     </div>
   </section>
 
   <section class="credits reveal">
-    <div class="label">— 005 · Crediti &amp; dettagli</div>
+    <div class="label">— 006 · Crediti &amp; dettagli</div>
     <dl>
       <div><dt>Anni</dt><dd>2024–2026</dd></div>
       <div><dt>Discipline</dt><dd>Strategia social, Personal brand, Fotografia, Video, Piano editoriale, Web, Sponsorizzate</dd></div>
@@ -639,5 +697,18 @@
     })();
   </script>
 <script src="/assets/consenso.js" defer></script>
+<script>
+(function(){
+  var data=[["dic",2630],["gen",1948],["feb",1320],["mar",14265],["apr",37634],["mag",9321],["giu",7744],["lug",7107],["ago",7848],["set",7609],["ott",5317],["nov",6735],["dic",5739],["gen",7066]];
+  var b=document.getElementById('mbars'),l=document.getElementById('mlabels');if(!b)return;
+  var max=Math.max.apply(null,data.map(function(d){return d[1]}));
+  data.forEach(function(d,i){
+    var e=document.createElement('div');e.className='bar'+(i<3?' soft':'')+(d[1]===max?' peak':'');
+    e.style.height=(d[1]/max*100)+'%';e.title=d[1].toLocaleString('it-IT')+' visite';
+    e.innerHTML='<span class="v">'+d[1].toLocaleString('it-IT')+'</span>';b.appendChild(e);
+    var s=document.createElement('span');s.textContent=d[0]+(i===0?' 24':i===1?' 25':i===13?' 26':'');l.appendChild(s);
+  });
+})();
+</script>
 </body>
 </html>
