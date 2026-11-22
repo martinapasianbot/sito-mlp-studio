@@ -1274,22 +1274,14 @@
             </select>
           </div>
           <div class="field">
-            <label for="f-budget">Budget mensile <span class="req">*</span></label>
-            <select id="f-budget" name="budget" required>
-              <option value="">Seleziona una fascia...</option>
-              <option>800 — 1.500 € / mese</option>
-              <option>1.500 — 3.000 € / mese</option>
-              <option>3.000 — 5.000 € / mese</option>
-              <option>Oltre 5.000 € / mese</option>
-              <option value="altro">Altro (specifica sotto)</option>
+            <label for="f-persone">Quante persone lavorano in azienda <span class="req">*</span></label>
+            <select id="f-persone" name="persone" required>
+              <option value="">Seleziona...</option>
+              <option>1-5</option>
+              <option>6-20</option>
+              <option>21-50</option>
+              <option>Oltre 50</option>
             </select>
-          </div>
-        </div>
-
-        <div class="row row-1" id="budget-altro-row" hidden>
-          <div class="field">
-            <label for="f-budget-altro">Specifica il tuo budget</label>
-            <input id="f-budget-altro" type="text" name="budget-altro" placeholder="Es. budget una tantum, range diverso, ecc." />
           </div>
         </div>
 
@@ -1452,16 +1444,6 @@
       var formWrap = document.getElementById('form-contatti');
       if(formWrap){
         var form = formWrap.querySelector('form');
-        var budgetSelect = document.getElementById('f-budget');
-        var budgetAltroRow = document.getElementById('budget-altro-row');
-        var budgetAltroInput = document.getElementById('f-budget-altro');
-
-        budgetSelect.addEventListener('change', function(){
-          var isAltro = budgetSelect.value === 'altro';
-          budgetAltroRow.hidden = !isAltro;
-          if(isAltro){ budgetAltroInput.focus(); } else { budgetAltroInput.value = ''; }
-        });
-
         form.addEventListener('submit', function(e){
           e.preventDefault();
           if(!form.checkValidity()){ form.reportValidity(); return; }
